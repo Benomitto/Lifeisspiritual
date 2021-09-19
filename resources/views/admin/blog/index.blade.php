@@ -1,0 +1,183 @@
+@extends('layouts.master')
+
+@section('content')
+
+<div class="container">
+    <div class="row p-3">
+        <div class="col-md-11 card p-3">
+			<h5 class="text-center text-primary">Blog</h5>
+			<div class="form-group">
+				
+				<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+					<i class="fa fa-plus"></i>
+				</a>
+				<!--Modal Start-->
+							<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+										  <div class="modal-dialog">
+											<div class="modal-content">
+											  <div class="modal-body">
+													<div class="container">
+    <div class="row p-3 ">
+        <div class="col-md-6 mx-auto card p-3">
+			<h5 class="text-center text-primary">Add New Blog</h5>
+			<form method="post" action={{route('blog.store')}} enctype="multipart/form-data" >
+			@csrf
+				<div class="form-group">
+					<input class="form-control" type="text" name="title" placeholder="Title">
+				</div>
+				<div class="form-group">
+					<textarea class="form-control" rows="5" cols="30" name="description" placeholder="description"></textarea>
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="date" name="date" placeholder="Date">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="file" name="image" >
+				</div>
+				<div class="form-group">
+					<select class="form-control" 
+					name="category_id" 
+					<option value="" selected>
+						Choose a category
+					</option>
+					@foreach($blogs as $blog) 
+					
+					<option value="{{$blog->id}}">
+					{{$blog->title}}
+					</option>
+					@endforeach</select>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</form>
+			
+        </div>
+    </div>	
+</div>
+
+											  </div>
+											  <div class="modal-footer">
+												<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+											  </div>
+											</div>
+										  </div>
+										</div>
+				<!--Modal End-->
+			</div>
+				<table class="table table-bordered border-dark">
+					<thead class="table table-bordered border-dark">
+						<tr>
+							<td>Id</td>
+							<td>Title</td>
+							<td>Date</td>
+							<td>Description</td>
+							<td>Image</td>
+						
+							<td></td>
+						</tr>
+					</thead>
+					<tbody class="table table-bordered border-dark">
+						@foreach ($blogs as $blog)
+							<tr>
+								<td>{{$blog->id}}</td>
+								<td>{{$blog->title}}</td>
+								<td>{{$blog->date}}</td>
+								<td>{{Str::limit($blog->description,200)}}</td>
+								<td><img src="{{asset($blog->image)}}" alt="{{$blog->title}}"
+									class="image-fluid"
+									width="50"
+									height="50">
+								</td>
+									
+									
+									<td class="d-flex flex-row justify-content-center align-items-center">
+									<div class="form-group">
+									<a href="#" class="btn btn-warning btn-sm mr-2" data-toggle="modal" data-target="#editBackdrop">
+										<i class="fa fa-edit"></i>
+									</a>
+									<!--Modal Start-->
+
+
+											<!-- Modal -->
+											<div class="modal fade" id="editBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+											  <div class="modal-dialog">
+												<div class="modal-content">
+												  <div class="modal-body">
+														<div class="container ">
+    <div class="row p-3 ">
+        <div class="col-md-6 mx-auto card p-3 ">
+			<h5 class="text-center text-primary ">Update Blog</h5>
+			<form method="post" action={{route('blog.update',$blog->id)}} enctype="multipart/form-data">
+			@csrf
+			@method('PUT')
+				<div class="form-group">
+					<input class="form-control" value="{{$blog->title}}" type="text" name="title" placeholder="Title">
+				</div>
+				<div class="form-group">
+					<input class="form-control" value="{{$blog->date}}" type="date" name="date" placeholder="Date">
+				</div>
+				<div class="form-group">
+					<textarea class="form-control" rows="5" cols="30" name="description" placeholder="description">{{$blog->description}}</textarea>
+				</div>
+				<div class="form-group"><img src="{{asset($blog->image)}}"  class="img-fluid" width="200" height="300" alt=""></div>
+				<div class="form-group">
+					<input class="form-control" type="file" name="image" >
+				</div>
+				<div class="form-group">
+					<select class="form-control" 
+					name="category_id" 
+					<option value="" selected>
+						Choose a category
+					</option>
+					@foreach($blogs as $blog) 
+					
+					<option {{$blog->id === $blog->id ? "selected" : ""}} value="{{$blog->id}}">
+					{{$blog->title}}
+					</option>
+					@endforeach</select>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</form>
+			
+        </div>
+    </div>	
+</div>
+
+												  </div>
+												  <div class="modal-footer">
+													<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+												  </div>
+												</div>
+											  </div>
+											</div>
+
+									<!--Modal End-->
+									</div>
+										<form action="{{route('blog.destroy',$blog->id)}}" method="post">
+											@csrf
+											@method('DELETE')
+											
+											<div class="form-group">
+												<button type="submit" class="btn btn-danger btn-sm">
+													<i class="fa fa-trash"></i>
+												</button>
+												
+											</div>
+										</form>
+									</td>
+							</tr>
+						@endforeach
+						
+					</tbody>
+				</table>
+				<div class="my-3 d-flex justify-content-center">
+				
+				</div>
+        </div>
+    </div>	
+</div>
+@endsection
+ 
