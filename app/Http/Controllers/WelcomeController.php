@@ -24,6 +24,7 @@ class WelcomeController extends Controller
 			'blogs' => Blog::all(),
 			'users' => User::all(),
 		]);
+		
 	}
     /**
      * Display a listing of the resource.
@@ -32,11 +33,17 @@ class WelcomeController extends Controller
      */
     public function index()
     { //Parameterized getblogs() which return only 3 blogs
-	$welcomes = Welcome::all();
-	$videos = Video::all();
-	$blogs = $this->getBlogs(3);
-    $products = $this->getProducts(4); 	 
-    return view('/welcome',compact('welcomes','videos','blogs', 'products'));
+	
+	
+	
+   	 
+    return view('/welcome')->with([
+		'welcomes'=>Welcome::all(),
+		'products'=>Product::all(),
+		'videos' => Video::all(),
+		'blogs' => $this->getBlogs(3),
+		 'products' => $this->getProducts(4),
+	]);
     }
 
     /**
