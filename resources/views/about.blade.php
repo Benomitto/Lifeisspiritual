@@ -74,7 +74,7 @@
       <div class="container">
         <div class="row align-items-center mr-5">
 		<div class="col-lg-6 py-5 px-5">
-            <img src="assets/img/christ.jpg" alt="image" class="img-fluid rounded" style="width:500px;height:500px;">
+            <img src="assets/img/Christ.jpg" alt="image" class="img-fluid rounded" style="width:500px;height:500px;">
           </div>
           <div class="col-lg-6 pl-lg-5 ">
             <p class="text-justify pt-3 mr-5">The body of Christ needs their own platforms where the evil arms of censorship and/or infiltration cannot reach. Satan's kingdom is a kingdom of darkness. Darkness is ignorance, therefore Satan's kingdom thrives on the ignorance of humanity. The more a born again human being declares the light of God's word, the less space the devil has to move around.</p>
