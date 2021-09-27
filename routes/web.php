@@ -89,7 +89,7 @@ Route::get('/payments', [App\Http\Controllers\OurbooksController::class, 'paymen
 
 //Transactions
 Route::get('/transactions', [App\Http\Controllers\OurbooksController::class, 'transactions'])->name('transactions');
-//Route::post('/transaction/new/{cart_total}/{user_id}', [MpesaController::class, 'stkPush'])->name('lipa')->middleware('auth');
+
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('welcome');

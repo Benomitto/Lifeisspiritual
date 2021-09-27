@@ -54,11 +54,11 @@ class MpesaController extends Controller
 		'Password'=>$this->lipaNaMpesaPassword(), //The Method we made at the beginning
 		'Timestamp'=>Carbon::rawParse('now')->format('YmdHms'),
 		'TransactionType'=>'CustomerPayBillOnline',
-		'Amount'=> 1, 
+		'Amount'=> $amount, 
 		'PartyA'=> $phoneNumber,
 		'PartyB'=>174379,
 		'PhoneNumber'=> $phoneNumber,
-		'CallBackURL'=> 'https://35ac-197-248-92-161.ngrok.io/api/stk/push/callback/url', 
+		'CallBackURL'=> 'https://b29c-197-248-92-161.ngrok.io/api/stk/push/callback/url', 
 		'AccountReference'=> "Life Is Spiritual",
 		'TransactionDesc'=> "Lipa na M-pesa"
 		];
