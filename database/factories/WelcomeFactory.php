@@ -23,18 +23,18 @@ class WelcomeFactory extends Factory
     {
         return [
             //
-			'intro'=>$this->faker->sentence,
-			'descri'=>$this->faker->sentence,
-			'introduction'=>$this->faker->sentence,
-			'descript'=>$this->faker->sentence,
-			'description'=>$this->faker->sentence,
-			'slider'=>$this->faker->imageUrl($width=1920,$height=1080),
-			"header"=>$this->faker->sentence,
-			"describe"=>$this->faker->sentence,
-			"described"=>$this->faker->sentence,
-			"image"=>$this->faker->imageUrl($width=300,$height=300),
-			"button"=>$this->faker->sentence,
-			"btn"=>$this->faker->sentence,
+			'intro'=>$this->sentence,
+			'descri'=>$this->sentence,
+			'introduction'=>$this->sentence,
+			'descript'=>$this->sentence,
+			'description'=>$this->sentence,
+			'slider'=>$this->imageUrl($width=1920,$height=1080),
+			"header"=>$this->sentence,
+			"describe"=>$this->sentence,
+			"described"=>$this->sentence,
+			"image"=>$this->imageUrl($width=300,$height=300),
+			"button"=>$this->sentence,
+			"btn"=>$this->sentence,
         ];
     }
 }

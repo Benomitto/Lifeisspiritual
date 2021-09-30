@@ -211,7 +211,7 @@
                                     <a href="{{route('admin.blog')}}" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="gi gi-blog sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Blog</span></a>
                                     <ul>
                                         <li>
-                                            <a href="">Index</a>
+                                            <a href="{{route('admin.blog')}}">Index</a>
                                         </li>
                                        
                                     </ul>
