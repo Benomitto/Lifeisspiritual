@@ -68,7 +68,7 @@ class LoginController extends Controller
 			])->withEmail($user->email);
 		}
 		
-		if(Auth::user()->usertype == 'admin'){
+		if(Auth::user()->userType == 'admin'){
 				return redirect('/admin')->with('status','Welcome');
 			}else{
 				return redirect()->back()->with('status','Welcome home');
