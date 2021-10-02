@@ -20,10 +20,6 @@ class CreateWelcomesTable extends Migration
 			$table->string('introduction');
 			$table->string('descript');
 			$table->string('description');
-			$table->string('slider');
-			$table->string('header');
-			$table->longText('describe');
-			$table->longText('described');
 			$table->string('image');
 			$table->string('button');
 			$table->string('btn');

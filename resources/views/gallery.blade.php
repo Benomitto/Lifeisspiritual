@@ -38,20 +38,6 @@
 	
 		            <section class="" id="sermons">
       <div class="container ">
-        <!--<div class="row no-gutter" id="">
-          <div class="col-sm-4 mb-0">
-			<a class="primary-overlay d-block mt-5 fancybox" href="/assets/img/1.jpg" data-fancybox="gallery1">
-              <div class="overlay-content"><img class="img-fluid rounded" src="/assets/img/1.jpg" alt="..."></div>
-			  <a class="primary-overlay d-block mt-5 fancybox" href="/assets/img/2.jpg" data-fancybox="gallery1"></a>
-			  <a class="primary-overlay d-block mt-5 fancybox" href="/assets/img/3.jpg" data-fancybox="gallery1"></a>
-			  <a class="primary-overlay d-block mt-5 fancybox" href="/assets/img/4.jpg" data-fancybox="gallery1"></a>
-			  <a class="primary-overlay d-block mt-5 fancybox" href="/assets/img/5.jpg" data-fancybox="gallery1"></a>
-			  <a class="primary-overlay d-block mt-5 fancybox" href="/assets/img/6.jpg" data-fancybox="gallery1"></a>
-			  <a class="primary-overlay d-block mt-5 fancybox" href="/assets/img/spiritual.jpg" data-fancybox="gallery1"></a>
-			  <a class="primary-overlay d-block mt-5 fancybox" href="/assets/img/8.jpg" data-fancybox="gallery1"></a>
-			</a>
-          </div>
-        </div>-->
 		<!--Album Start-->
 		 <a class="item fancybox mb-5 mt-5" href="/assets/img/1.jpg" data-fancybox="gallery1">
 		  <div class="overlay-content"><img class="img-fluid rounded" src="/assets/img/1.jpg" alt="...">

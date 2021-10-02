@@ -162,7 +162,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
-			$image_path = public_path('images/products/').$product->image;
+		$image_path = public_path('images/products/').$product->image;
 		if(File::exists($image_path)){
 			unlink($image_path);
 		}

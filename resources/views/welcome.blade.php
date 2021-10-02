@@ -77,8 +77,9 @@
         <!--end #hero-->
 <div class="ts-background" data-bg-color="#141a3a" data-bg-parallax="scroll" data-bg-parallax-speed="3">
                 <div class="ts-background-image ts-svg ts-z-index__1 ts-background-position-left d-none d-md-block" data-bg-image="assets/svg/shape-mask.svg" data-animate="ts-fadeInLeft"></div>
-                <div class="ts-background-image ts-parallax-element" data-bg-image="{{asset($welcome->slider)}}" alt="slider" data-animate="ts-zoomOutIn"></div>
+                <div class="ts-background-image ts-parallax-element" data-bg-image="{{('/images/slider/'.$welcome->image)}}" alt="Image" data-animate="ts-zoomOutIn"></div>
             </div>
+			@endforeach
         <!--*********************************************************************************************************-->
         <!--************ CONTENT ************************************************************************************-->
         <!--*********************************************************************************************************-->
@@ -90,16 +91,17 @@
             <!--ABOUT US ********************************************************************************************-->
             
 			<section id="about-us">
+			@foreach($abouts as $about)
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="ts-block pr-3">
                                 <div class="ts-title">
-                                    <h2>{{$welcome->header}}</h2>
+                                    <h2>{{$about->header}}</h2>
                                 </div>
                                 <!--end ts-title-->
-                                <p>{{$welcome->describe}}</p><p>{{$welcome->described}}</p>
-                                <a href="/about" class="btn btn-primary mr-3 my-2">{{$welcome->button}}
+                                <p>{{$about->describe}}</p><p>{{$about->described}}</p>
+                                <a href="/about" class="btn btn-primary mr-3 my-2">{{$about->button}}
 									<i class="fa fa-arrow-right small ml-3 ts-opacity__50"></i>
 								</a>
                             </div>
@@ -112,7 +114,7 @@
 
                 <div class="ts-background d-none d-sm-block" data-bg-color="#fafafa" data-bg-parallax1="scroll" data-bg-parallax-speed="3">
                     <div class="owl-carousel w-50 ts-push-left__100 h-100 ts-parallax-element1" data-owl-loop="1" data-owl-nav-container="#carousel-external-control">
-                        <div class="ts-background-image" data-bg-image="{{asset($welcome->image)}}" alt="img"></div>
+                        <div class="ts-background-image" data-bg-image="{{asset($about->image)}}" alt="img"></div>
                         <!--<div class="ts-background-image" data-bg-image="assets/img/bg-hand-mobile.jpg"></div>-->
                     </div>
                     <!--end owl-carousel-->

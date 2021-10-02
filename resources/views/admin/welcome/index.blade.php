@@ -69,9 +69,7 @@
 							<td>Introduction</td>
 							<td>Descript</td>
 							<td>Description</td>
-							<td>Slider</td>
 							<td>Image</td>
-						
 							<td></td>
 						</tr>
 					</thead>
@@ -84,16 +82,12 @@
 									<td>{{$welcome->introduction}}Ksh</td>
 									<td>{{Str::limit($welcome->descript,200)}}</td>
 									<td>{{Str::limit($welcome->description,200)}}</td>
-									<td><img src="{{asset($welcome->slider)}}" alt="{{$welcome->id}}"
+									<td><img src="{{asset('images/slider/'.$welcome->image)}}" alt="Image"
 									class="image-fluid"
 									width="50"
 									height="50">
 									</td>
-									<td><img src="{{asset($welcome->image)}}" alt="{{$welcome->id}}"
-									class="image-fluid"
-									width="50"
-									height="50">
-									</td>
+									
 									
 									
 									<td class="d-flex flex-row justify-content-center align-items-center">
@@ -129,6 +123,9 @@
 				</div>
 				<div class="form-group">
 					<textarea class="form-control" rows="5" cols="30" name="description" placeholder="description">{{$welcome->description}}</textarea>
+				</div>
+				<div class="form-group">
+					<img src="{{asset($welcome->image)}}"  class="img-fluid" width="200" height="300" alt="">
 				</div>
 				<div class="form-group">
 					<input class="form-control" type="file" name="image" >

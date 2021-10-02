@@ -28,11 +28,7 @@ class WelcomeFactory extends Factory
 			'introduction'=>$this->sentence,
 			'descript'=>$this->sentence,
 			'description'=>$this->sentence,
-			'slider'=>$this->imageUrl($width=1920,$height=1080),
-			"header"=>$this->sentence,
-			"describe"=>$this->sentence,
-			"described"=>$this->sentence,
-			"image"=>$this->imageUrl($width=300,$height=300),
+			'image'=>$this->imageUrl($width=1920,$height=1080),
 			"button"=>$this->sentence,
 			"btn"=>$this->sentence,
         ];

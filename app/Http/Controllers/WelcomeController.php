@@ -19,6 +19,7 @@ class WelcomeController extends Controller
 	{
 		return view('admin.welcome.index')->with([
 			'welcomes'=>Welcome::all(),
+			'abouts'=>About::all(),
 			'products' => Product::all(),
 			'orders' => Order::all(),
 			'blogs' => Blog::all(),
@@ -36,9 +37,10 @@ class WelcomeController extends Controller
 	
 	
 	
-   	 
+   	
     return view('/welcome')->with([
 		'welcomes'=>Welcome::all(),
+		'abouts'=>About::all(),
 		'products'=>Product::all(),
 		'videos' => Video::all(),
 		'blogs' => $this->getBlogs(3),
@@ -56,6 +58,7 @@ class WelcomeController extends Controller
         //
 		return view('admin.welcome.create')->with([
 			'welcomes' => Welcome::all(),
+			'abouts'=>About::all(),
 			'products'=>Product::all(),
 			'orders' => Order::all(),
 		]);
@@ -79,40 +82,26 @@ class WelcomeController extends Controller
     public function store(Request $request)
     {
         //
-			$this->validate($request,[
-			'intro' => 'required',
-			'descri' => 'required',
-			'introduction' => 'required',
-			'descript' => 'required',
-			'description' => 'required',
-			'slider' => 'required|image|mimes:png,jpg,jpeg|max: 4048',
-			'header' => 'required',
-			'describe' => 'required',
-			'described' => 'required',
-			'image' => 'required|image|mimes:png,jpg,jpeg|max: 4048',
-			'id' => 'required|numeric',
-		]);
-		if($request->hasFile('slider')){
-			$file = $request->slider;
-			$imageName = "images/welcome/".time()."_".$file->getClientOriginalName();
-			$file->move(public_path("images/welcome/"),$imageName);
-			$intro = $request->intro;
-			$introduction = $request->introduction;
-			Welcome::create([
-			'intro' => $intro,
-			'descri' => $request->description,
-			'introduction' => $introduction,
-			'descript' => $request->descript,
-			'description' => $request->description,
-			'slider' => $imageName,
-			'header' => $request->header,
-			'describe' => $request->describe,
-			'described' => $request->described,
-			'image' => $imageName,
-			'id' => $request->id,
-			]);
-			return redirect()->route('admin.welcome')->withSuccess("Item has been addedd ");
+		$welcome = new Welcome;
+		$welcome->intro = $request->input('intro');
+		$welcome->descri = $request->input('descri');
+		$welcome->introduction = $request->input('introduction');
+		$welcome->descript = $request->input('descript');
+		$welcome->description = $request->input('description');
+		
+		if($request->hasFile('image')){
+			
+			$file = $request->file('image');
+			$extention = $file->getClientOriginalExtension();
+			$filename = time().'.'.$extention;
+			$file->move('images/slider/',$filename);
+			$welcome->image = $filename;
 		}
+		
+		$welcome->save();
+		
+		
+		return redirect()->back()->with('status','Item Saved');
     }
 
     /**
@@ -155,18 +144,18 @@ class WelcomeController extends Controller
 			$welcome->descri = $request->input('descri');
 			$welcome->introduction = $request->input('introduction');
 			$welcome->descript = $request->input('descript');
-			$welcome->header = $request->input('header');
+			$welcome->description = $request->input('description');
 			
 			if($request->hasFile('image'))
 			{
-				$destination = 'images/welcome/'.$welcome->image;
+				$destination = 'images/slider/'.$welcome->image;
 				if(File::exists($destination)){
 					File::delete($destination);
 				}
 				$file = $request->file('image');
 				$extention = $file->getClientOriginalExtension();
 				$filename = time().'.'.$extention;
-				$file->move('images/welcome/',$filename);
+				$file->move('images/slider/',$filename);
 				$welcome->image = $filename;
 				
 			}
@@ -180,13 +169,10 @@ class WelcomeController extends Controller
      * @param  \App\Models\Welcome  $welcome
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Welcome $welcome)
+    public function destroy($id)
     {
         //
-		$image_path = public_path('images/welcome/').$welcome->image;
-		if(File::exists($image_path)){
-			unlink($image_path);
-		}
+		$welcome = Welcome::findorFail($id);
 		$welcome->delete();
 		return redirect()->route('admin.welcome')->withSuccess("Item has been removed");
     }

@@ -25,15 +25,8 @@
 					<textarea class="form-control" rows="5" cols="30" name="description" placeholder="description">{{$welcome->description}}</textarea>
 				</div>
 				<div class="form-group">
-					<textarea class="form-control" rows="5" cols="30" name="header" placeholder="header">{{$welcome->header}}</textarea>
-				</div>
-				<div class="form-group"><img src="{{asset($welcome->slider)}}"  class="img-fluid" width="1920" height="1080" alt=""></div>
-				<div class="form-group">
-					<input class="form-control" type="file" name="slider" >
-				</div>
-				<div class="form-group"><img src="{{/assets/img/($welcome->image)}}"  class="img-fluid" width="200" height="300" alt=""></div>
-				<div class="form-group">
 					<input class="form-control" type="file" name="image" >
+					<img src="{{'/assets/img/'.$welcome->image}}"  class="img-fluid" width="50" height="50" alt="">
 				</div>
 				<div class="form-group">
 					<button type="submit" class="btn btn-primary">Submit</button>

@@ -25,13 +25,11 @@ class AboutFactory extends Factory
         return [
             //
 			
-			'title'=>$this->faker->sentence,
+			'header'=>$this->faker->sentence,
 			"image"=>$this->faker->imageUrl($width=500,$height=500),
-			"description"=>$this->faker->paragraph,
-			"sentence"=>$this->faker->sentence,
-			"photo"=>$this->faker->imageUrl($width=500,$height=500),
-			"paragraph"=>$this->faker->paragraph,
-			"segment"=>$this->faker->sentence,
+			"describe"=>$this->faker->paragraph,
+			"described"=>$this->faker->sentence,
+			"button"=>$this->faker->sentence,
         ];	
     }
 }
