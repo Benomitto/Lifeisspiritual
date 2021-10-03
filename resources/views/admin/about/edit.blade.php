@@ -18,7 +18,7 @@
 				<div class="form-group">
 					<textarea class="form-control" rows="5" cols="30" name="description" placeholder="description">{{$about->sentence}}</textarea>
 				</div>
-				<div class="form-group"><img src="{{asset($about->image)}}"  class="img-fluid" width="200" height="100" alt=""></div>
+				<div class="form-group"><img src="{{asset('images/product/'.$product->image)"  class="img-fluid" width="200" height="100" alt=""></div>
 				<div class="form-group">
 					<input class="form-control" type="file" name="image" >
 				</div>

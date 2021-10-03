@@ -39,6 +39,12 @@
 					<textarea class="form-control" rows="5" cols="30" name="description" placeholder="description"></textarea>
 				</div>
 				<div class="form-group">
+					<input class="form-control" type="text" name="button" placeholder="button">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="btn" placeholder="Donate button">
+				</div>
+				<div class="form-group">
 					<input class="form-control" type="file" name="image" >
 				</div>
 				
@@ -69,6 +75,8 @@
 							<td>Introduction</td>
 							<td>Descript</td>
 							<td>Description</td>
+							<td>About</td>
+							<td>Donate</td>
 							<td>Image</td>
 							<td></td>
 						</tr>
@@ -82,6 +90,8 @@
 									<td>{{$welcome->introduction}}Ksh</td>
 									<td>{{Str::limit($welcome->descript,200)}}</td>
 									<td>{{Str::limit($welcome->description,200)}}</td>
+									<td>{{Str::limit($welcome->button,200)}}</td>
+									<td>{{Str::limit($welcome->btn,200)}}</td>
 									<td><img src="{{asset('images/slider/'.$welcome->image)}}" alt="Image"
 									class="image-fluid"
 									width="50"
@@ -125,7 +135,13 @@
 					<textarea class="form-control" rows="5" cols="30" name="description" placeholder="description">{{$welcome->description}}</textarea>
 				</div>
 				<div class="form-group">
-					<img src="{{asset($welcome->image)}}"  class="img-fluid" width="200" height="300" alt="">
+					<input class="form-control" type="text" name="button" placeholder="button">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="btn" placeholder="Donate button">
+				</div>
+				<div class="form-group">
+					<img src="{{asset('images/slider/'.$welcome->image)}}"  class="img-fluid" width="100" height="100" alt="">
 				</div>
 				<div class="form-group">
 					<input class="form-control" type="file" name="image" >

@@ -23,9 +23,8 @@ class VideoFactory extends Factory
     {
         return [
             //
+			'url'=>$this->faker->getvideoUrl($width=359,$height=359),
 			'title'=>$this->faker->sentence,
-			'subject'=>$this->faker->sentence,
-			'name'=>$this->faker->sentence,
 			'button'=>$this->faker->sentence,
         ];
     }

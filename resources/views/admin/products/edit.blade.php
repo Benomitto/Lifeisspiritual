@@ -24,7 +24,7 @@
 				<div class="form-group">
 					<input class="form-control" value="{{$product->inStock}}" type="number" name="inStock" placeholder="Quantity in stock">
 				</div>
-				<div class="form-group"><img src="{{asset($product->image)}}"  class="img-fluid" width="200" height="300" alt=""></div>
+				<div class="form-group"><img src="asset('images/product/'.$product->image)"  class="img-fluid" width="200" height="300" alt=""></div>
 				<div class="form-group">
 					<input class="form-control" type="file" name="image" >
 				</div>

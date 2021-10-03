@@ -114,7 +114,7 @@
 
                 <div class="ts-background d-none d-sm-block" data-bg-color="#fafafa" data-bg-parallax1="scroll" data-bg-parallax-speed="3">
                     <div class="owl-carousel w-50 ts-push-left__100 h-100 ts-parallax-element1" data-owl-loop="1" data-owl-nav-container="#carousel-external-control">
-                        <div class="ts-background-image" data-bg-image="{{asset($about->image)}}" alt="img"></div>
+                        <div class="ts-background-image" data-bg-image="{{('/images/about/'.$about->image)}}" alt="img"></div>
                         <!--<div class="ts-background-image" data-bg-image="assets/img/bg-hand-mobile.jpg"></div>-->
                     </div>
                     <!--end owl-carousel-->
@@ -168,19 +168,9 @@
                     <div class="row">
 				@foreach($videos as $video)
 					<div class="col-md-4">
-                           <iframe width="359" height="359" src="https://www.youtube.com/embed/KkS7Up3AHhk" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.1s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                           <iframe width="359" height="359" src="{{$video->url}}" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.1s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <h5 class="py-4"><a href="videos">{{$video->title}}</a> </h5>
                         </div>
-                        <div class="col-md-4">
-                           <iframe width="359" height="359" src="https://www.youtube.com/embed/Rq8NNOqTuaU" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.1s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <h5 class="py-4"><a href="videos">{{$video->subject}}</a> </h5>
-                        </div>
-						<div class="col-md-4">
-                           <iframe width="359" height="359" src="https://www.youtube.com/embed/cPAYOBFGZh8" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.1s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <h5 class="py-4"><a href="videos">{{$video->name}}</a> </h5>
-                        </div>
-                        <!--end col-md-4-->
-						
                     </div>
                     <!--end row-->
                     <div class="my-3 text-center">

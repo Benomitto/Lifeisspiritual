@@ -21,26 +21,19 @@
 			<form method="post" action={{route('about.store')}} enctype="multipart/form-data">
 			@csrf
 				<div class="form-group">
-					<input class="form-control" type="text" name="title" placeholder="Title">
+					<input class="form-control" type="text" name="header" placeholder="Header">
 				</div>
 				<div class="form-group">
-					<textarea class="form-control" rows="5" cols="30" name="description" placeholder="Sentence|Sentence appears on the right side"></textarea>
+					<textarea class="form-control" rows="5" cols="30" name="describe" placeholder="Describe 1st Paragraph"></textarea>
 				</div>
 				<div class="form-group">
-					<textarea class="form-control" rows="5" cols="30" name="sentence" placeholder="Sentence|Sentence appears on the right side"></textarea>
+					<textarea class="form-control" rows="5" cols="30" name="described" placeholder="Describe 2nd Paragraph"></textarea>
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="button" placeholder="Button">
 				</div>
 				<div class="form-group">
 					<input class="form-control" type="file" name="image" >
-				</div>
-				<div class="form-group">
-					<textarea class="form-control" rows="5" cols="30" name="paragraph" placeholder="Sentence|Sentence appears on the left side"></textarea>
-				</div>
-				<div class="form-group">
-					<textarea class="form-control" rows="5" cols="30" name="segment" placeholder="Sentence|Sentence appears on the left side"></textarea>
-				</div>
-				
-				<div class="form-group">
-					<input class="form-control" type="file" name="photo" >
 				</div>
 				<div class="form-group">
 					<button type="submit" class="btn btn-primary">Submit</button>
@@ -63,13 +56,11 @@
 					<thead class="table table-bordered border-dark">
 						<tr>
 							<td>Id</td>
-							<td>Title</td>
-							<td>Description</td>
-							<td>Sentence</td>
-							<td>Paragraph</td>
-							<td>Segment</td>
+							<td>Header</td>
+							<td>Describe</td>
+							<td>Described</td>
+							<td>Buttton</td>
 							<td>Image</td>
-							<td>Photo</td>
 							<td></td>
 						</tr>
 					</thead>
@@ -77,19 +68,15 @@
 						@foreach ($abouts as $about)
 							<tr>
 									<td>{{$about->id}}</td>
-									<td>{{$about->title}}</td>
-									<td>{{$about->description}}</td>
-									<td>{{$about->sentence}}</td>
-									<td>{{$about->paragraph}}</td>
-									<td>{{$about->segment}}</td>
-									<td><img src="{{asset($about->image)}}" alt="{{$about->title}}"
+									<td>{{$about->header}}</td>
+									<td>{{$about->describe}}</td>
+									<td>{{$about->described}}</td>
+									<td>{{$about->button}}</td>
+									<td><img src="{{asset('images/about/'.$about->image)}}" alt="{{$about->title}}"
 									class="image-fluid"
 									width="50"
 									height="50"></td>
-									<td><img src="{{asset($about->photo)}}" alt="{{$about->title}}"
-									class="image-fluid"
-									width="50"
-									height="50"></td>
+									
 									<td class="d-flex flex-row justify-content-center align-items-center">
 									<div class="form-group">
 									<a href="#" class="btn btn-warning btn-sm mr-2" data-toggle="modal" data-target="#editBackdrop">
@@ -102,34 +89,37 @@
 													<div class="modal-content">
 													  <div class="modal-body">
 															<div class="container">
-    <div class="row p-3">
-        <div class="col-md-6 mx-auto card p-3">
-			<h5 class="text-center text-primary">Update About</h5>
-			<form method="post" action={{route('about.update',$about->id)}} enctype="multipart/form-data">
-			@csrf
-			@method('PUT')
-				<div class="form-group">
-					<input class="form-control" value="{{$about->title}}" type="text" name="title" placeholder="Title">
-				</div>
-				<div class="form-group">
-					<textarea class="form-control" rows="5" cols="30" name="description" placeholder="description">{{$about->description}}</textarea>
-				</div>
-				<div class="form-group">
-					<textarea class="form-control" rows="5" cols="30" name="description" placeholder="description">{{$about->sentence}}</textarea>
-				</div>
-				<div class="form-group"><img src="{{asset($about->image)}}"  class="img-fluid" width="200" height="100" alt=""></div>
-				<div class="form-group">
-					<input class="form-control" type="file" name="image" >
-				</div>
-				
-				<div class="form-group">
-					<button type="submit" class="btn btn-primary">Submit</button>
-				</div>
-			</form>
-			
-        </div>
-    </div>	
-</div>
+															<div class="row p-3">
+																<div class="col-md-6 mx-auto card p-3">
+																	<h5 class="text-center text-primary">Update About</h5>
+																	<form method="post" action={{route('about.update',$about->id)}} enctype="multipart/form-data">
+																	@csrf
+																	@method('PUT')
+																		<div class="form-group">
+																			<input class="form-control" value="{{$about->header}}" type="text" name="header" placeholder="Header">
+																		</div>
+																		<div class="form-group">
+																			<textarea class="form-control" rows="5" cols="30" name="describe" placeholder="describe">{{$about->describe}}</textarea>
+																		</div>
+																		<div class="form-group">
+																			<textarea class="form-control" rows="5" cols="30" name="described" placeholder="described">{{$about->described}}</textarea>
+																		</div>
+																		<div class="form-group">
+																			<input class="form-control" value="{{$about->button}}" type="text" name="button" placeholder="Button">
+																		</div>
+																		<div class="form-group"><img src="{{asset('images/about/'.$about->image)}}"  class="img-fluid" width="100" height="100" alt=""></div>
+																		<div class="form-group">
+																			<input class="form-control" type="file" name="image" >
+																		</div>
+																		
+																		<div class="form-group">
+																			<button type="submit" class="btn btn-primary">Submit</button>
+																		</div>
+																	</form>
+																	
+																</div>
+															</div>	
+														</div>
 													  </div>
 													  <div class="modal-footer">
 														<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>

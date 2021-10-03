@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Video extends Model
 {
 	protected $table = 'videos';
-	protected $fillable = ["title","subject","name","button"];
+	protected $fillable = ["url","title","button"];
     use HasFactory;
 }

@@ -46,17 +46,18 @@ Route::get('/admin/orders', 'App\Http\Controllers\AdminController@getOrders')->n
 //Welcome
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
 Route::get('/admin/welcome', 'App\Http\Controllers\WelcomeController@getWelcome')->name('admin.welcome');
-//Route::get('/admin/welcome','App\Http\Controllers\WelcomeController@store')->name('admin.welcome');
 Route::post('/admin/welcome','App\Http\Controllers\WelcomeController@store');
 Route::get('welcome.update/{id}','App\Http\Controllers\WelcomeController@edit');
 Route::put('welcome.update/{id}','App\Http\Controllers\WelcomeController@update');
-
 Route::resource('/welcome','App\Http\Controllers\WelcomeController');
 
 
 //About
 Route::get('/about/', [App\Http\Controllers\AboutController::class, 'about'])->name('about');
 Route::get('/admin/about', 'App\Http\Controllers\AboutController@getAbout')->name('admin.about');
+Route::post('/admin/about','App\Http\Controllers\AboutController@store');
+Route::get('about.update/{id}','App\Http\Controllers\AboutController@edit');
+Route::put('about.update/{id}','App\Http\Controllers\AboutController@update');
 Route::resource('/about','App\Http\Controllers\AboutController');
 
 //Blog

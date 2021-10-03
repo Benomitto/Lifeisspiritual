@@ -145,22 +145,10 @@
                                     <span class="sidebar-header-title">Design Kit</span>
                                 </li>
                                 <li>
-                                    <a href="{{route('admin.welcome')}}" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="gi gi-home sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Home</span></a>
-										 <ul>
-                                                <li>
-                                                    <a href="{{route('admin.welcome')}}">Index</a>
-                                                </li>
-                                               
-                                            </ul>
+                                    <a href="{{route('admin.welcome')}}"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="gi gi-home sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Home</span></a>
                                 </li>
                                 <li>
-                                    <a href="{{route('admin.about')}}" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="gi gi-notes_2 sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">About Us</span></a>
-										 <ul>
-                                                <li>
-                                                    <a href="{{route('admin.about')}}">Index</a>
-                                                </li>
-                                               
-                                            </ul>
+                                    <a href="{{route('admin.about')}}"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="gi gi-notes_2 sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">About Us</span></a>
                                 </li>
 								
                                 
@@ -168,13 +156,7 @@
                                     <a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="gi gi-book sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Ourbooks</span></a>
                                     <ul>
                                         <li>
-                                            <a href="#" class="sidebar-nav-submenu"><i class="fa fa-angle-left sidebar-nav-indicator"></i>Products</a>
-                                            <ul>
-                                                <li>
-                                                    <a href="{{route('admin.products')}}">Index</a>
-                                                </li>
-                                               
-                                            </ul>
+                                            <a href="{{route('admin.products')}}"><i class="fa fa-angle-left sidebar-nav-indicator"></i>Products</a>
                                         </li>
                                         <li>
                                             <a href="#" class="sidebar-nav-submenu"><i class="fa fa-angle-left sidebar-nav-indicator"></i>Orders</a>

@@ -68,26 +68,23 @@ class AboutController extends Controller
     public function store(Request $request)
     {
         //
-		$this->validate($request,[
-			'title' => 'required',
-			'description' => 'required',
-			'image' => 'required|image|mimes:png,jpg,jpeg|max: 4048',
-			'sentence' => 'required',
-		]);
-		if($request->hasFile('image')){
-			$file = $request->image;
-			$imageName = "images/products/".time()."_".$file->getClientOriginalName();
-			$file->move(public_path("images/products/"),$imageName);
-			$title = $request->title;
-			About::create([
-			'title' => $title,
-			'description' => $request->description,
-			'sentence' => $request->sentence,
-			'image' => $imageName,
+			$about = new About;
+			$about->header = $request->input('header');
+			$about->describe = $request->input('describe');
+			$about->described = $request->input('described');
+			$about->button = $request->input('button');
 			
-			]);
-			return redirect()->route('admin.about')->withSuccess("Item has been addedd ");
+			if($request->hasFile('image')){
+			
+			$file = $request->file('image');
+			$extention = $file->getClientOriginalExtension();
+			$filename = time().'.'.$extention;
+			$file->move('images/about/',$filename);
+			$about->image = $filename;
 		}
+		
+		$about->save();
+		return redirect()->back()->with('status','Item Saved');
     }
 
     /**
@@ -108,17 +105,12 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function edit(About $about)
+    public function edit(About $about,$id)
     {
         //
 		
-		return view('admin.about.edit')->with([
-			'abouts' => About::all(),
-			'products' => Product::all(),
-			'orders' => Order::all(),
-			'about' => $about
-			
-		]);
+		$abouts = About::find($id);
+		return view('admin.about.edit',compact('about'));
     }
 
     /**
@@ -128,44 +120,31 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, About $about)
+    public function update(Request $request,$id)
     {
         //
-		$this->validate($request,[
-			'title' => 'required',
-			'description' => 'required',
-			'sentence' => 'required',
-			'image' => 'image|mimes:png,jpg,jpeg|max: 4048',
-			"photo" => 'required',
-			'paragraph' => 'required',
-			'segment' => 'required',
-			
-		]);
-		if($request->hasFile('image')){
-			$image_path = public_path('images/abouts/').$about->image;
-			if(File::exists($image_path)){
-			unlink($image_path);
+		$about = About::find($id);
+		$about->header = $request->input('header');
+		$about->describe = $request->input('describe');
+		$about->described = $request->input('described');
+		$about->button = $request->input('button');
+		
+		if($request->hasFile('image'))
+			{
+				$destination = 'images/about/'.$about->image;
+				if(File::exists($destination)){
+					File::delete($destination);
+				}
+				$file = $request->file('image');
+				$extention = $file->getClientOriginalExtension();
+				$filename = time().'.'.$extention;
+				$file->move('images/about/',$filename);
+				$about->image = $filename;
 			}
-			$file = $request->image;
-			$imageName = "images/abouts".time()."_".$file->getClientOriginalName();
-			$file->move(public_path("images/abouts/"),$imageName);
-			$about->image = $imageName;
-			}
-			$title = $request->title;
-			$about->update([
-			'title' => $title,
-			'description' => $request->description,
-			'sentence' => $request->sentence,
-			'image' => $about->image,
-			"photo" => 'required',
-			'paragraph' => 'required',
-			'segment' => 'required',
-			'id'=>$request->id,
 			
-			
-			
-			]);
-			return redirect()->route('admin.about')->withSuccess("About page has been updated ");
+			$about->update();
+			return redirect()->back()->with('status','Item Saved');
+		
 
     }
 
@@ -175,15 +154,12 @@ class AboutController extends Controller
      * @param  \App\Models\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function destroy(About $about)
+    public function destroy($id)
     {
         //
-			$image_path = public_path('images/abouts/').$about->image;
-		if(File::exists($image_path)){
-			unlink($image_path);
-		}
+		$about = About::findorFail($id);
 		$about->delete();
-		return redirect()->back()->withSuccess("Item has been deleted");
+		return redirect()->route('admin.about')->withSuccess("Item has been removed");
     }
 	
 	

@@ -19,8 +19,8 @@
 @include('layouts.navbar') 
             <!--end navbar-->
 			
-			@foreach($abouts as $about)
-			<section class="bg-cencer bg-contain" style="background: url(assets/img/hero-bg-3.jpg)">
+			
+	<section class="bg-cencer bg-contain" style="background: url(assets/img/hero-bg-3.jpg)">
       <div class="dark-overlay">
         <div class="overlay-content py-5 index-forward">
           <div class="container py-5 mt-5">
@@ -39,7 +39,7 @@
       <div class="container">
         <div class="row align-items-center mr-5">
 		<div class="col-lg-6 py-5 px-5">
-            <img src="{{asset($about->image)}}" alt="image" class="img-fluid rounded" style="width:500px;height:500px;">
+            <img src="assets/img/bible.jpg" alt="image" class="img-fluid rounded" style="width:500px;height:500px;">
           </div>
           <div class="col-lg-6 pl-lg-5 ">
 		  <h3 class="mt-4 font-weight-bold">About Us</h3>
@@ -50,7 +50,7 @@
         </div>
       </div>
     </div>
-	@endforeach
+	
 	<!--1-->
 	
 	<!--2-->

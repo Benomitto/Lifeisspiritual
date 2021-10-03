@@ -25,6 +25,12 @@
 				<div class="form-group">
 					<textarea class="form-control" rows="5" cols="30" name="description" placeholder="description"></textarea>
 				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="button" placeholder="button">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="btn" placeholder="Donate button">
+				</div>
 				<div class="form-group"><img src="{{/assets/img/($welcome->image)}}"  class="img-fluid" width="1920" height="1080" alt=""></div>
 				<div class="form-group">
 					<input class="form-control" type="file" name="image" >

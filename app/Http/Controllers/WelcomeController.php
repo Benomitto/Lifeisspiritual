@@ -43,6 +43,7 @@ class WelcomeController extends Controller
 		'abouts'=>About::all(),
 		'products'=>Product::all(),
 		'videos' => Video::all(),
+		'abouts' => $this->getAbout(1),
 		'blogs' => $this->getBlogs(3),
 		 'products' => $this->getProducts(4),
 	]);
@@ -64,6 +65,10 @@ class WelcomeController extends Controller
 		]);
 		
     }
+	
+	public function getAbout(int $limit) {
+    return About::take($limit)->get();
+	}
 	
 	public function getBlogs(int $limit) {
     return Blog::take($limit)->get();
@@ -88,6 +93,8 @@ class WelcomeController extends Controller
 		$welcome->introduction = $request->input('introduction');
 		$welcome->descript = $request->input('descript');
 		$welcome->description = $request->input('description');
+		$welcome->button = $request->input('button');
+		$welcome->btn = $request->input('btn');
 		
 		if($request->hasFile('image')){
 			
@@ -99,8 +106,6 @@ class WelcomeController extends Controller
 		}
 		
 		$welcome->save();
-		
-		
 		return redirect()->back()->with('status','Item Saved');
     }
 
@@ -145,6 +150,8 @@ class WelcomeController extends Controller
 			$welcome->introduction = $request->input('introduction');
 			$welcome->descript = $request->input('descript');
 			$welcome->description = $request->input('description');
+			$welcome->button = $request->input('button');
+			$welcome->btn = $request->input('btn');
 			
 			if($request->hasFile('image'))
 			{

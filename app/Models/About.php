@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class About extends Model
 {
     protected $table = 'abouts';
-	protected $fillable = ["header","image","describe","described","button"];
+	protected $fillable = ["header","describe","described","image","button"];
 	use HasFactory;
 }
