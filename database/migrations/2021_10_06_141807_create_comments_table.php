@@ -22,6 +22,21 @@ class CreateCommentsTable extends Migration
         });
     }
 
+
+		  public function store(Request $request)
+    {
+        //
+			$request->validate([
+			'comment'=>'required',
+		]);
+		$data = new Comment;
+		$data->user_id=$request->user()->id;
+		$data->blog_id=$id;
+		$data->comment=$request->comment;
+		$data->save();
+		return back();
+		
+    }
     /**
      * Reverse the migrations.
      *

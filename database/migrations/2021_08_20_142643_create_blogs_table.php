@@ -21,7 +21,6 @@ class CreateBlogsTable extends Migration
 			$table->string('description');
 			$table->string('slug',191)->unique();
 			$table->text('body');
-			$table->text('comment');
             $table->timestamps();
         });
     }

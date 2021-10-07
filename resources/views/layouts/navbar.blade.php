@@ -11,12 +11,12 @@
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav ml-auto">
                             <a class="nav-item nav-link active ts-scroll" href="/">Home <span class="sr-only">(current)</span></a>
-							<a class="nav-item nav-link ts-scroll" href="about">About Us</a>
-                            <a class="nav-item nav-link ts-scroll" href="ourbooks">Our Books</a>
-                            <a class="nav-item nav-link ts-scroll" href="videos">Videos</a>
-                            <a class="nav-item nav-link ts-scroll" href="gallery">Gallery</a>
-                            <a class="nav-item nav-link ts-scroll" href="blog">Blog</a>
-                            <a class="nav-item nav-link ts-scroll mr-2" href="contactus">Contact Us</a>
+							<a class="nav-item nav-link ts-scroll" href="/about">About Us</a>
+                            <a class="nav-item nav-link ts-scroll" href="/ourbooks">Our Books</a>
+                            <a class="nav-item nav-link ts-scroll" href="/videos">Videos</a>
+                            <a class="nav-item nav-link ts-scroll" href="/gallery">Gallery</a>
+                            <a class="nav-item nav-link ts-scroll" href="/blog">Blog</a>
+                            <a class="nav-item nav-link ts-scroll mr-2" href="/contactus">Contact Us</a>
                             @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">

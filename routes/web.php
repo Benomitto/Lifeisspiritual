@@ -66,7 +66,7 @@ Route::get('/blog/', [App\Http\Controllers\BlogController::class, 'index'])->nam
 Route::get('blogs/{slug}','App\Http\Controllers\BlogController@getArticles')->name('article.show');
 Route::get('blog.update/{id}','App\Http\Controllers\BlogController@edit');
 Route::put('blog.update/{id}','App\Http\Controllers\BlogController@update');
-Route::post('save_comment/{slug}/{id}','App\Http\Controllers\BlogController@save_comment')->name('save_comment');
+Route::post('save_comment/{id}','App\Http\Controllers\BlogController@save_comment')->name('save_comment');
 Route::get('/admin/blog', 'App\Http\Controllers\BlogController@getBlog')->name('admin.blog');
 Route::resource('/blog','App\Http\Controllers\BlogController');
 

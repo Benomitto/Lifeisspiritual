@@ -83,11 +83,10 @@
 						Comments
 					<h5>
 					<div class="card-body">
-					<form method="post" action="{{url('save-comment/'.Str::slug($blog->title).'/'.$blog->id)}}">
+					<form method="post" action="{{route('save_comment',[$blog->id])}}">
 					@csrf
 						<textarea name="comment" class="form-control py-5"></textarea>
 						<input type="submit" class="btn btn-primary mt-3">
-						</form>
 					</div>
 						
 				</ul>

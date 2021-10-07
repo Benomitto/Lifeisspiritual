@@ -30,17 +30,17 @@ class BlogController extends Controller
 	
 	
 	
-	function save_comment($request,$slug,$id)
+	function save_comment(Request $request,$id)
 	{
 		$request->validate([
 			'comment'=>'required',
 		]);
 		$data = new Comment;
 		$data->user_id=$request->user()->id;
-		$data->post_id=$id;
+		$data->blog_id=$id;
 		$data->comment=$request->comment;
 		$data->save();
-		return redirect()->back()->with('status','Comment has been posted');
+		return back();
 	}
 	
 	
