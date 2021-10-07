@@ -2,15 +2,48 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Similiar;
 use App\Models\Blog;
+use App\Models\Comment;
+use App\Models\Article;
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\Welcome;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
+	
+	public function getArticles($slug)
+	{
+		$article = Blog::where('slug', $slug)->first();
+		$blog = Blog::where('slug', $slug)->first();
+    return view('blogs.show')->with([
+        'article' => $article,
+		'blog' => $blog,
+		
+		
+    ]);
+	}
+	
+	
+	
+	function save_comment($request,$slug,$id)
+	{
+		$request->validate([
+			'comment'=>'required',
+		]);
+		$data = new Comment;
+		$data->user_id=$request->user()->id;
+		$data->post_id=$id;
+		$data->comment=$request->comment;
+		$data->save();
+		return redirect()->back()->with('status','Comment has been posted');
+	}
+	
+	
 	public function getBlog()
 	{
 		
@@ -60,27 +93,25 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         //
-		$this->validate($request,[
-			'title' => 'required',
-			'description' => 'required',
-			'image' => 'required|image|mimes:png,jpg,jpeg|max: 4048',
-			'date' => 'required',
-			'id' => 'required|numeric',
-		]);
+			$blog = new Blog;
+			$blog->title = $request->input('title');
+			$blog->date = $request->input('date');
+			$blog->description = $request->input('description');
+			$blog->slug = $request->input('slug');
+			$blog->body = $request->input('body');
+		
 		if($request->hasFile('image')){
-			$file = $request->image;
-			$imageName = "images/blog/".time()."_".$file->getClientOriginalName();
-			$file->move(public_path("images/blog/"),$imageName);
-			$title = $request->title;
-			Blog::create([
-			'title' => $title,
-			'date' => $request->date,
-			'description' => $request->description,
-			'image' => $imageName,
-			'id' => $request->id,
-			]);
-			return redirect()->route('admin.blog')->withSuccess("Blog has been addedd ");
+			
+			$file = $request->file('image');
+			$extention = $file->getClientOriginalExtension();
+			$filename = time().'.'.$extention;
+			$file->move('images/blogs/',$filename);
+			$blog->image = $filename;
 		}
+		
+		$blog->save();
+		return redirect()->back()->with('status','Item Saved');
+		
     }
 
     /**
@@ -91,7 +122,7 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        //return view('blog.show')->withBlog($blog);
+       
 		
     }
 
@@ -101,15 +132,11 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit($id)
     {
         //
-		return view('admin.blog.edit')->with([
-			'blogs' => Blog::all(),
-			'products' => Product::all(),
-			'orders' => Order::all(),
-			'blog' => $blog
-		]);
+		$blogs = Blog::find($id);
+		return view('admin.blog.edit',compact('blog'));
     }
 
     /**
@@ -119,36 +146,31 @@ class BlogController extends Controller
      * @param  \App\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request,$id)
     {
         //
-			$this->validate($request,[
-			'title' => 'required',
-			'description' => 'required',
-			'image' => 'image|mimes:png,jpg,jpeg|max: 4048',
-			'date' => 'required|numeric',
-			'id' => 'required|numeric',
-		]);
-		if($request->hasFile('image')){
-			$image_path = public_path('images/blog/').$blog->image;
-			if(File::exists($image_path)){
-			unlink($image_path);
-			}
-			$file = $request->image;
-			$imageName = "images/blog".time()."_".$file->getClientOriginalName();
-			$file->move(public_path("images/blog/"),$imageName);
-			$blog->image = $imageName;
-			}
-			$title = $request->title;
-			$blog->update([
-			'title' => $title,
-			'date' => $request->date,
-			'description' => $request->description,
-			'image' => $blog->image,
-			'id' => $request->id,
+			$blog = Blog::findorFail($id);
+			$blog->title = $request->input('title');
+			$blog->date = $request->input('date');
+			$blog->description = $request->input('description');
+			$blog->slug = $request->input('slug');
+			$blog->body = $request->input('body');
 			
-			]);
-			return redirect()->route('admin.blog')->withSuccess("Blog has been updated ");
+			if($request->hasFile('image'))
+			{
+				$destination = 'images/blogs/'.$blog->image;
+				if(File::exists($destination)){
+					File::delete($destination);
+				}
+				$file = $request->file('image');
+				$extention = $file->getClientOriginalExtension();
+				$filename = time().'.'.$extention;
+				$file->move('images/blogs/',$filename);
+				$blog->image = $filename;
+				
+			}
+			$blog->update();
+			return redirect()->route('admin.blog')->withSuccess("Item has been updated ");
     }
 
     /**
@@ -160,11 +182,11 @@ class BlogController extends Controller
     public function destroy(Blog $blog)
     {
         //
-		$image_path = public_path('images/blog/').$blog->image;
+		$image_path = public_path('images/blogs/').$blog->image;
 		if(File::exists($image_path)){
 			unlink($image_path);
 		}
 		$blog->delete();
-		return redirect()->route('admin.blog')->withSuccess("Blog has been removed");
+		return redirect()->route('admin.blog')->withSuccess("Item has been removed");
     }
 }

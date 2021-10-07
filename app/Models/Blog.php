@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
     protected $table = 'blogs';
-	protected $fillable = ["image","title","date","description"];
+	protected $fillable = ["image","title","date","description","slug","body"];
 	use HasFactory;
+	function comments()
+	{
+		return $this->hasMany('App\Models\Comment')->orderBy('id','desc');
+	}
 }

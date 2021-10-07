@@ -190,13 +190,7 @@
                                     </ul>
                                 </li>
 								  <li>
-                                    <a href="{{route('admin.blog')}}" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="gi gi-blog sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Blog</span></a>
-                                    <ul>
-                                        <li>
-                                            <a href="{{route('admin.blog')}}">Index</a>
-                                        </li>
-                                       
-                                    </ul>
+                                    <a href="{{route('admin.blog')}}"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="gi gi-blog sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Blog</span></a>
                                 </li>
                                 <li class="sidebar-header">
                                     <span class="sidebar-header-options clearfix"><a href="javascript:void(0)" data-toggle="tooltip" title="Quick Settings"><i class="gi gi-user"></i></a></span>

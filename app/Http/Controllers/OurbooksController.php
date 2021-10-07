@@ -15,7 +15,7 @@ class OurbooksController extends Controller
 		
         return view('/ourbooks')->with([
 		'products' => Product::latest()->paginate(6),
-		'categories' => Category::has('products')->get()
+		'categories' => Category::has('products')->get(),
 		]);;
     }
 	
@@ -28,6 +28,7 @@ class OurbooksController extends Controller
 		'categories' => Category::has('products')->get()
 		]);
     }
+	
 	
 	public function transactions()
     {

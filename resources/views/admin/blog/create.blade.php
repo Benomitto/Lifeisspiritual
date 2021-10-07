@@ -17,21 +17,9 @@
 				<div class="form-group">
 					<input class="form-control" type="date" name="date" placeholder="Date">
 				</div>
+				<div class="form-group"><img src="{{('/images/blogs/'.$blog->image)}}"  class="img-fluid" width="200" height="300" alt=""></div>
 				<div class="form-group">
 					<input class="form-control" type="file" name="image" >
-				</div>
-				<div class="form-group">
-					<select class="form-control" 
-					name="category_id" 
-					<option value="" selected>
-						Choose a category
-					</option>
-					@foreach($blogs as $blog) 
-					
-					<option value="{{$blog->id}}">
-					{{$blog->title}}
-					</option>
-					@endforeach</select>
 				</div>
 				<div class="form-group">
 					<button type="submit" class="btn btn-primary">Submit</button>

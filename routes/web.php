@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\MpesaController;
+use App\Http\Controllers\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,12 +57,16 @@ Route::resource('/welcome','App\Http\Controllers\WelcomeController');
 Route::get('/about/', [App\Http\Controllers\AboutController::class, 'about'])->name('about');
 Route::get('/admin/about', 'App\Http\Controllers\AboutController@getAbout')->name('admin.about');
 Route::post('/admin/about','App\Http\Controllers\AboutController@store');
-Route::get('about.update/{id}','App\Http\Controllers\AboutController@edit');
+Route::get('/admin/blog/{id}','App\Http\Controllers\AboutController@edit');
 Route::put('about.update/{id}','App\Http\Controllers\AboutController@update');
 Route::resource('/about','App\Http\Controllers\AboutController');
 
 //Blog
 Route::get('/blog/', [App\Http\Controllers\BlogController::class, 'index'])->name('blog');
+Route::get('blogs/{slug}','App\Http\Controllers\BlogController@getArticles')->name('article.show');
+Route::get('blog.update/{id}','App\Http\Controllers\BlogController@edit');
+Route::put('blog.update/{id}','App\Http\Controllers\BlogController@update');
+Route::post('save_comment/{slug}/{id}','App\Http\Controllers\BlogController@save_comment')->name('save_comment');
 Route::get('/admin/blog', 'App\Http\Controllers\BlogController@getBlog')->name('admin.blog');
 Route::resource('/blog','App\Http\Controllers\BlogController');
 
@@ -70,10 +75,7 @@ Route::get('/ourbooks', [App\Http\Controllers\OurbooksController::class, 'ourboo
 Route::get('/category/products/{category}', 'App\Http\Controllers\OurbooksController@getCategoryProducts')->name('category.products');
 Route::resource('/products','App\Http\Controllers\ProductController');
 Route::resource('/orders','App\Http\Controllers\OrderController');
-//master
-//Route::get('/blog/', [App\Http\Controllers\BlogController::class, 'index'])->name('blog');
-//Route::get('/admin/blog', 'App\Http\Controllers\BlogController@getBlog')->name('admin.blog');
-//Route::resource('/blog','App\Http\Controllers\BlogController');
+
 //Cart
 Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('cart.index');
 Route::post('/add/cart/{product}', 'App\Http\Controllers\CartController@addProductToCart')->name('add.cart');

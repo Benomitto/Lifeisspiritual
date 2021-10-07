@@ -34,25 +34,39 @@
       </div>
     </section>
 	
-	<section id="our-life-sotry" class="ts-block"  data-bg-color="#ffffff">
-                <div class="container">
-                 <div class="row row-cols-1 row-cols-md-3 g-4">
-				 @foreach($blogs as $blog)
-					  <div class="col">
-						<div class="card" data-animate="ts-fadeInUp">
-						  <a href="#"><img src="{{asset($blog->image)}}" class="card-img-top " alt="...">
-						  <div class="card-body">
-							<h5 class="card-title">{{$blog->title}}</h5></a>
-							<p class="date"><small>{{$blog->date}}</small></p>
-							<p class="card-text">{{$blog->description}}</p>
-						  </div>
-						</div>
-					  </div>
-				@endforeach
-				</div>
+	<section id="about" class="ts-block" >
+                   <div id="cards_landscape_wrap-2">
+        <div class="container">
+            <div class="row">
+			@foreach($blogs as $blog)
+                <div class="col-lg-4">
+                    <a href={{route("article.show",$blog->slug)}}>
+                        <div class="card-flyer"  >
+                            <div class="text-box">
+                                <div class="image-box ">
+                                    <img src="{{'/images/blogs/'.$blog->image}}" alt="{{$blog->title}}" class="img-fluid rounded mx-auto d-block" width="100%"/>
+                                </div>
+                                <div class="text-container">
+                                    <h6>{{$blog->title}}</h6>
+                                    <p style="max-width: 18rem;"class="ts-opacity__50">{{Str::limit($blog->description,100)}}</p>
+                                </div>
+								<div class="card-footer">
+											<span class="text-primary font-weight-bold">Read</span>
+								</div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <!--end container-->
-            </section>
+				@endforeach
+            </div>
+        </div>
+    </div>
+				
+				<!--New-->
+			
+				<!--New End-->
+            </section>            
+			
 
  <footer class="footer-top" id="ts-footer">
             <section id="contact" class="ts-separate-bg-element" data-bg-image="assets/img/bg-hand-mobile.jpg" data-bg-image-opacity=".1" data-bg-color="#12264f">

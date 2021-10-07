@@ -115,7 +115,6 @@
                 <div class="ts-background d-none d-sm-block" data-bg-color="#fafafa" data-bg-parallax1="scroll" data-bg-parallax-speed="3">
                     <div class="owl-carousel w-50 ts-push-left__100 h-100 ts-parallax-element1" data-owl-loop="1" data-owl-nav-container="#carousel-external-control">
                         <div class="ts-background-image" data-bg-image="{{('/images/about/'.$about->image)}}" alt="img"></div>
-                        <!--<div class="ts-background-image" data-bg-image="assets/img/bg-hand-mobile.jpg"></div>-->
                     </div>
                     <!--end owl-carousel-->
                 </div>
@@ -159,7 +158,9 @@
 				<!--New-->
 			
 				<!--New End-->
-            </section>            <!--END TIMELINE ****************************************************************************************-->
+            </section>            
+			
+			<!--END TIMELINE ****************************************************************************************-->
 
             <section id="our-life-sotry" class="ts-block ts-separate-bg-element ts-background-repeat" data-bg-image-opacity=".1" data-bg-image="assets/img/bg-pattern-dot.png">
                 <div class="container py-5">
@@ -183,25 +184,35 @@
             </section>
 			
             <!--END GALLERY *****************************************************************************************-->
-			  <section id="our-life-sotry" class="ts-block"  data-bg-color="#ffffff">
-                <div class="container">
-                 <div class="row row-cols-1 row-cols-md-3 g-4">
-				 @foreach($blogs as $blog)
-					  <div class="col">
-						<div class="card" data-animate="ts-fadeInUp">
-						  <a href="/blog"><img src="{{asset($blog->image)}}" class="card-img-top " alt="...">
-						  <div class="card-body">
-							<h5 class="card-title">{{$blog->title}}</h5></a>
-							<p class="date"><small>{{$blog->date}}</small></p>
-							<p class="card-text">{{$blog->description}}</p>
-						  </div>
-						</div>
-					  </div>
-				@endforeach
-				</div>
+		<section id="about" class="ts-block" >
+		<div id="cards_landscape_wrap-2">
+		<div class="container">
+            <div class="row">
+			@foreach($blogs as $blog)
+                <div class="col-lg-4">
+                    <a href={{route("article.show",$blog->slug)}}>
+                        <div class="card-flyer"  >
+                            <div class="text-box">
+                                <div class="image-box ">
+                                    <img src="{{'/images/blogs/'.$blog->image}}" alt="{{$blog->title}}" class="img-fluid rounded mx-auto d-block" width="100%"/>
+                                </div>
+                                <div class="text-container">
+                                    <h6>{{$blog->title}}</h6>
+                                    <p style="max-width: 18rem;"class="ts-opacity__50">{{Str::limit($blog->description,100)}}</p>
+                                </div>
+								<div class="card-footer">
+											<span class="text-primary font-weight-bold">Read</span>
+								</div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <!--end container-->
-            </section>
+				@endforeach
+            </div>
+        </div>
+		</div>
+        </section>            
+			
             <!--HAPPY CLIENTS ***************************************************************************************-->
 
             <!--END HAPPY CLIENTS ***********************************************************************************-->

@@ -19,13 +19,13 @@
 	@include('layouts.navbar')            <!--end navbar-->
 			
 			
-			<section class="bg-cencer bg-contain" style="background: url(/assets/img/hero-bg-3.jpg)">
+			<section class="bg-cencer bg-contain" style="background: url(/assets/img/blog.jpg)">
       <div class="dark-overlay">
         <div class="overlay-content py-5 index-forward">
           <div class="container py-5 mt-5">
             <div class="row py-5 text-white text-center">
-              <div class="col-lg-7 mx-auto">
-                <h4 class="text">{{$product->title}}</h4>
+              <div class="col-lg-7 ">
+                <h4 class="text">{{$blog->title}}</h4>
                 <p class="lead"></p>
               </div>
             </div>
@@ -39,78 +39,74 @@
 				<!--<h2 class="text-center">Our Books</h2>-->
                     <!--end ts-title-->
                     <div class="row">
-				
-                        <div class="col-lg-6">
+				@if(Session::has('success'))
+					<p class="text-success">{{session('success')}}</p>
+				@endif
+                        <div class="col-lg-8">
                             <div class="card">
                                 <div class="ts-card__image ts-img-into-bg">
-                                   <a href=""> <img class="card-img-top image-fluid" src="{{asset($product->image)}}" alt="{{$product->title}}"></a>
+                                   <a href=""> <img class="card-img-top image-fluid" src="{{'/images/blogs/'.$blog->image}}" alt="{{$blog->title}}"></a>
                                 </div>
                                 <!--end ts-card__image-->
                                 <div class="card-body">
-                                    <a href=""><h5 class="mb-3">{{$product->title}}</h5></a>
-                                    
+                                    <a href=""><h5 class="mb-3">{{$blog->date}}</h5></a>
+                                    <a href=""><h5 class="mb-3">{{$blog->title}}</h5></a>
+									<h5 class="mb-3 text-justify py-3">{{$blog->body}}</h5>
+									<a href=""><button type="button" class="btn btn-outline-dark">Read More</button></a>
                                 </div>
                                 <!--end card-body-->
-                                <div class="card-footer bg-white">
-                                    <div class="ts-social-icons">
-                                       
-                                        <a href="">
-											<i class="text-muted"><strike>Ksh.{{$product->price}}</strike></i>
-                                            <span class="text-primary font-weight-bold">Ksh.{{$product->price}}</span>
-                                        </a><br>
-										@if($product->inStock>0)
-									<span class="badge badge-primary p-3">Available</span>
-								@else
-									<span class="badge badge-primary p-3">Not Available</span>
-									@endif
-                                       
-                                    </div>
-                                    <!--end social-icons-->
-                                </div>
+                               
                                 <!--end card-footer-->
                             </div>
                             <!--end card-->
                         </div>
-						<div class="col-md-4 ">
-			<form action="{{route('add.cart',$product->slug)}}" method="post">
-				@csrf
-				<div class="form-group">
-					<label for="qty" class="label-input">
-						Quantity
-					</label>
-					<input type="number" name="qty" id="qty" value="1" max="{{$product->inStock}}" min="1" class="form-control">
-				</div>
-				<div class="form-group">
-					<button type="submit" class="btn btn-primary btn-block mb-5">
-						Add To Cart
-					</button>
-					<h6 class="ts-opacity__50">{{($product->description)}}
-									 .</h6>
-					
-				</div>
-			</form>
-		</div>
+						<div class="col-lg-4">
+								<div class="card mr-5">
+				<ul class="list-group list-group-horizontal-md">
+					<li class="list-group-item active">
+						Recent Posts
+					<li>
+						
+				</ul>
+			</div>
+						</div>
                     </div>
 				<!--end row-->
                 </div>
             </section>
 			
 			<!--Related Products-->
-			
-				<div class="col-md-4">
-				<ul class="list-group list-group-horizontal-md">
-					<li class="list-group-item active">
-						Related Products
-					<li>
-						@foreach($categories as $category)
-							<a href="{{route("category.products"),$category->slug}}" class="list-group list-group-horizontal-md list-group-item-action">
-								{{$category->title}}
-								({{$category->product->count()}})
-							</a>
-						@endforeach
+			@auth
+			<div class="card ml-5 col-lg-8">
+				<ul class="list-group list-group-horizontal">
+					<h5 class="list-group-item active">
+						Comments
+					<h5>
+					<div class="card-body">
+					<form method="post" action="{{url('save-comment/'.Str::slug($blog->title).'/'.$blog->id)}}">
+					@csrf
+						<textarea name="comment" class="form-control py-5"></textarea>
+						<input type="submit" class="btn btn-primary mt-3">
+						</form>
+					</div>
+						
 				</ul>
 			</div>
-			
+			@endauth
+			<div class="card ml-5 col-lg-8">
+				<h5 class="card-header mb-4">Comments<span class="badge badge-info ml-2">{{count($blog->comments)}}</span></h5>
+				<div class="card-body mt-3">
+					@if($blog->comments)
+						@foreach($blog->comments as $comment)
+						<blockquote class="blockquote">
+							<p class="mb-0">{{$comment->comment}}</p>
+							<footer class="blockquote-footer">Username</footer>
+						</blockquote>
+						<hr>
+						@endforeach
+					@endif
+				</div>
+			</div>
 			<!--Related Products-->
 			
 			 <footer class="footer-top" id="ts-footer">

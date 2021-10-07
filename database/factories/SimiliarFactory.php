@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Blog;
+use App\Models\Similiar;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class BlogFactory extends Factory
+class SimiliarFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Blog::class;
+    protected $model = Similiar::class;
 
     /**
      * Define the model's default state.
@@ -23,12 +23,6 @@ class BlogFactory extends Factory
     {
         return [
             //
-			'image'=>$this->faker->imageUrl($width=500,$height=500),
-			'title'=>$this->faker->sentence,
-			'date'=>$this->faker->dateTimeThisMonth()->format('m-d-Y'),
-			'description'=>$this->faker->sentence,
-			"slug"=>Str::slug($this->sentence),
-			'body'=>this->faker->sentence
         ];
     }
 }

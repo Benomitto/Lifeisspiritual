@@ -22,13 +22,11 @@ class ProductController extends Controller
     public function index()
     {
         //
-		
 		 return view('/ourbooks')->with([
 		'products' => Product::all(),
-		
-		
 	]);
     }
+	
 
     /**
      * Show the form for creating a new resource.
@@ -89,6 +87,8 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
+		
+
 		return view('products.show')->withProduct($product);
     }
 
