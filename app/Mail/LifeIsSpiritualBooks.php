@@ -7,21 +7,19 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class LifeIsSpiritual extends Mailable
+class LifeIsSpiritualBooks extends Mailable
 {
     use Queueable, SerializesModels;
 	
-	
-	public $dataReceived; 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($data)
+    public function __construct()
     {
         //
-		$this->dataReceived = $data; 
+		
     }
 
     /**
@@ -31,12 +29,9 @@ class LifeIsSpiritual extends Mailable
      */
     public function build()
     {
-        return $this->view('mailTemplate');
-		return $this->markdown('emails.attachment')
-		->subject('books')
-		->attach(public_path('/docs/Dummypdf.pdf'),[
-			'as' => 'Dummypdf.pdf',
-			'mime' => 'application/jpg'
-		]);
+		
+       return $this->markdown('emails.orders.placed');
+       
+		
     }
 }

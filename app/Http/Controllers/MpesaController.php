@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use App\Models\MpesaTransaction;
 use App\Models\Payment;
+use App\Mail\LifeIsSpiritualBooks;
 class MpesaController extends Controller
 {
     //
@@ -58,7 +61,7 @@ class MpesaController extends Controller
 		'PartyA'=> $phoneNumber,
 		'PartyB'=>174379,
 		'PhoneNumber'=> $phoneNumber,
-		'CallBackURL'=> 'https://516e-197-248-92-161.ngrok.io/api/stk/push/callback/url', 
+		'CallBackURL'=> 'https://f3bb-41-212-116-92.ngrok.io/api/stk/push/callback/url', 
 		'AccountReference'=> "Life Is Spiritual",
 		'TransactionDesc'=> "Lipa na M-pesa"
 		];
@@ -110,6 +113,7 @@ class MpesaController extends Controller
 		$message = ["success"=>true, "message"=>"Payment successful!"];
 		session($message);
 		//here you can redirect to a page to be shown after the user has paid successfuly!
+		Mail::send(new LifeIsSpiritualBooks);
 		return back();
 		
 	}

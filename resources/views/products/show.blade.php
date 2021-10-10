@@ -99,17 +99,59 @@
 			
 				<div class="col-md-4">
 				<ul class="list-group list-group-horizontal-md">
-					<li class="list-group-item active">
+					<!--<li class="list-group-item active">
 						Related Products
-					<li>
+					<li>-->
 						@foreach($categories as $category)
-							<a href="{{route("category.products"),$category->slug}}" class="list-group list-group-horizontal-md list-group-item-action">
+							<a href="{{route("category.products",$category),$category->slug}}" class="list-group list-group-horizontal-md list-group-item-action">
 								{{$category->title}}
-								({{$category->product->count()}})
+									
 							</a>
 						@endforeach
 				</ul>
 			</div>
+			
+			<section class="py-5 bg-light">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h5>Related Products</h5>
+							<hr>
+							<div class="row">
+							
+							@foreach($products as $product)
+								
+							@endforeach
+								<div class="col-md-3">
+									<div class="card-border">
+										<div class="card-body">
+											<img src="{{('/images/products/'.$product->image)}}" alt="Image" class="w-100">
+											<div class="row">
+												<div class="col-md-12">
+													<h6>Dummy</h6>
+													<hr>
+												</div>
+												<div class="col-md-6">
+													<h6>Ksh. Dummy</h6>
+													<hr>
+												</div>
+												<div class="col-md-6">
+													<h6>Ksh.<s> Dummy</s></h6>
+													<hr>
+												</div>
+												<div class="col-md-12">
+													<a href="" class="btn btn-block btn-primary">View</a>
+													<hr>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			
 			<!--Related Products-->
 			

@@ -89,7 +89,17 @@ class ProductController extends Controller
         //
 		
 
-		return view('products.show')->withProduct($product);
+		return view('products.show')->with([
+			'categories' => Category::all(),
+			'products' => Product::all(),
+			'product' => $product
+			
+		]);
+    }
+	
+	public function getCategory()
+    {
+		return $this->belongsTo(Category::class, 'category_id','id');
     }
 
     /**

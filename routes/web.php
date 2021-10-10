@@ -86,7 +86,7 @@ Route::delete('/delete/cart/{product}', 'App\Http\Controllers\CartController@rem
 Route::get('/checkout', 'App\Http\Controllers\CheckoutController@index')->name('checkout');
 
 //Confirmation Message
-Route::get('/confirm', function () {return view('confirm');});
+Route::get('/confirm', function () {return view('confirm')->with('trans');});
 Route::post('payment/confirmation', [MpesaController::class, 'confirmPayment'])->name('confirm.payment');
 
 //Payments
