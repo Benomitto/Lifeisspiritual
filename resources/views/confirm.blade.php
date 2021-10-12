@@ -18,10 +18,12 @@
                         @csrf
                         <div class="login-inner-block">
 						
-                            <div class="frm-grp">
+						<div class="frm-grp">
                                 <label>@lang('Transaction Id')</label>
-                                <input type="text" name="transactionId" placeholder="@lang('Example: OIB9FQP9H7')">
-								<span class="text-box">Your Transaction Id Is<span>
+                                <input type="text" value="" name="transactionId" placeholder="@lang('Example: OIB9FQP9H7')">
+								<span class="text-box">Your Transaction Id Is:<span>
+                        </div>
+						
                             </div>
 						
                         <div class="btn-area text-center">

@@ -14,8 +14,10 @@
 							<td>Qty</td>
 							<td>Price</td>
 							<td>Total</td>
+							<td>Phone</td>
 							<td>Paid</td>
 							<td>Delivered</td>
+							<td>Trans Id</td>
 							<td></td>
 						</tr>
 					</thead>
@@ -28,6 +30,7 @@
 									<td>{{$order->qty}}</td>
 									<td>{{$order->price}}Ksh</td>
 									<td>{{$order->total}}Ksh</td>
+									<td>{{$order->phone}}Ksh</td>
 									<td>@if($order->paid)<i class="fa fa-check text-success"></i>@else
 									<i class="fa fa-times text-danger"></i>@endif</td>
 									<td>@if($order->delivered)<i class="fa fa-check text-success"></i>@else

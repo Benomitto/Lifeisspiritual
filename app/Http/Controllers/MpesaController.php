@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Models\MpesaTransaction;
 use App\Models\Payment;
-use App\Mail\LifeIsSpiritualBooks;
+use App\Mail\OrderPlaced;
 class MpesaController extends Controller
 {
     //
@@ -41,14 +41,15 @@ class MpesaController extends Controller
 	}
 	
 	public function stkPush(Request $request,$amount){
-		$cart = \Cart::getSubtotal();
 		
+		$cart = \Cart::getSubtotal();
 		$user = $request->user; //Displays on the checkout form
 		$amount = $request->amount;
 		$phone = $request->phone;
 		$formatedPhone = substr($phone,1);
 		$code = "254";
 		$phoneNumber = $code.$formatedPhone; //concatinates the country code and the phone number
+		
 		
 		
 		$url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
@@ -61,7 +62,7 @@ class MpesaController extends Controller
 		'PartyA'=> $phoneNumber,
 		'PartyB'=>174379,
 		'PhoneNumber'=> $phoneNumber,
-		'CallBackURL'=> 'https://f3bb-41-212-116-92.ngrok.io/api/stk/push/callback/url', 
+		'CallBackURL'=> 'https://edda-41-212-116-92.ngrok.io/api/stk/push/callback/url', 
 		'AccountReference'=> "Life Is Spiritual",
 		'TransactionDesc'=> "Lipa na M-pesa"
 		];
@@ -76,7 +77,15 @@ class MpesaController extends Controller
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
 		$curl_response = curl_exec($curl);
 		\Log::info($curl_response);
+		Mail::send(new OrderPlaced);
+		
+		 $pays = Payment::all();
+		//$pays = Payment::latest()->get();
+		
+		
 		return redirect('/confirm');
+		//return redirect()->route('confirm', compact('pays'));
+		 //return view('confirm', compact('pays'));
 		
 	}
 	
@@ -113,9 +122,15 @@ class MpesaController extends Controller
 		$message = ["success"=>true, "message"=>"Payment successful!"];
 		session($message);
 		//here you can redirect to a page to be shown after the user has paid successfuly!
-		Mail::send(new LifeIsSpiritualBooks);
-		return back();
+		
 		
 	}
+	
+	public function confirmation()
+	{
+		return view();
+	}
+
+	
 
 }

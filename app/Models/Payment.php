@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Payment extends Model
 {
-	
+	protected $table = 'payments';
+	protected $fillable =['mpesa_trans_id'];
     use HasFactory;
 }
