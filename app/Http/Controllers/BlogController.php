@@ -6,8 +6,7 @@ use App\Models\Similiar;
 use App\Models\Blog;
 use App\Models\Comment;
 use App\Models\Article;
-use App\Models\Product;
-use App\Models\Order;
+use App\Models\Like;
 use App\Models\Welcome;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -15,6 +14,11 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
+	public function likes()
+	{
+			return $this->hasMany(Like::class);
+	}
+	
 	
 	public function getArticles($slug)
 	{

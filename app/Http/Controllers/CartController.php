@@ -42,4 +42,10 @@ class CartController extends Controller
 		return redirect()->route('cart.index');
 	}
 	
+	public function cart()
+	{
+		$ourbooks = \Cart::getContent();
+        $subTotal = Cart::getSubTotal();
+        $cartTotalQuantity = Cart::getTotalQuantity();
+	}
 }

@@ -62,7 +62,7 @@ class MpesaController extends Controller
 		'PartyA'=> $phoneNumber,
 		'PartyB'=>174379,
 		'PhoneNumber'=> $phoneNumber,
-		'CallBackURL'=> 'https://edda-41-212-116-92.ngrok.io/api/stk/push/callback/url', 
+		'CallBackURL'=> 'https://3e6d-197-248-92-161.ngrok.io/api/stk/push/callback/url', 
 		'AccountReference'=> "Life Is Spiritual",
 		'TransactionDesc'=> "Lipa na M-pesa"
 		];
@@ -77,9 +77,9 @@ class MpesaController extends Controller
 		curl_setopt($curl, CURLOPT_POSTFIELDS, $data_string);
 		$curl_response = curl_exec($curl);
 		\Log::info($curl_response);
-		Mail::send(new OrderPlaced);
 		
-		 $pays = Payment::all();
+		
+		 //$pays = Payment::all();
 		//$pays = Payment::latest()->get();
 		
 		
@@ -119,17 +119,14 @@ class MpesaController extends Controller
 			session($error);
 			return back();
 		}
-		$message = ["success"=>true, "message"=>"Payment successful!"];
+		$message = ["success"=>true, "message"=>"Payment Successful!"];Mail::send(new OrderPlaced);
 		session($message);
 		//here you can redirect to a page to be shown after the user has paid successfuly!
-		
+		return redirect('combine');
 		
 	}
 	
-	public function confirmation()
-	{
-		return view();
-	}
+	
 
 	
 

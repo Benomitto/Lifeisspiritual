@@ -9,15 +9,11 @@
 					<thead>
 						<tr>
 							<td>Id</td>
-							<td>Client</td>
-							<td>Product</td>
-							<td>Qty</td>
-							<td>Price</td>
-							<td>Total</td>
+							<td>Name</td>
 							<td>Phone</td>
-							<td>Paid</td>
-							<td>Delivered</td>
-							<td>Trans Id</td>
+							<td>Product</td>
+							<td>Amount</td>
+							<td>Transsaction</td>
 							<td></td>
 						</tr>
 					</thead>
@@ -31,6 +27,7 @@
 									<td>{{$order->price}}Ksh</td>
 									<td>{{$order->total}}Ksh</td>
 									<td>{{$order->phone}}Ksh</td>
+									<td>{{$order->transid}}Ksh</td>
 									<td>@if($order->paid)<i class="fa fa-check text-success"></i>@else
 									<i class="fa fa-times text-danger"></i>@endif</td>
 									<td>@if($order->delivered)<i class="fa fa-check text-success"></i>@else

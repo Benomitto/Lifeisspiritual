@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Testimonial;
+use App\Models\Customerinfo;
 use Illuminate\Http\Request;
 
-class TestimonialController extends Controller
+class CustomerinfoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +14,7 @@ class TestimonialController extends Controller
     public function index()
     {
         //
+		return view('customerinfo.customerinfo');
     }
 
     /**
@@ -36,15 +36,21 @@ class TestimonialController extends Controller
     public function store(Request $request)
     {
         //
+		$customerinfo = new Customerinfo;
+		$customerinfo->email = $request->input('email');
+		$customerinfo->name = $request->input('name');
+		$customerinfo->country = $request->input('country');
+		$customerinfo->save();
+		return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Testimonial  $testimonial
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Testimonial $testimonial)
+    public function show($id)
     {
         //
     }
@@ -52,10 +58,10 @@ class TestimonialController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Testimonial  $testimonial
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Testimonial $testimonial)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +70,10 @@ class TestimonialController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Testimonial  $testimonial
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Testimonial $testimonial)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +81,10 @@ class TestimonialController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Testimonial  $testimonial
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Testimonial $testimonial)
+    public function destroy($id)
     {
         //
     }

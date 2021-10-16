@@ -24,10 +24,11 @@ class OrderFactory extends Factory
         return [
             //
 	"user_id"=>User::factory()->create()->id,
-	"product_name"=>$this->faker->word,
-	"qty"=>$this->faker->numberBetween($min=1,$height=10),
-	"price"=>$this->faker->numberBetween($min=100,$max=900),
-	"total"=>$this->faker->numberBetween($min=1000,$max=9000),
+	"product_name"=>$this->word,
+	"qty"=>$this->numberBetween($min=1,$height=10),
+	"price"=>$this->numberBetween($min=100,$max=900),
+	"total"=>$this->numberBetween($min=1000,$max=9000),
+	"phone"=>$this->numberBetween($min=100,$max=900),
         ];
     }
 }

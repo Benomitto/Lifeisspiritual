@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\MpesaController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CombineController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +25,9 @@ Route::get('/gallery', function () {return view('gallery');});
 //Ecommerce Dashboard
 //Route::get('/dashboard', 'App\Http\Controllers\PagesController@dashboard')->name('dashboard');
 
-Route::get('/orders', 'App\Http\Controllers\PagesController@orders')->name('orders');
+Route::get('/orders', 'App\Http\Controllers\OrderController@orders')->name('orders');
+Route::get('/orders.store', 'App\Http\Controllers\OrderController@store')->name('orders.store');
+Route::resource('/orders','App\Http\Controllers\OrderController');
 //Controller
 Route::get('/contactus', 'App\Http\Controllers\PagesController@contactus')->name('contactus');
 Route::post('/contactus', function(){$data = request(['name','phone','email','message']);
@@ -82,6 +85,10 @@ Route::post('/add/cart/{product}', 'App\Http\Controllers\CartController@addProdu
 Route::put('/update/cart/{product}', 'App\Http\Controllers\CartController@updateProductOnCart')->name('update.cart');
 Route::delete('/delete/cart/{product}', 'App\Http\Controllers\CartController@removeProductFromCart')->name('delete.cart');
 
+//CustomerInfo
+Route::get('/customerinfo', 'App\Http\Controllers\CustomerinfoController@index')->name('customerinfo');
+Route::post('/customerinfo.store', 'App\Http\Controllers\CustomerinfoController@store')->name('customerinfo');
+Route::resource('/customerinfo','App\Http\Controllers\CustomerinfoController');
 //Mpesa Checkout
 Route::get('/checkout', 'App\Http\Controllers\CheckoutController@index')->name('checkout');
 
@@ -99,3 +106,6 @@ Route::get('/transactions', [App\Http\Controllers\OurbooksController::class, 'tr
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('welcome');
+
+
+Route::get('combine',[CombineController::class,'index']);

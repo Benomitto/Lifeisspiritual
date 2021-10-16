@@ -167,19 +167,30 @@
                         <!--<h2 class="text-center py-4">Videos</h2>-->
                     <!--end ts-title-->
                     <div class="row">
-				@foreach($videos as $video)
-					<div class="col-md-4">
-                           <iframe width="359" height="359" src="{{$video->url}}" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.1s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <h5 class="py-4"><a href="videos">{{$video->title}}</a> </h5>
+						<div class="col-md-4">
+                           <iframe width="359" height="359" src="https://www.youtube.com/embed/KkS7Up3AHhk" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.1s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <h5 class="py-4"><a href="videos">Erica part 4: Death,Hell & Heaven Book</a> </h5>
                         </div>
+                        <div class="col-md-4">
+                                <iframe width="359" height="359" src="https://www.youtube.com/embed/Rq8NNOqTuaU" title="YouTube video player" frameborder="0"  data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <h5 class="py-4"><a href="videos">Bamboo presents Erica Mukisa's Testimony of Witchcraft & Deliverance Part 1</a> </h5>
+						</div>
+                        <!--end col-md-4-->
+                        
+                        <!--end col-md-4-->
+                        <div class="col-md-4">
+                            <iframe width="359" height="359" src="https://www.youtube.com/embed/cPAYOBFGZh8" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <h5 class="py-4"><a href="videos">Bamboo presents Erica Mukisa's Testimony of Witchcraft & Deliverance Part 2</a> </h5>
+                        </div>
+                        <!--end col-md-4-->
                     </div>
                     <!--end row-->
                     <div class="my-3 text-center">
-                        <a href="/videos" class="btn btn-primary " >{{$video->button}}
+                        <a href="/videos" class="btn btn-primary " >See More
 							<i class="fa fa-arrow-right small ml-3 ts-opacity__50"></i>
 						</a>
                     </div>
-                </div>@endforeach
+                </div>
                 <!--end container-->
             </section>
 			

@@ -111,7 +111,7 @@
 						<div class="col-md-12">
 							<div class="cart-checkout-btn text-center">
 								@if(Auth::user())
-									<a href="{{url('checkout')}}" class="btn btn-primary">Proceed To CheckOut</a>
+									<a href="{{url('/customerinfo')}}" class="btn btn-primary">Proceed To CheckOut</a>
 								@else
 									<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#LoginModal">Proceed To CheckOut</a>
 									<!-- Modal -->

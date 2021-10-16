@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
 			$table->string('image');
 			$table->string('slug',191)->unique();
 			$table->text('description');
-			$table->text('quantity')->unique();
+			$table->text('quantity')->nullable;
 			$table->text('price',8,2)->nullable;
 			$table->text('old_price',8,2)->nullable;
 			$table->integer('inStock')->default(0);

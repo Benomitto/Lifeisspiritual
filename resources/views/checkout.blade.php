@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
      <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">-->
-	<link rel="stylesheet" href="assets/css/checkout.css"">
+	<link rel="stylesheet" href="assets/css/checkout.css">
     <title>Life Is Spiritual</title>
   </head>
   <body>
@@ -45,15 +45,10 @@
 	
     <div class="modal-info">
       <div class="info">
-        <h2>Payment Information</h2>
+        <h3 class="pb-5">Payment Information</h3>
         <form id="payment-form" action="{{ route('lipa',\Cart::getSubtotal()) }}" method="POST" class="mb-4">
 		@csrf
-			<label>
-			<div class="frm-grp">
-				<span class="fname">@lang('Name') <span class="required">*</span></span>
-				<span class="text-box">{{Auth::user()->name}}<span>
-			</div>
-			</label>
+			
 			
 			<label>
 				<span>@lang('Address & City') <span class="required">*</span></span>
@@ -73,7 +68,7 @@
 			<label>
 				<div class="frm-grp">
                                 <span>@lang('Amount')<span class="required">*</span></span>
-                                <span class="text-box">{{\Cart::getSubtotal() }} Ksh</span>
+                                <span class="text-box">{{\Cart::getSubtotal()}} Ksh</span>
 								
                             </div>
 			</label>

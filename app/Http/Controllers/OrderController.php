@@ -48,6 +48,16 @@ class OrderController extends Controller
     public function show(Order $order)
     {
         //
+		 Order::create([
+       "product_name"=>$request->product_name,
+       "price"=>$request->price,
+	   "total"=>$request->total,
+	   "qty"=>$request->qty,
+	   "price"=>$request->price,
+       "user_id"=>auth()->user()->id,
+
+   ]);  
+
     }
 
     /**
