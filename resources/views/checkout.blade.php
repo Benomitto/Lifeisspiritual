@@ -1,95 +1,77 @@
 <!doctype html>
-	
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="ThemeStarz">
 
-    <!-- Bootstrap CSS -->
-     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">-->
-	<link rel="stylesheet" href="assets/css/checkout.css">
-    <title>Life Is Spiritual</title>
-  </head>
-  <body>
-    <!-- Font Awesome Link -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
-<div class="modal clearfix">
-    <div class="modal-product">
-      <div class="product">
-
-        <!-- Slideshow container -->
-        <div class="product-slideshow">
-
-          <!-- Full-width images with number and caption text -->
-          
-
-          
-
-          <br>
-
-          <!-- The dots/circles -->
-          <div style="text-align:center">
-        
-          </div>
-
-        </div>
-
-       
-
-      </div>
-
-      <div class="round-shape"></div>
-    </div>
 	
-    <div class="modal-info">
-      <div class="info">
-        <h3 class="pb-5">Payment Information</h3>
-        <form id="payment-form" action="{{ route('lipa',\Cart::getSubtotal()) }}" method="POST" class="mb-4">
-		@csrf
-			
-			
-			<label>
-				<span>@lang('Address & City') <span class="required">*</span></span>
-				<input type="text" name="houseadd" placeholder="Example:Kawaha Sukari,00115 Wudanyi Rd, Nairobi">
-			</label>
-			
-			<label>
-				<span> @lang('ZIP Address') <span class="required">*</span></span>
-				<input type="text" name="postcode" placeholder="00115, Wudanyi Rd"> 
-			</label>
-			
-			<label>
-			  <span>@lang('Phone') <span class="required">*</span></span>
-			  <input type="tel" name="phone" placeholder="07********">
-			</label>
-			
-			<label>
-				<div class="frm-grp">
-                                <span>@lang('Amount')<span class="required">*</span></span>
-                                <span class="text-box">{{\Cart::getSubtotal()}} Ksh</span>
-								
-                            </div>
-			</label>
+    <link href='https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css' rel='stylesheet'>
+                                <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+	<title>Life Is Spiritual</title>
 
-          <button type="submit" class="submit-btn">Pay Now</button>
-        </form>
-		
-      </div>
+</head>
+  <body>
+    
+@include('layouts.navbar') 
+            <!--Start Form-->
+				<div class="container pt-5 pb-5">
+				<form action="{{ route('lipa',\Cart::getSubtotal()) }}" method="post" id="customerinfo">
+				@csrf
+				<div class="max-w-md mx-auto bg-white shadow-lg rounded-lg md:max-w-xl mx-2 pt-5 mt-5">
+            <div class="md:flex ">
+                <div class="w-full p-4 px-5 py-5">
+                    <div class="flex flex-row">
+                        <h2 class="text-3xl font-semibold"></h2>
+                        <h2 class="text-3xl text-blue-400 font-semibold">Life Is Spiritual</h2>
+                    </div>
+                    <div class="flex flex-row pt-2 text-xs pt-6 pb-5"> 
+						<span class="font-bold">Payment Information</span> 
+						<small class="text-gray-400 ml-1">></small> </small>
+					</div> 
+					
+					<span>SubTotal Amount:</span>
+                    <div class="relative mb-5"> 
+						<span class="text-box mt-4">{{\Cart::getSubtotal()}} Ksh</span>
+					</div> 
+					
+					<span>Enter your Mobile No*</span>
+                    
+					<input type="text" name="phone" class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm" placeholder="Mobile Number*" required> 
+					
+                    <div class="flex justify-between items-center pt-3"> <a href="/cart">
+					<button type="submit" class="h-12 w-24 text-red-500 text-xs bg-gray-200 font-medium">Return to cart</button>
+					<button type="submit" class=" h-12 w-48 rounded font-medium text-xs bg-blue-500 text-white ml-5" id="btnblue">Make Payment</button> </div>
+                </div>
+            </div>
+        </div>
+		</form>
     </div>
-  </div>
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-     <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-    -->@include('sweetalert::alert')
-	<script src="assets/js/checkout.js"></script>
+				
+			<!--End Form-->
+			
+	
+	 
+	
+	<script src="assets/js/custom.hero.js"></script>
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+	<script src="assets/js/isInViewport.jquery.js"></script>
+	<script src="assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="assets/js/owl.carousel.min.js"></script>
+	<script src="assets/js/scrolla.jquery.min.js"></script>
+	<script src="assets/js/jquery.validate.min.js"></script>
+	<script src="assets/js/jquery-validate.bootstrap-tooltip.min.js"></script>
+	<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js'></script>
+    <script type='text/javascript'></script>
+    <script src="assets/js/custom.js"></script>
   </body>
 </html>

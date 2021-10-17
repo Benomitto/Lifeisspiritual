@@ -38,24 +38,24 @@
 	
 		            <section class="" id="sermons">
       <div class="container ">
-		<!--Album Start-->
-		 <a class="item fancybox mb-5 mt-5" href="/assets/img/1.jpg" data-fancybox="gallery1">
-		  <div class="overlay-content"><img class="img-fluid rounded" src="/assets/img/1.jpg" alt="...">
+		<!--Album Start-->@foreach($galleries as $gallery)
+		 <a class="item fancybox mb-5 mt-5" href="{{('/images/gallery/'.$gallery->image)}}" data-fancybox="gallery1">
+		  <div class="overlay-content"><img class="img-fluid rounded" src="{{('/images/gallery/'.$gallery->image)}}" alt="...">
 		  </div>
-         <h2 class="text-center">Life Is Spiritual Photo Album</h2>
-         <p class="text-center text-dark">9 Photos</p>
+         <h2 class="text-center">{{$gallery->title}}</h2>
+         <p class="text-center text-dark">9 {{$gallery->description}}</p>
          <div class="description">
-            <p class="text-center">Click to see more photos.</p>
+            <p class="text-center">{{$gallery->sentence}}</p>
          </div>
-		 <a class="item fancybox" href="/assets/img/2.jpg" data-fancybox="gallery1"></a>
+		 <!--<a class="item fancybox" href="/assets/img/2.jpg" data-fancybox="gallery1"></a>
 		 <a class="item fancybox" href="/assets/img/3.jpg" data-fancybox="gallery1"></a>
 		 <a class="item fancybox" href="/assets/img/4.jpg" data-fancybox="gallery1"></a>
-			  <a class="item fancybox" href="/assets/img/5.jpg" data-fancybox="gallery1"></a>
-			  <a class="item fancybox" href="/assets/img/6.jpg" data-fancybox="gallery1"></a>
-			  <a class="item fancybox" href="/assets/img/spiritual.jpg" data-fancybox="gallery1"></a>
-			  <a class="item mt-5 fancybox" href="/assets/img/8.jpg" data-fancybox="gallery1"></a>
+		<a class="item fancybox" href="/assets/img/5.jpg" data-fancybox="gallery1"></a>
+		<a class="item fancybox" href="/assets/img/6.jpg" data-fancybox="gallery1"></a>
+		<a class="item fancybox" href="/assets/img/spiritual.jpg" data-fancybox="gallery1"></a>
+		<a class="item mt-5 fancybox" href="/assets/img/8.jpg" data-fancybox="gallery1"></a>-->
       </a>
-	  <!--Album End-->
+	  <!--Album End-->@endforeach
       </div>
     </section>
 	
@@ -79,5 +79,8 @@
 	<script src="assets/js/jquery-validate.bootstrap-tooltip.min.js"></script>
     <script src="assets/js/custom.js"></script>
 	<script src= "https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+	
+	
+	
   </body>
 </html>

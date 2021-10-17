@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Similiar;
 use App\Models\Blog;
+
 use App\Models\Comment;
 use App\Models\Article;
 use App\Models\Like;
@@ -54,8 +55,7 @@ class BlogController extends Controller
 		
 		return view('admin.blog.index')->with([
 			'blogs' => Blog::all(),
-			'products' => Product::all(),
-			'orders' => Order::all(),
+			
 		]);
 	}
     /**

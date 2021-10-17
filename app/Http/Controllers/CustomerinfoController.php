@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Customerinfo;
+use App\Models\Order;
+
 use Illuminate\Http\Request;
 
 class CustomerinfoController extends Controller
@@ -40,8 +42,34 @@ class CustomerinfoController extends Controller
 		$customerinfo->email = $request->input('email');
 		$customerinfo->name = $request->input('name');
 		$customerinfo->country = $request->input('country');
+		$customerinfo->zipcode = $request->input('zipcode');
+		$customerinfo->city = $request->input('city');
+		$customerinfo->state = $request->input('state');
 		$customerinfo->save();
-		return redirect()->back();
+
+        $userid = $customerinfo->id;
+        $items = \Cart::getContent();
+        // echo "<pre>";
+        //  print_r($items);
+        foreach($items as $item){
+            $order = new Order;
+
+            $productID = $item->id;
+            $productName =  $item->name;
+            $productQty =  $item->quantity;
+            $productPrice =  $item->price;
+
+
+            $order->product_name = $productName;
+            $order->price = $productID;
+            $order->total  = $productQty*$productPrice;
+            $order->qty = $productQty;
+            $order->delivered = 0;
+            $order->user_id = $userid;
+            $order->save();
+        }
+        
+		return redirect()->route('checkout')->withSuccess("Items have been updated ");
     }
 
     /**

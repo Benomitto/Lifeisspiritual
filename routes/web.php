@@ -19,7 +19,7 @@ use App\Http\Controllers\CombineController;
 //Index
 
 Route::get('/videos', function () {return view('videos');});
-Route::get('/gallery', function () {return view('gallery');});
+
 
 
 //Ecommerce Dashboard
@@ -79,6 +79,11 @@ Route::get('/category/products/{category}', 'App\Http\Controllers\OurbooksContro
 Route::resource('/products','App\Http\Controllers\ProductController');
 Route::resource('/orders','App\Http\Controllers\OrderController');
 
+//Gallery
+Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'index'])->name('gallery');
+Route::get('/admin/gallery', 'App\Http\Controllers\GalleryController@getGallery')->name('admin.gallery');
+Route::post('gallery.store', 'App\Http\Controllers\GalleryController@store')->name('gallery.store');
+Route::resource('/gallery','App\Http\Controllers\GalleryController');
 //Cart
 Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('cart.index');
 Route::post('/add/cart/{product}', 'App\Http\Controllers\CartController@addProductToCart')->name('add.cart');

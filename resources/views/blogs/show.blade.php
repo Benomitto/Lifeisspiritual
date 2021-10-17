@@ -47,7 +47,7 @@
                             <!-- Post title-->
                             <h1 class="fw-bolder mb-1">{{$blog->title}}</h1>
                             <!-- Post meta content-->
-                            <div class="text-muted fst-italic mb-2">Posted on <p>{{$blog->date}}</p> by Start Bootstrap</div>
+                            <div class="text-muted fst-italic mb-2">Posted on <p>{{$blog->date}}</p> by {{Auth::user()->name}}</div>
                             <!-- Post categories-->
                         </header>
                         <!-- Preview image figure-->
@@ -80,7 +80,7 @@
                                             <div class="ms-3">
 											@if($blog->comments)
 													@foreach($blog->comments as $comment)
-                                                <div class="fw-bold">{{Auth::user()->name}} <span class="text-black-50 sm">{{$comment->created_at->diffForHumans()}}</span></div>
+                                                <div class="fw-bold">{{Auth::user()->name}}<span class="text-black-50 sm"> {{$comment->created_at->diffForHumans()}}</span></div>
                                                 <p>{{$comment->comment}}</p>
 													<div class="flex items-center">
 														<form></form>
@@ -111,21 +111,21 @@
                         </div>
                     </div>
                     <!-- Categories widget-->
-                    <div class="card mb-4">
+                   <!-- <div class="card mb-4">
                         <div class="list-group-item active">Similiar Posts</div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <ul class="list-unstyled mb-0">
-                                        <li><a href="#!">Web Design</a></li>
-                                        <li><a href="#!">HTML</a></li>
-                                        <li><a href="#!">Freebies</a></li>
+                                        <li><a href="#!">The Truth About Money</a></li>
+                                        <li><a href="#!">Understand what Salvation really means</a></li>
+                                        <li><a href="#!">Welcome tolife is spiritual ministries</a></li>
                                     </ul>
                                 </div>
                                 
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                     <!-- Side widget-->
                     
                 </div>

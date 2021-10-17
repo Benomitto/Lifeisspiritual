@@ -181,13 +181,8 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="gi gi-camera sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Gallery</span></a>
-                                    <ul>
-                                        <li>
-                                            <a href="page_layout_static.html">Index</a>
-                                        </li>
-                                       
-                                    </ul>
+                                    <a href="{{route('admin.gallery')}}"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="gi gi-camera sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Gallery</span></a>
+                                   
                                 </li>
 								  <li>
                                     <a href="{{route('admin.blog')}}"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="gi gi-blog sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Blog</span></a>

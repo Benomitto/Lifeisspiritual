@@ -9,11 +9,12 @@
 					<thead>
 						<tr>
 							<td>Id</td>
-							<td>Name</td>
-							<td>Phone</td>
-							<td>Product</td>
-							<td>Amount</td>
-							<td>Transsaction</td>
+							<td>Client</td>
+							<td>Book Id</td>
+							<td>Qty</td>
+							<td>Price</td>
+							<td>Total</td>
+							<td>Delivered</td>
 							<td></td>
 						</tr>
 					</thead>
@@ -21,15 +22,11 @@
 						@foreach ($orders as $order)
 							<tr>
 								<td>{{$order->id}}</td>
-								<td>{{$order->user->name}}</td>
+								<td>{{Auth::user()->name}}</td>
 									<td>{{$order->product_name}}</td>
 									<td>{{$order->qty}}</td>
 									<td>{{$order->price}}Ksh</td>
 									<td>{{$order->total}}Ksh</td>
-									<td>{{$order->phone}}Ksh</td>
-									<td>{{$order->transid}}Ksh</td>
-									<td>@if($order->paid)<i class="fa fa-check text-success"></i>@else
-									<i class="fa fa-times text-danger"></i>@endif</td>
 									<td>@if($order->delivered)<i class="fa fa-check text-success"></i>@else
 									<i class="fa fa-times text-danger"></i>@endif</td>
 									<td class="d-flex justify-content-between">
