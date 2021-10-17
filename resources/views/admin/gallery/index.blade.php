@@ -72,10 +72,17 @@
 								<td>{{$gallery->title}}</td>
 									<td>{{Str::limit($gallery->description,200)}}</td>
 									<td>{{Str::limit($gallery->sentence,200)}}</td>
-									<td><img src="{{asset('images/slider/'.$gallery->image)}}" alt="Image"
+									<td>
+										@php
+										$images= explode("|",$gallery->image)
+										@endphp
+
+										@foreach ($images as $img)
+										<img src="{{asset('images/gallery/'.$img)}}" alt="Image"
 									class="image-fluid"
 									width="50"
 									height="50">
+									@endforeach
 									</td>
 									
 									

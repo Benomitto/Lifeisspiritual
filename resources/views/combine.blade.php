@@ -21,7 +21,6 @@
 						
 						<th>Name</th>
 						<th>Phone</th>
-						<th>Title</th>
 						<th>Amount</th>
 						<th>Transaction Id</th>
 					</tr>
@@ -34,7 +33,6 @@
 					
 					<td>{{$row->name}}</td>
 					<td>{{$row->phone}}</td>
-					<td>{{$row->title}}</td>
 					<td>{{$row->amount}}</td>
 					<td>{{$row->mpesa_trans_id}}</td>
 				</tr>@endif

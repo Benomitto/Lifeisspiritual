@@ -13,8 +13,9 @@ class CombineController extends Controller
 	public function index()
 	{
 		$data = User::join('payments','payments.id', '=', 'users.id')
-					->join('customerinfos','users.name','=', 'customerinfos.name')	
-						  ->get(['customerinfos.name','payments.phone','payments.amount','payments.mpesa_trans_id']);
+					->join('customerinfos','users.name','=', 'customerinfos.name')
+					
+						  ->get(['customerinfos.name','payments.phone','customerinfos.email','payments.amount','payments.mpesa_trans_id']);
 						  
 						  return view('combine',compact('data'));
 	}

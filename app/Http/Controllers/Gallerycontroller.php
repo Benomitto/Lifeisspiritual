@@ -17,18 +17,18 @@ class Gallerycontroller extends Controller
     public function index()
     {
         //
-			 return view('/gallery')->with([
-				'galleries' => Gallery::all(),
-	]);
-	
-	}
-	  public function getGallery()
-	{
-		return view('admin.gallery.index')->with([
-		'galleries' => Gallery::all(),
-		
-		]);
-	}
+             return view('/gallery')->with([
+                'galleries' => Gallery::all(),
+    ]);
+    
+    }
+      public function getGallery()
+    {
+        return view('admin.gallery.index')->with([
+        'galleries' => Gallery::all(),
+        
+        ]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -38,9 +38,9 @@ class Gallerycontroller extends Controller
     public function create()
     {
         //
-		return view('admin.gallery.create')->with([
-			'galleries' => Gallery::all(),
-		]);
+        return view('admin.gallery.create')->with([
+            'galleries' => Gallery::all(),
+        ]);
     }
 
     /**
@@ -52,30 +52,44 @@ class Gallerycontroller extends Controller
     public function store(Request $request)
     {
         //
-		$gallery = new Gallery;
-		$gallery->title = $request->input('title');
-		$gallery->description = $request->input('description');
-		$gallery->sentence = $request->input('sentence');
-		
-		
-		 $validatedData = $request->validate([
+        $gallery = new Gallery;
+        $gallery->title = $request->input('title');
+        $gallery->description = $request->input('description');
+        $gallery->sentence = $request->input('sentence');
+        
+        
+         $validatedData = $request->validate([
             'image' => 'required',
             'image.*' => 'mimes:jpeg,jpg,gif,png|max:8000'
         ]);
 
         $images=array();
-        if($files=$request->file('images/gallery')){
+        if($files=$request->file('image')){
             //if file present
+            $count = count($files);
+            $i = 1;
+            $imagesNames = "";
             foreach($files as $file){
 //                $name=$file->getClientOriginalName();
                 $name = time().'.'.$file->getClientOriginalName();
                 $file->move('images/gallery',$name);
-                $images[]=$name;
-                Image::insert( ['images/gallery'=> $name]);
+                //$images[]=$name;
+
+                //Image::insert( ['images/gallery'=> $name]);
+                if ($i<$count) {
+                    $imagesNames.=$name.'|';
+                }else{
+                    $imagesNames.=$name;
+                }
+                $i++;
+                //$gallery->save();
+
             }
         }
-		$gallery->save();
-		return redirect()->back()->with('status','Item Saved');
+        $gallery->image = $imagesNames;
+
+        $gallery->save();
+        return redirect()->back()->with('status','Item Saved');
 
     }
 
@@ -99,8 +113,8 @@ class Gallerycontroller extends Controller
     public function edit($id)
     {
         //
-		$gallery = Gallery::find($id);
-		return view('admin.gallery.edit',compact('welcome'));
+        $gallery = Gallery::find($id);
+        return view('admin.gallery.edit',compact('welcome'));
     }
 
     /**
@@ -124,8 +138,8 @@ class Gallerycontroller extends Controller
     public function destroy($id)
     {
         //
-		$gallery = Gallery::findorFail($id);
-		$gallery->delete();
-		return redirect()->route('admin.gallery')->withSuccess("Item has been removed");
+        $gallery = Gallery::findorFail($id);
+        $gallery->delete();
+        return redirect()->route('admin.gallery')->withSuccess("Item has been removed");
     }
 }

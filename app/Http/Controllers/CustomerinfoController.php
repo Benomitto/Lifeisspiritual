@@ -61,12 +61,13 @@ class CustomerinfoController extends Controller
 
 
             $order->product_name = $productName;
-            $order->price = $productID;
+            $order->price = $productPrice;
             $order->total  = $productQty*$productPrice;
             $order->qty = $productQty;
             $order->delivered = 0;
             $order->user_id = $userid;
             $order->save();
+			Mail::send(new OrderPlaced);
         }
         
 		return redirect()->route('checkout')->withSuccess("Items have been updated ");

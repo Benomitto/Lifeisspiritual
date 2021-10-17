@@ -84,6 +84,7 @@ Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'index'])
 Route::get('/admin/gallery', 'App\Http\Controllers\GalleryController@getGallery')->name('admin.gallery');
 Route::post('gallery.store', 'App\Http\Controllers\GalleryController@store')->name('gallery.store');
 Route::resource('/gallery','App\Http\Controllers\GalleryController');
+
 //Cart
 Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('cart.index');
 Route::post('/add/cart/{product}', 'App\Http\Controllers\CartController@addProductToCart')->name('add.cart');

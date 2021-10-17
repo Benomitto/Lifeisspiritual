@@ -37,26 +37,32 @@
     </section>
 	
 		            <section class="" id="sermons">
+		            	
       <div class="container ">
-		<!--Album Start-->@foreach($galleries as $gallery)
-		 <a class="item fancybox mb-5 mt-5" href="{{('/images/gallery/'.$gallery->image)}}" data-fancybox="gallery1">
-		  <div class="overlay-content"><img class="img-fluid rounded" src="{{('/images/gallery/'.$gallery->image)}}" alt="...">
+		<!--Album Start-->
+		@foreach ($galleries as $gallery)
+		@php
+		$images= explode("|",$gallery->image);
+		$count = count($images);
+		$image1 = 'images/gallery/'.$images[0];
+		@endphp
+		 <a class="item fancybox mb-5 mt-5" href="{{asset($image1)}}" data-fancybox="gallery1">
+		  <div class="overlay-content"><img class="img-fluid rounded" src="{{asset($image1)}}" alt="...">
 		  </div>
          <h2 class="text-center">{{$gallery->title}}</h2>
-         <p class="text-center text-dark">9 {{$gallery->description}}</p>
+         <p class="text-center text-dark">{{$count}} Photos</p>
          <div class="description">
-            <p class="text-center">{{$gallery->sentence}}</p>
+            <p class="text-center">Click to see more photos.</p>
          </div>
-		 <!--<a class="item fancybox" href="/assets/img/2.jpg" data-fancybox="gallery1"></a>
-		 <a class="item fancybox" href="/assets/img/3.jpg" data-fancybox="gallery1"></a>
-		 <a class="item fancybox" href="/assets/img/4.jpg" data-fancybox="gallery1"></a>
-		<a class="item fancybox" href="/assets/img/5.jpg" data-fancybox="gallery1"></a>
-		<a class="item fancybox" href="/assets/img/6.jpg" data-fancybox="gallery1"></a>
-		<a class="item fancybox" href="/assets/img/spiritual.jpg" data-fancybox="gallery1"></a>
-		<a class="item mt-5 fancybox" href="/assets/img/8.jpg" data-fancybox="gallery1"></a>-->
+         @foreach ($images as $img)
+		 <a class="item fancybox" href="{{asset('images/gallery/'.$img)}}" data-fancybox="gallery1"></a>
+      @endforeach
+		 
       </a>
-	  <!--Album End-->@endforeach
+      @endforeach
+	  <!--Album End-->
       </div>
+
     </section>
 	
 	 <footer class="footer-top" id="ts-footer">
@@ -79,8 +85,5 @@
 	<script src="assets/js/jquery-validate.bootstrap-tooltip.min.js"></script>
     <script src="assets/js/custom.js"></script>
 	<script src= "https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-	
-	
-	
   </body>
 </html>
