@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Order;
 use App\Models\Blog;
+use App\Models\Gallery;
 use App\Models\User;
+use App\Models\About;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -22,6 +24,9 @@ class AdminController extends Controller
 		'orders' => Order::all(),
 		'blogs' => Blog::all(),
 		'users' => User::all(),
+		'abouts' => About::all(),
+		'galleries' => Gallery::all(),
+		
 		]);
 	}
 

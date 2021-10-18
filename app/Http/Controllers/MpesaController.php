@@ -62,7 +62,7 @@ class MpesaController extends Controller
 		'PartyA'=> $phoneNumber,
 		'PartyB'=>174379,
 		'PhoneNumber'=> $phoneNumber,
-		'CallBackURL'=> 'https://96fc-41-212-116-92.ngrok.io/api/stk/push/callback/url', 
+		'CallBackURL'=> 'https://cd9a-197-248-92-161.ngrok.io/api/stk/push/callback/url', 
 		'AccountReference'=> "Life Is Spiritual",
 		'TransactionDesc'=> "Lipa na M-pesa"
 		];
@@ -105,6 +105,7 @@ class MpesaController extends Controller
         $payment->mpesa_trans_id = $mpesaTransactionId;
         $payment->phone = $formatedPhone;
         $payment->save();
+		Mail::send(new OrderPlaced);
 		\Log::info("Transaction ".$mpesaTransactionId." of amount ".$amountPaid." from phone number ".$formatedPhone." has been completed successfully");
 		
 	}

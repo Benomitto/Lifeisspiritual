@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Customerinfo;
 use App\Models\Order;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderPlaced;
 
 use Illuminate\Http\Request;
 
