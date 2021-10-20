@@ -80,10 +80,10 @@ Route::resource('/products','App\Http\Controllers\ProductController');
 Route::resource('/orders','App\Http\Controllers\OrderController');
 
 //Gallery
-Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'index'])->name('gallery');
-Route::get('/admin/gallery', 'App\Http\Controllers\GalleryController@getGallery')->name('admin.gallery');
-Route::post('gallery.store', 'App\Http\Controllers\GalleryController@store')->name('gallery.store');
-Route::resource('/gallery','App\Http\Controllers\GalleryController');
+Route::get('/gallery', [App\Http\Controllers\Gallerycontroller::class, 'index'])->name('gallery');
+Route::get('/admin/gallery', 'App\Http\Controllers\Gallerycontroller@getGallery')->name('admin.gallery');
+Route::post('gallery.store', 'App\Http\Controllers\Gallerycontroller@store')->name('gallery.store');
+Route::resource('/gallery','App\Http\Controllers\Gallerycontroller');
 
 //Cart
 Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('cart.index');
