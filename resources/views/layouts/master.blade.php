@@ -205,43 +205,6 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="fa fa-wrench sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Components</span></a>
-                                    <ul>
-                                        <li>
-                                            <a href="#" class="sidebar-nav-submenu"><i class="fa fa-angle-left sidebar-nav-indicator"></i>3 Level Menu</a>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Link 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Link 2</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="page_comp_maps.html">Maps</a>
-                                        </li>
-                                        <li>
-                                            <a href="page_comp_charts.html">Charts</a>
-                                        </li>
-                                        <li>
-                                            <a href="page_comp_gallery.html">Gallery</a>
-                                        </li>
-                                        <li>
-                                            <a href="page_comp_carousel.html">Carousel</a>
-                                        </li>
-                                        <li>
-                                            <a href="page_comp_calendar.html">Calendar</a>
-                                        </li>
-                                        <li>
-                                            <a href="page_comp_animations.html">CSS3 Animations</a>
-                                        </li>
-                                        <li>
-                                            <a href="page_comp_syntax_highlighting.html">Syntax Highlighting</a>
-                                        </li>
-                                    </ul>
-                                </li>
                             </ul>
                             <!-- END Sidebar Navigation -->
 
