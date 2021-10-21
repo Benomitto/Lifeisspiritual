@@ -47,7 +47,7 @@
                             <!-- Post title-->
                             <h1 class="fw-bolder mb-1">{{$blog->title}}</h1>
                             <!-- Post meta content-->
-                            <div class="text-muted fst-italic mb-2">Posted on <p>{{$blog->date}}</p> by {{Auth::user()->name}}</div>
+                            <div class="text-muted fst-italic mb-2">Posted on <p>{{$blog->month}}</p> by {{$blog->writer}}</div>
                             <!-- Post categories-->
                         </header>
                         <!-- Preview image figure-->
@@ -80,7 +80,7 @@
                                             <div class="ms-3">
 											@if($blog->comments)
 													@foreach($blog->comments as $comment)
-                                                <div class="fw-bold">{{Auth::user()->name}}<span class="text-black-50 sm"> {{$comment->created_at->diffForHumans()}}</span></div>
+                                                <div class="fw-bold">{{$comment->user_name}}<span class="text-black-50 sm"> {{$comment->created_at->diffForHumans()}}</span></div>
                                                 <p>{{$comment->comment}}</p>
 													<div class="flex items-center">
 														<form></form>

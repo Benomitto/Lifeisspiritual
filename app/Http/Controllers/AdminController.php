@@ -8,6 +8,7 @@ use App\Models\Gallery;
 use App\Models\User;
 use App\Models\About;
 use App\Models\Category;
+use App\Models\Welcome;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -26,7 +27,7 @@ class AdminController extends Controller
 		'users' => User::all(),
 		'abouts' => About::all(),
 		'galleries' => Gallery::all(),
-		
+		'welcomes' => Welcome::all(),
 		]);
 	}
 

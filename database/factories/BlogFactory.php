@@ -23,12 +23,13 @@ class BlogFactory extends Factory
     {
         return [
             //
-			'image'=>$this->faker->imageUrl($width=500,$height=500),
-			'title'=>$this->faker->sentence,
-			'date'=>$this->faker->dateTimeThisMonth()->format('m-d-Y'),
-			'description'=>$this->faker->sentence,
+			'image'=>$this->imageUrl($width=500,$height=500),
+			'title'=>$this->sentence,
+			'month'=>$this->dateTimeThisMonth()->format('m-d-Y'),
+			'description'=>$this->sentence,
 			"slug"=>Str::slug($this->sentence),
-			'body'=>this->faker->sentence
+			'body'=>$this->sentence,
+			'writer'=>$this->sentence
         ];
     }
 }

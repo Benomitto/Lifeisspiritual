@@ -1,5 +1,6 @@
 @extends('layouts.master')
 
+
 @section('content')
 
 <div class="container">
@@ -35,7 +36,10 @@
 					<textarea class="form-control" rows="5" cols="30" name="body" placeholder="body"></textarea>
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="date" name="date" placeholder="Date">
+					<input class="form-control" type="text" name="month" placeholder="Date">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="writer" placeholder="Author">
 				</div>
 				<div class="form-group">
 					<input class="form-control" type="file" name="image" >
@@ -67,6 +71,7 @@
 							<td>Description</td>
 							<td>Slug</td>
 							<td>Body</td>
+							<td>Author</td>
 							<td>Image</td>
 						
 							<td></td>
@@ -77,10 +82,11 @@
 							<tr>
 								<td>{{$blog->id}}</td>
 								<td>{{$blog->title}}</td>
-								<td>{{$blog->date}}</td>
+								<td>{{$blog->month}}</td>
 								<td>{{Str::limit($blog->description,200)}}</td>
 								<td>{{Str::limit($blog->slug,200)}}</td>
 								<td>{{$blog->body}}</td>
+								<td>{{$blog->writer}}</td>
 								<td><img src="{{('/images/blogs/'.$blog->image)}}"  class="img-fluid" width="100" height="100" alt="{{$blog->title}}">
 									
 								</td>
@@ -110,7 +116,7 @@
 					<input class="form-control" value="{{$blog->title}}" type="text" name="title" placeholder="Title">
 				</div>
 				<div class="form-group">
-					<input class="form-control" value="{{$blog->date}}" type="date" name="date" placeholder="Date">
+					<input class="form-control" value="{{$blog->month}}" type="text" name="month" placeholder="Date">
 				</div>
 				<div class="form-group">
 					<textarea class="form-control" rows="5" cols="30" name="description" placeholder="description">{{$blog->description}}</textarea>
@@ -120,6 +126,9 @@
 				</div>
 				<div class="form-group">
 					<textarea class="form-control" rows="5" cols="30" name="body" placeholder="body">{{$blog->body}}</textarea>
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" name="writer" placeholder="Author">
 				</div>
 				<div class="form-group"><img src="{{('/images/blogs/'.$blog->image)}}"  class="img-fluid" width="200" height="300" alt=""></div>
 				<div class="form-group">

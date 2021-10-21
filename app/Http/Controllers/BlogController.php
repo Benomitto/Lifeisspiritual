@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Similiar;
 use App\Models\Blog;
-
+use App\Models\User;
 use App\Models\Comment;
 use App\Models\Article;
 use App\Models\Like;
@@ -20,6 +20,11 @@ class BlogController extends Controller
 			return $this->hasMany(Like::class);
 	}
 	
+	public function user()
+	{
+		return $this->belongsTo(User::class);
+	}
+	
 	
 	public function getArticles($slug)
 	{
@@ -28,6 +33,7 @@ class BlogController extends Controller
     return view('blogs.show')->with([
         'article' => $article,
 		'blog' => $blog,
+		'users' => User::all(),
 		
 		
     ]);
@@ -41,7 +47,7 @@ class BlogController extends Controller
 			'comment'=>'required',
 		]);
 		$data = new Comment;
-		$data->user_id=$request->user()->id;
+		$data->user_name=$request->user()->name;
 		$data->blog_id=$id;
 		$data->comment=$request->comment;
 		$data->save();
@@ -99,10 +105,11 @@ class BlogController extends Controller
         //
 			$blog = new Blog;
 			$blog->title = $request->input('title');
-			$blog->date = $request->input('date');
+			$blog->month = $request->input('month');
 			$blog->description = $request->input('description');
 			$blog->slug = $request->input('slug');
 			$blog->body = $request->input('body');
+			$blog->writer = $request->input('writer');
 		
 		if($request->hasFile('image')){
 			
@@ -155,10 +162,11 @@ class BlogController extends Controller
         //
 			$blog = Blog::findorFail($id);
 			$blog->title = $request->input('title');
-			$blog->date = $request->input('date');
+			$blog->month = $request->input('month');
 			$blog->description = $request->input('description');
 			$blog->slug = $request->input('slug');
 			$blog->body = $request->input('body');
+			$blog->writer = $request->input('writer');
 			
 			if($request->hasFile('image'))
 			{
