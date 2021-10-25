@@ -23,7 +23,7 @@ class BlogFactory extends Factory
     {
         return [
             //
-			'image'=>$this->imageUrl($width=500,$height=500),
+			'image'=>$this->imageUrl($width=945,$height=630),
 			'title'=>$this->sentence,
 			'month'=>$this->dateTimeThisMonth()->format('m-d-Y'),
 			'description'=>$this->sentence,

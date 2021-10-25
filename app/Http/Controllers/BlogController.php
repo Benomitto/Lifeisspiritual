@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\PostlikeController;
 use App\Models\Product;
 use App\Models\Similiar;
 use App\Models\Blog;
@@ -27,12 +28,13 @@ class BlogController extends Controller
 	
 	
 	public function getArticles($slug)
-	{
+	{	$like = Blog::where('slug', $slug)->first();
 		$article = Blog::where('slug', $slug)->first();
 		$blog = Blog::where('slug', $slug)->first();
     return view('blogs.show')->with([
         'article' => $article,
 		'blog' => $blog,
+		'likes'=> $like,
 		'users' => User::all(),
 		
 		
@@ -74,7 +76,7 @@ class BlogController extends Controller
         //
 		$products = Product::all();
 		return view('/blog')->with([
-			'blogs' => Blog::all(),
+			'blogs' => Blog::paginate(2),
 			
 		]);
     }

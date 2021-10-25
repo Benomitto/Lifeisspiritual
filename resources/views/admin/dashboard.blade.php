@@ -78,16 +78,16 @@
 							
                             
                             
-                           <!-- <div class="col-sm-6">
+                            <div class="col-sm-6">
                                 <!-- Widget -->
-                                <!-- <a href="page_comp_charts.html" class="widget widget-hover-effect1">
+                                 <a href="page_comp_charts.html" class="widget widget-hover-effect1">
                                     <div class="widget-simple">
                                         <div class="widget-icon pull-left themed-background animation-fadeIn">
                                             <i class="gi gi-wallet"></i>
                                         </div>
                                         <div class="pull-right">
-                                            <!-- Jquery Sparkline (initialized in js/pages/index.js), for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
-                                             <!--<span id="mini-chart-sales"></span>
+                                             <!--Jquery Sparkline (initialized in js/pages/index.js), for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-about-->
+                                             <span id="mini-chart-sales"></span>
                                         </div>
                                         <h3 class="widget-content animation-pullDown visible-lg">
                                             Latest <strong>Sales</strong>
@@ -150,25 +150,6 @@
                                 </a>
                                 <!-- END Widget -->
                             </div>
-                           <!-- <div class="col-sm-6">
-                                <!-- Widget -->
-                                <!-- <a href="page_comp_charts.html" class="widget widget-hover-effect1">
-                                    <div class="widget-simple">
-                                        <div class="widget-icon pull-left themed-background animation-fadeIn">
-                                            <i class="gi gi-wallet"></i>
-                                        </div>
-                                        <div class="pull-right">
-                                            <!-- Jquery Sparkline (initialized in js/pages/index.js), for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
-                                             <!--<span id="mini-chart-sales"></span>
-                                        </div>
-                                        <h3 class="widget-content animation-pullDown visible-lg">
-                                            Latest <strong>Sales</strong>
-                                            <small>Per hour</small>
-                                        </h3>
-                                    </div>
-                                </a>
-                                <!-- END Widget -->
-                             <!--</div>-->
                         </div>
 @endsection
 

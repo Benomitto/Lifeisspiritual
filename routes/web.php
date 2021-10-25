@@ -115,3 +115,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('combine',[CombineController::class,'index']);
+
+//Likes
+Route::post('/blog/{id}/likes', [App\Http\Controllers\PostlikeController::class, 'store'])->name('blog.likes');

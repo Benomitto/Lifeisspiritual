@@ -52,4 +52,9 @@ class User extends Authenticatable
 	public function transaction(){
 		return $this->hasMany(Transaction::class);
 	}
+	
+	public function likes()
+	{
+		return $this->hasMany(Like::class);
+	}
 }

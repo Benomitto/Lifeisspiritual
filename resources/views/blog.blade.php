@@ -34,38 +34,37 @@
       </div>
     </section>
 	
-	<section id="about" class="ts-block" >
-                   <div id="cards_landscape_wrap-2">
-        <div class="container">
-            <div class="row">
-			@foreach($blogs as $blog)
-                <div class="col-lg-4">
-                    <a href={{route("article.show",$blog->slug)}}>
-                        <div class="card-flyer"  >
-                            <div class="text-box">
-                                <div class="image-box ">
-                                    <img src="{{'/images/blogs/'.$blog->image}}" alt="{{$blog->title}}" class="img-fluid rounded mx-auto d-block" width="100%"/>
-                                </div>
-                                <div class="text-container">
-                                    <h6>{{$blog->title}}</h6>
-                                    <p style="max-width: 18rem;"class="ts-opacity__50">{{Str::limit($blog->description,100)}}</p>
-                                </div>
-								<div class="card-footer">
-											<span class="text-primary font-weight-bold">Read</span>
-								</div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-				@endforeach
-            </div>
-        </div>
-    </div>
-				
-				<!--New-->
-			
-				<!--New End-->
-            </section>            
+	<section id="blog">
+     <div class="container">
+	 @foreach($blogs as $blog)
+          <div class="row">
+
+               <div class="col-md-offset-1 col-md-10 col-sm-12">
+                    <div class="blog-post-thumb">
+                         <div class="blog-post-image">
+                              <a href="single-post.html">
+                                   <img src="{{'/images/blogs/'.$blog->image}}" class="img-responsive" alt="Blog Image">
+                              </a>
+                         </div>
+                         <div class="blog-post-title">
+                              <h3><a href="{{route("article.show",$blog->slug)}}">{{$blog->title}}</a></h3>
+                         </div>
+                         <div class="blog-post-format">
+                              <span><a href="#"><img src="images/author-image1.jpg" class="img-responsive img-circle"> {{$blog->writer}}</a></span>
+                              <span><i class="fa fa-date"></i> {{$blog->date}}</span>
+                              <span><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> {{count($blog->comments)}} Comments</a></span>
+							  <span><a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>  Likes</a></span>
+                         </div>
+                         <div class="blog-post-des">
+                              <p>{{$blog->body}}</p>
+                              <a href="{{route("article.show",$blog->slug)}}" class="btn btn-outline-secondary">Continue Reading</a>
+                         </div>
+                    </div>  
+               </div>
+			  
+          </div>@endforeach
+     </div>
+</section> <div class="pagination justify-content-center">{{$blogs->links()}}</div>         
 			
 
  <footer class="footer-top" id="ts-footer">
@@ -87,5 +86,8 @@
 	<script src="assets/js/jquery.validate.min.js"></script>
 	<script src="assets/js/jquery-validate.bootstrap-tooltip.min.js"></script>
     <script src="assets/js/custom.js"></script>
+	
+<script src="https://use.fontawesome.com/a7e58df41d.js"></script>
+
   </body>
 </html>

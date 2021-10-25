@@ -37,29 +37,75 @@
       </div>
     </section>
 		<!--Section End-->
+		
+		<section id="blog-single-post">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-offset-1 col-md-10 col-sm-12">
+                    <div class="blog-single-post-thumb">
+                         
+
+                         <div class="blog-post-title">
+                              <h2>{{$blog->title}}</a></h2>
+                         </div>
+
+                         <div class="blog-post-format">
+                              <span><a href="#"><img src="images/author-image1.jpg" class="img-responsive img-circle">{{$blog->writer}}</a></span>
+                              <span><i class="fa fa-date"></i> {{$blog->month}}</span>
+                              <span><a href="#"><i class="fa fa-comment-o"></i> {{count($blog->comments)}} Comments</a></span>
+							   <span><a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Likes</a></span>
+                         </div>
+
+                         <div class="blog-post-des">
+							  <blockquote>{{$blog->description}}</blockquote>
+                              <p>{{$blog->body}}</p>
+                              
+                              <div class="blog-post-image">
+                              <img src="{{'/images/blogs/'.$blog->image}}" class="img-responsive" alt="Blog Image 3">
+                         </div>
+					   </div>
+                         
+                     
+                         <p>The greatest sin is the misallocation of time.
+If no time is given to wastage, then time will be properly used for profit, instead of loss. Some people allocate their time for loss, others allocate their time for profit. So some grow rich, while others grow/stay poor. Time, the great equalizer is given to them all by our Heavenly Father.</p>
+
+
+<form action = "{{route('blog.likes',$blog->id)}}" method="post" class="mr-1">
+@csrf
+<button type="submit">Like</button>
+@if($blog->likes)
+<span>{{$blog->likes->count()}}</span>
+@endif
+</form>
+                         <div class="blog-author">
+                              <div class="media">
+                                  
+                                   <div class="media-body">
+                                        <h3 class="media-heading"><a href="#">{{$blog->writer}} ( Evangelist )</a></h3>
+                                        <p>Tim is married to Erica Mukisa Kimani and is a family man and a man of God. We believe that there are many deep and wonderful truths hidden in the bible which God's children need to know.</p>
+                                   
+								   </div>
+								   
+								   
+                              </div>
+                         </div>
+						 
+
+                        <div class="blog-comment"><h3>Comments {{count($blog->comments)}}</h3></div>
+						<div class="blog-comment-form"><h3>Leave a Comment</h3></div>
+
+                         
+</section>
+		
         <div class="container py-5 mt-5">
             <div class="row py-5">
                 <div class="col-lg-8">
                     <!-- Post content-->
-                    <article>
-                        <!-- Post header-->
-                        <header class="mb-4">
-                            <!-- Post title-->
-                            <h1 class="fw-bolder mb-1">{{$blog->title}}</h1>
-                            <!-- Post meta content-->
-                            <div class="text-muted fst-italic mb-2">Posted on <p>{{$blog->month}}</p> by {{$blog->writer}}</div>
-                            <!-- Post categories-->
-                        </header>
-                        <!-- Preview image figure-->
-                        <figure class="mb-4"><img class="img-fluid rounded" src="{{'/images/blogs/'.$blog->image}}" alt="" width="900" height="400"/></figure>
-                        <!-- Post content-->
-                        <section class="mb-5">
-                            <p class="fs-5 mb-4">{{$blog->body}}</p>
-                            <a href=""><button type="submit" class="btn btn-outline-primary">Read More</button></a>
-                        </section>
-                    </article>
+                   
                     <!-- Comments section-->
-                    <section class="mb-5"><h5 class="list-group-item active">Comments<span class="badge badge-primary ml-2">{{count($blog->comments)}}</span></h5>
+                    <section class="mb-5">
+					<h5 class="list-group-item active">Comments<span class="badge badge-primary ml-2">{{count($blog->comments)}}</span></h5>
                         <div class="card bg-light">
                             <div class="card-body">
                                 <!-- Comment form-->
@@ -82,9 +128,6 @@
 													@foreach($blog->comments as $comment)
                                                 <div class="fw-bold">{{$comment->user_name}}<span class="text-black-50 sm"> {{$comment->created_at->diffForHumans()}}</span></div>
                                                 <p>{{$comment->comment}}</p>
-													<div class="flex items-center">
-														<form></form>
-													</div>
 													@endforeach
 												@endif
                                             </div>
@@ -99,36 +142,7 @@
                     </section>
                 </div>
                 <!-- Side widgets-->
-                <div class="col-lg-4"><br><br><br><br><br><br><br><br><br><br>
-                    <!-- Search widget-->
-                    <div class="card mt-5">
-                        <div class="list-group-item active">Search</div>
-                        <div class="card-body">
-                            <div class="input-group">
-                                <input class="form-control px-1" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" /><br>
-                                <button class="btn btn-outline-primary" id="button-search" type="button">Go!</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Categories widget-->
-                   <!-- <div class="card mb-4">
-                        <div class="list-group-item active">Similiar Posts</div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="#!">The Truth About Money</a></li>
-                                        <li><a href="#!">Understand what Salvation really means</a></li>
-                                        <li><a href="#!">Welcome tolife is spiritual ministries</a></li>
-                                    </ul>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>-->
-                    <!-- Side widget-->
-                    
-                </div>
+                
             </div>
         </div>
         <!-- Footer-->
@@ -154,5 +168,6 @@
 	<script src="/assets/js/jquery-validate.bootstrap-tooltip.min.js"></script>
     <script src="/assets/js/custom.js"></script>
     <script src="/assets/js/scripts.js"></script>
+	<script src="https://use.fontawesome.com/a7e58df41d.js"></script>
     </body>
 </html>
