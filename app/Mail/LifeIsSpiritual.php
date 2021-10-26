@@ -36,7 +36,7 @@ class LifeIsSpiritual extends Mailable
 		->subject('books')
 		->attach(public_path('/docs/Dummypdf.pdf'),[
 			'as' => 'Dummypdf.pdf',
-			'mime' => 'application/jpg'
+			'mime' => 'application/pdf'
 		]);
     }
 }

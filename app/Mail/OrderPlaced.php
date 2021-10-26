@@ -32,6 +32,8 @@ class OrderPlaced extends Mailable
 		->to('omittobenjamin@gmail.com','Omitto')
 		->bcc('omittobenjamin@gmail.com')
 		->subject('Books')
-		->view('emails.orders.placed');
+		->markdown('emails.orders.placed')
+		 ->attach('docs/Dummypdf.pdf');
+		
     }
 }

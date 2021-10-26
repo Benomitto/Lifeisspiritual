@@ -14,6 +14,7 @@
 							<td>Qty</td>
 							<td>Price</td>
 							<td>Order Date</td>
+							<td>Transaction Id</td>
 							<td>Total</td>
 							<td>Delivered</td>
 							<td></td>
@@ -27,6 +28,7 @@
 									<td>{{$order->product_name}}</td>
 									<td>{{$order->qty}}</td>
 									<td>{{$order->price}}Ksh</td>
+									
 									<td>{{$order->created_at}}</td>
 									<td>{{$order->total}}Ksh</td>
 									<td>@if($order->delivered)<i class="fa fa-check text-success"></i>@else

@@ -1,17 +1,11 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Bootstrap CSS -->
-   
-    <title>Email</title>
-  </head>
-  <body>
-    Email Test
+@component('mail::message')
+# Life Is Spiritual
+Here is your book
 
-   
-  </body>
-</html>
+@component('mail::button',['url'=>'link'])
+			Get Book
+@endcomponent
+
+Thanks,for making a purchase<br>
+Laravel
+@endcomponent

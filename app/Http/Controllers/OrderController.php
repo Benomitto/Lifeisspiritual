@@ -16,6 +16,7 @@ class OrderController extends Controller
     {
 		//'blogs' => Blog::all(),
         //
+		
     }
 
     /**

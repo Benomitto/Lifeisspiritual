@@ -51,10 +51,10 @@
                          </div>
 
                          <div class="blog-post-format">
-                              <span><a href="#"><img src="images/author-image1.jpg" class="img-responsive img-circle">{{$blog->writer}}</a></span>
+                              <span>{{$blog->writer}}</span>
                               <span><i class="fa fa-date"></i> {{$blog->month}}</span>
                               <span><a href="#"><i class="fa fa-comment-o"></i> {{count($blog->comments)}} Comments</a></span>
-							   <span><a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Likes</a></span>
+							   <span><a href="#"><i class="fa fa-comment-o"></i> {{count($blog->comments)}} Likes</a></span>
                          </div>
 
                          <div class="blog-post-des">

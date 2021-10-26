@@ -65,6 +65,7 @@ class AdminController extends Controller
 		'orders' => Order::all(),
 		'products' => Product::all(),
 		
+		
 		]);
 	}
 

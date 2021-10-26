@@ -137,10 +137,6 @@
                                 <div class="image-box">
                                     <img src="{{asset($product->image)}}" alt="{{$product->title}}" class="img-fluid rounded mx-auto d-block" width="100%"/>
                                 </div>
-                                <div class="text-container">
-                                    <h6>{{$product->title}}</h6>
-                                   
-                                </div>
 								<div class="card-footer">
 											<i class="text-muted"><strike>Ksh.{{$product->old_price}}</strike></i>
                                             <span class="text-primary font-weight-bold">Ksh.{{$product->price}}</span><br>
@@ -209,10 +205,10 @@
                                 </div>
                                 <div class="text-container">
                                     <h6>{{$blog->title}}</h6>
-                                    <p style="max-width: 18rem;"class="ts-opacity__50">{{Str::limit($blog->description,100)}}</p>
+                                   
                                 </div>
 								<div class="card-footer">
-											<span class="mybuttonoverlaptwo btn btn-primary text-white font-weight-bold">Read</span>
+											<span class="mybuttonoverlaptwo btn btn-primary text-white text-center font-weight-bold">Read</span>
 								</div>
                             </div>
                         </div>

@@ -68,7 +68,6 @@ class CustomerinfoController extends Controller
             $order->qty = $productQty;
             $order->delivered = 0;
             $order->user_id = $userid;
-			$order->created_at;
             $order->save();
 			Mail::send(new OrderPlaced);
         }

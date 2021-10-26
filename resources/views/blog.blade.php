@@ -50,10 +50,10 @@
                               <h3><a href="{{route("article.show",$blog->slug)}}">{{$blog->title}}</a></h3>
                          </div>
                          <div class="blog-post-format">
-                              <span><a href="#"><img src="images/author-image1.jpg" class="img-responsive img-circle"> {{$blog->writer}}</a></span>
+                              </span>
                               <span><i class="fa fa-date"></i> {{$blog->date}}</span>
                               <span><a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> {{count($blog->comments)}} Comments</a></span>
-							  <span><a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>  Likes</a></span>
+							  <span><a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {{count($blog->comments)}} Likes</a></span>
                          </div>
                          <div class="blog-post-des">
                               <p>{{$blog->body}}</p>

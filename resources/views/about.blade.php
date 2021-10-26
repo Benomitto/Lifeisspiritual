@@ -50,17 +50,22 @@
 		  <h3 class="mt-4 font-weight-bold">About Us</h3>
             <p class="text-justify pt-0 mr-5">Life Is Spiritual Publishing Company LTD (LIS) is a publishing company working with a<span id="dots">...</span> non-denominational christian discipleship youth ministry under Faith Christian Fellowship Kenya www.fcfkenya.com.</p>
 			<p class="text-justify pt-0 mr-5"><span id="more">FCF-Kenya has a goal to see the gospel of the Kingdom of God spread to the entire world. This ministry was founded by Apostle Timsimon "Bamboo" Kimani and prophetess Erica Kimani.</span></p>
-        <button onclick="myFunction()" id="myBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-					Load More
-					<i class="fa fa-arrow-right small ml-3 ts-opacity__50"></i>
-		</button>
-		 </div>
-        </div>
+        <!-- Button trigger modal -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+  Load More
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog-xxl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
       </div>
-    </div>
-	<!--1-->
-	
-	<!--2-->
+      <div class="modal-body">
+			<!--2-->
 	<div class="site-section">
       <div class="container">
         <div class="row align-items-center mr-5">
@@ -122,6 +127,28 @@
     </div>
 	<!--4-->
 	
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+		 </div>
+        </div>
+      </div>
+    </div>
+	<!--1-->
+	
+	
+	
+	
+	
+	
+	
 	
 	 <footer class="footer-top" id="ts-footer">
             <section id="contact" class="ts-separate-bg-element" data-bg-image="assets/img/bg-hand-mobile.jpg" data-bg-image-opacity=".1" data-bg-color="#12264f">
@@ -142,8 +169,8 @@
 	<script src="assets/js/jquery.validate.min.js"></script>
 	<script src="assets/js/jquery-validate.bootstrap-tooltip.min.js"></script>
     <script src="assets/js/custom.js"></script>
-	<script>function myFunction2() {
-  var dots = document.getElementById("dots2");
+	<script>function myFunction() {
+  var dots = document.getElementById("dots");
   var moreText = document.getElementById("more");
   var btnText = document.getElementById("myBtn");
 
