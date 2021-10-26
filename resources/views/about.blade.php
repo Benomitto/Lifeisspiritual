@@ -58,11 +58,12 @@
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog-xxl">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="staticBackdropLabel">About Us</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;
+														</span></button>
       </div>
       <div class="modal-body">
 			<!--2-->
@@ -72,7 +73,7 @@
           <div class="col-lg-6 pl-lg-5 ">
             <p class="text-justify pt-3 mr-5">Tim is married to Erica Mukisa Kimani and is a family man and a man of God. We believe that there are many deep and wonderful truths hidden in the bible which God's children need to know.<span id="dots2">...</span> <span id="more2">
 			Unfortunately, many of these truths are not revealed by the mainstream christian church through televangelists because of the level of compromise and infiltration of the enemy into positions of media leadership.
-			Therefore the enemy is able to conceal many of his deceptions to the world because his agents are some of the popular ministers with access to the world through the media. 
+			<br><br>Therefore the enemy is able to conceal many of his deceptions to the world because his agents are some of the popular ministers with access to the world through the media. 
 			Now there are many men of God who have not been compromised however, these men seem to have no voice or have been silenced before they could reach many souls in the world with the truth.</span></p>
           <button onclick="myFunction2()" id="myBtn2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 					Load More
@@ -80,7 +81,7 @@
 		</button>
 		  </div>
 		  <div class="col-lg-6 py-5 px-5">
-            <img src="assets/img/marriage.jpg" alt="image" class="img-fluid rounded" style="width:500px;height:500px;">
+            <img src="assets/img/marriage.jpg" alt="image" class="img-fluid rounded" style="width:300px;height:300px;">
           </div>
         </div>
       </div>
@@ -92,11 +93,11 @@
       <div class="container">
         <div class="row align-items-center mr-5">
 		<div class="col-lg-6 py-5 px-5">
-            <img src="assets/img/Christ.jpg" alt="image" class="img-fluid rounded" style="width:500px;height:500px;">
+            <img src="assets/img/Christ.jpg" alt="image" class="img-fluid rounded" style="width:300px;height:300px;">
           </div>
           <div class="col-lg-6 pl-lg-5 ">
             <p class="text-justify pt-3 mr-5">The body of Christ needs their own platforms where the evil arms of censorship and/or infiltration cannot reach. Satan's kingdom is a kingdom of darkness.<span id="dots3">...</span> <span id="more3"> Darkness is ignorance, therefore Satan's kingdom thrives on the ignorance of humanity. The more a born again human being declares the light of God's word, the less space the devil has to move around.
-			Matthew 5:14 "Ye are the light of the world, a city that is set on a hill cannot be hid." These were Yeshuah's (Jesus) words to his disciples. A light must reveal truth. The kind of truth that makes one dangerous to the kingdom of darkness is the truth which reveals and exposes their secrets, their plans and their purposes.</span></p>
+			<br><br>Matthew 5:14 "Ye are the light of the world, a city that is set on a hill cannot be hid." These were Yeshuah's (Jesus) words to his disciples. A light must reveal truth. The kind of truth that makes one dangerous to the kingdom of darkness is the truth which reveals and exposes their secrets, their plans and their purposes.</span></p>
           <button onclick="myFunction3()" id="myBtn3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 					Load More
 					<i class="fa fa-arrow-right small ml-3 ts-opacity__50"></i>
@@ -113,14 +114,14 @@
         <div class="row align-items-center mr-5">
           <div class="col-lg-6 pl-lg-5 ">
             <p class="text-justify pt-3 mr-5">Light is what will destroy Satan's kingdom. Yeshuah is that light. The light of God's word and the revealing of Satan's operations is a key which the body of Christ must use to our advantage. <span id="dots4">...</span> <span id="more4">If this generation knew what they were up against, they would be more loyal to God than they were to the devil. This ministry exists to reveal truth, dangerous truth. The kind of truth which Satan and his minions do NOT want God's children to know.
-			This ministry will continue to release various publications such as the "Erica" series with a view to feed God's children with as much information as possible so as to equip them for the days ahead. We are in the last of the last days. We are the circumcision, who worship God in spirit, we rejoice in Christ Jesus and have no confidence in the flesh (Phil 3:3). May God bless your journey, and thank you for stopping by and remember, Life is Spiritual.<br>God Bless You.</span></p>
+			<br><br>This ministry will continue to release various publications such as the "Erica" series with a view to feed God's children with as much information as possible so as to equip them for the days ahead. We are in the last of the last days. We are the circumcision, who worship God in spirit, we rejoice in Christ Jesus and have no confidence in the flesh (Phil 3:3). May God bless your journey, and thank you for stopping by and remember, Life is Spiritual.<br>God Bless You.</span></p>
 			<button onclick="myFunction4()" id="myBtn4" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 					Load More
 					<i class="fa fa-arrow-right small ml-3 ts-opacity__50"></i>
 		</button>
 		  </div>
 		  <div class="col-lg-6 py-5 px-5">
-            <img src="assets/img/cross.jpg" alt="image" class="img-fluid rounded" style="width:500px;height:500px;">
+            <img src="assets/img/cross.jpg" alt="image" class="img-fluid rounded" style="width:300px;height:300px;">
           </div>
         </div>
       </div>
@@ -129,8 +130,7 @@
 	
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

@@ -69,7 +69,7 @@ class CustomerinfoController extends Controller
             $order->delivered = 0;
             $order->user_id = $userid;
             $order->save();
-			Mail::send(new OrderPlaced);
+			Mail::send(new OrderPlaced($order));
         }
         
 		return redirect()->route('checkout')->withSuccess("Items have been updated ");

@@ -52,7 +52,8 @@
 					
                     <div class="flex justify-between items-center pt-3"> <a href="/cart">
 					<button type="submit" class="h-12 w-24 text-red-500 text-xs bg-gray-200 font-medium">Return to cart</button>
-					<button type="submit" class=" h-12 w-48 rounded font-medium text-xs bg-blue-500 text-white ml-5" id="btnblue">Continue to Payment</button> </div>
+					<button type="submit" class=" h-12 w-48 rounded font-medium text-xs bg-blue-500 text-white ml-5" id="btnblue" data-toggle="modal" data-target="#phoneModal">Continue to Payment</button>
+					</div>
                 </div>
             </div>
         </div>

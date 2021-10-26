@@ -28,7 +28,7 @@ class OrderPlaced extends Mailable
      */
     public function build()
     {
-        return $this->from('benjaminomittto@gmail.com','Ben')
+        return $this->from('benjaminomittto@gmail.com','Life Is Spiritual')
 		->to('omittobenjamin@gmail.com','Omitto')
 		->bcc('omittobenjamin@gmail.com')
 		->subject('Books')

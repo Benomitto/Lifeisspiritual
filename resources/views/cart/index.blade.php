@@ -111,7 +111,68 @@
 						<div class="col-md-12">
 							<div class="cart-checkout-btn text-center">
 								@if(Auth::user())
-									<a href="{{url('/customerinfo')}}" class="btn btn-primary">Proceed To CheckOut</a>
+									<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Proceed To CheckOut</a>
+										<!-- Modal Start-->
+												<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+												  <div class="modal-dialog modal-lg">
+													<div class="modal-content">
+													  <div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLabel">Additional Information</h5>
+														<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;
+														</span></button>
+													  </div>
+													 
+														<!--Checkout Start-->
+																	            <!--Start Form-->
+				<div class="container">
+				<form action="{{ route('customerinfo.store') }}" method="post" id="customerinfo">
+				@csrf
+				<div class="max-w-md mx-auto bg-white shadow-lg rounded-lg md:max-w-xl mx-2 pt-5 mt-5">
+            <div class="md:flex ">
+                <div class="w-full p-4 px-5 py-5">
+                    <div class="flex flex-row">
+                        <h2 class="text-3xl font-semibold"></h2>
+                        <h2 class="text-3xl text-blue-400 font-semibold">Life Is Spiritual</h2>
+                    </div>
+                    <div class="flex flex-row pt-2 text-xs pt-6 pb-5"> 
+						<span class="font-bold">Additional Information</span> 
+						<small class="text-gray-400 ml-1">></small> </small>
+					</div> 
+					
+					<span>Customer Information</span>
+                    <div class="relative pb-5"> 
+						<input spellcheck="true" type="text" name="email" class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm" placeholder="E-mail" required>
+					</div> 
+					
+					<span class="mb-4">Shipping Address</span><br>
+                    
+					<input type="text" name="name" class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm" placeholder="Username*" required> 
+					<div class="grid md:grid-cols-3 md:gap-2">
+					<input type="text" name="zipcode" class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm" placeholder="Zipcode*"><br> 
+					<input type="text" name="city" class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm" placeholder="City*" required><br>  
+					<input type="text" name="state" class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm" placeholder="State*" required> </div>
+					<input type="text" name="country" class="border rounded h-10 w-full focus:outline-none focus:border-green-200 px-2 mt-2 text-sm" placeholder="Country*" required> 
+					
+                    <div class="flex justify-between items-center pt-3"> 
+					<a href="/cart" class="btn btn-secondary h-12 w-24 text-red-500 text-xs bg-gray-200 font-medium">Return to cart</a>
+					<button type="submit" class="btn btn-primary h-12 w-48 rounded font-medium text-xs bg-blue-500 text-white ml-5" id="btnblue">Continue to Payment</button> </div>
+                </div>
+            </div>
+        </div>
+		</form>
+    </div>
+				
+			<!--End Form-->
+														<!--Checkout End-->
+													  
+													  <div class="modal-footer">
+														<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+														
+													  </div>
+													</div>
+												  </div>
+												</div>
+										<!-- Modal End-->
 								@else
 									<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#LoginModal">Proceed To CheckOut</a>
 									<!-- Modal -->
