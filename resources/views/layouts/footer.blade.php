@@ -1,4 +1,5 @@
-		<div class="container py-4">
+	<section id="contact" class="ts-separate-bg-element" data-bg-image="assets/img/bg-hand-mobile.jpg" data-bg-image-opacity=".1" data-bg-color="#12264f">
+	<div class="container py-4">
                    <div class="row">
 						<div class="col-md-3 col-sm-6 col-xs-12 segment-one">
 							<h5 class="text-white">Life Is Spiritual</h5>
@@ -12,7 +13,7 @@
 								<a href="/blog"><li class="px-5 text-justify px-4 text-white-50">Blog</li></a>
 							</ul>
 						</div>
-						<div class="col-md-3 col-sm-6 col-xs-12 segment-three justify-content-center">
+						<div class="col-md-3 col-sm-6 col-xs-12 segment-three">
 							<h5 class="text-justify px-5 text-white">Follow Us</h5>
 							<a href="https://www.facebook.com/lifeisspiritualministries/" class="text-justify px-5 text-white-50"><i class="fab fa-facebook-f"></i></a>
 							<a href="https://www.instagram.com/lifeisspiritualministries/" class="text-justify px-5 text-white-50"><i class="fab fa-instagram"></i></a>
@@ -27,3 +28,4 @@
 						</div>
 					</div>
                 </div>
+				</section>
