@@ -99,9 +99,10 @@
                             <div class="ts-block pr-3">
                                 <div class="ts-title">
                                     <h2>{{$about->header}}</h2>
+									<p>{{$about->describe}}</p><br><p>{{$about->described}}</p>
                                 </div>
                                 <!--end ts-title-->
-                                <p>{{$about->describe}}</p><p>{{$about->described}}</p>
+                                
                                 <a href="/about" class="btn btn-primary mr-3">{{$about->button}}
 									<i class="fa fa-arrow-right small ml-3 ts-opacity__50"></i>
 								</a>

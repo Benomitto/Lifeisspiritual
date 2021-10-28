@@ -52,7 +52,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <!-- Left Side Of Navbar -->
                     <div class="navbar-nav ml-auto">
-							<a class="nav-item nav-link {{'' == request()->path() ? 'active' : ''}} ts-scroll" href="/">Home </a>
+							<a class="nav-item nav-link {{'/' == request()->path() ? 'active' : ''}} ts-scroll" href="/">Home </a>
 							<a class="nav-item nav-link {{'about' == request()->path() ? 'active' : ''}} ts-scroll" href="about">About Us</a>
                             <a class="nav-item nav-link {{'ourbooks' == request()->path() ? 'active' : ''}} ts-scroll" href="ourbooks">Our Books</a>
                             <a class="nav-item nav-link {{'videos' == request()->path() ? 'active' : ''}} ts-scroll" href="videos">Videos</a>
