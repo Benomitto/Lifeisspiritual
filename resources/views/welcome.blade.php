@@ -102,7 +102,7 @@
                                 </div>
                                 <!--end ts-title-->
                                 <p>{{$about->describe}}</p><p>{{$about->described}}</p>
-                                <a href="/about" class="btn btn-primary mr-3 my-2">{{$about->button}}
+                                <a href="/about" class="btn btn-primary mr-3">{{$about->button}}
 									<i class="fa fa-arrow-right small ml-3 ts-opacity__50"></i>
 								</a>
                             </div>

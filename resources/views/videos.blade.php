@@ -40,7 +40,7 @@
                     <!--end ts-title-->
                     <div class="row">
 					<div class="col-md-4">
-                           <iframe width="359" height="359" src="https://www.youtube.com/embed/KkS7Up3AHhk" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.1s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                           <iframe width="350" height="180" src="https://www.youtube.com/embed/KkS7Up3AHhk" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.1s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="trailer-titel"><br>
 						<h5><a href="videos">Erica part 4: Death,Hell & Heaven Book</a> </h5>
 						</div>
@@ -49,7 +49,7 @@
 						
 						<!--Video 2 Start-->
                         <div class="col-md-4">
-                                <iframe width="359" height="359" src="https://www.youtube.com/embed/Rq8NNOqTuaU" title="YouTube video player" frameborder="0"  data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="350" height="180" src="https://www.youtube.com/embed/Rq8NNOqTuaU" title="YouTube video player" frameborder="0"  data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <div class="trailer-titel"><br>
 						<h5><a href="videos">Bamboo presents Erica Mukisa's Testimony of Witchcraft & Deliverance Part 1</a> </h5>
 						</div>
@@ -58,7 +58,7 @@
                         
                         <!--Video 3 Start-->
                         <div class="col-md-4">
-                            <iframe width="359" height="359" src="https://www.youtube.com/embed/cPAYOBFGZh8" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="350" height="180" src="https://www.youtube.com/embed/cPAYOBFGZh8" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="trailer-titel"><br>
 							<h5><a href="videos">Bamboo presents Erica Mukisa's Testimony of Witchcraft & Deliverance Part 2</a> </h5>
 							</div>
@@ -78,14 +78,14 @@
                     <!--end ts-title-->
                     <div class="row">
 					<div class="col-md-4">
-                           <iframe width="359" height="359" src="https://www.youtube.com/embed/fsQWZ3uFslE" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.1s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                           <iframe width="350" height="180" src="https://www.youtube.com/embed/fsQWZ3uFslE" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.1s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="trailer-titel"><br>
 						<h5><a href="/products/erica-part-four-death-hell-&-heaven">
 Bamboo Presents Part 3 of Erica Mukisa's Testimony of Witchcraft & Deliverance</a> </h5>
 				</div>
                         </div>
                         <div class="col-md-4">
-                                <iframe width="359" height="359" src="https://www.youtube.com/embed/UAG7ytoR9ZQ" title="YouTube video player" frameborder="0"  data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="350" height="180" src="https://www.youtube.com/embed/UAG7ytoR9ZQ" title="YouTube video player" frameborder="0"  data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                        <div class="trailer-titel"><br>
 						<h5>
 						<a href="videos">Bamboo Presents Erica Mukisa Kimani’s Testimony of Witchcraft & Deliverance Part 4</a>
@@ -96,7 +96,7 @@ Bamboo Presents Part 3 of Erica Mukisa's Testimony of Witchcraft & Deliverance</
                         
                         <!--end col-md-4-->
                         <div class="col-md-4">
-                            <iframe width="359" height="359" src="https://www.youtube.com/embed/ekfcxxHLz-E" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="350" height="180" src="https://www.youtube.com/embed/ekfcxxHLz-E" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                              <div class="trailer-titel"><br>
 						<h5><a href="videos">Bamboo Presents Erica Mukisa’s Testimony of Witchcraft & Deliverance pt 5  </a> </h5>
 				</div>
@@ -115,14 +115,14 @@ Bamboo Presents Part 3 of Erica Mukisa's Testimony of Witchcraft & Deliverance</
                     <!--end ts-title-->
                     <div class="row">
 					<div class="col-md-4">
-                           <iframe width="359" height="359" src="https://www.youtube.com/embed/W2UfrQNzHlI" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.1s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                           <iframe width="350" height="180" src="https://www.youtube.com/embed/W2UfrQNzHlI" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.1s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <div class="trailer-titel"><br>
 						<h5><a href="/products/erica-part-four-death-hell-&-heaven">
 Bamboo Presents Erica Mukisa’s Testimony of Witchcraft & Deliverance Part 6</a> </h5>
 				</div>
                         </div>
                         <div class="col-md-4">
-                                <iframe width="359" height="359" src="https://www.youtube.com/embed/zCkgkjL65ok" title="YouTube video player" frameborder="0"  data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="350" height="180" src="https://www.youtube.com/embed/zCkgkjL65ok" title="YouTube video player" frameborder="0"  data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <div class="trailer-titel"><br>
 						<h5>
 						<a href="videos">Bamboo Presents Erica Mukisa Part 7 - Corona Virus Insight</a>

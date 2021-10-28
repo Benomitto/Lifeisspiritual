@@ -10,23 +10,23 @@
                     <!--end navbar-toggler-->
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav ml-auto">
-                            <a class="nav-item nav-link active ts-scroll" href="/">Home <span class="sr-only">(current)</span></a>
-							<a class="nav-item nav-link ts-scroll" href="/about">About Us</a>
-                            <a class="nav-item nav-link ts-scroll" href="/ourbooks">Our Books</a>
-                            <a class="nav-item nav-link ts-scroll" href="/videos">Videos</a>
-                            <a class="nav-item nav-link ts-scroll" href="/gallery">Gallery</a>
-                            <a class="nav-item nav-link ts-scroll" href="/blog">Blog</a>
-                            <a class="nav-item nav-link ts-scroll mr-2" href="/contactus">Contact Us</a>
+                            <a class="nav-item nav-link {{'' ? 'active' : ''}} ts-scroll" href="/">Home <span class="sr-only">(current)</span></a>
+							<a class="nav-item nav-link {{'about' == request()->path() ? 'active' : ''}} ts-scroll" href="/about">About Us</a>
+                            <a class="nav-item nav-link {{'ourbooks' == request()->path() ? 'active' : ''}} ts-scroll" href="/ourbooks">Our Books</a>
+                            <a class="nav-item nav-link {{'videos' == request()->path() ? 'active' : ''}} ts-scroll" href="/videos">Videos</a>
+                            <a class="nav-item nav-link {{'gallery' == request()->path() ? 'active' : ''}} ts-scroll" href="/gallery">Gallery</a>
+                            <a class="nav-item nav-link {{'blog' == request()->path() ? 'active' : ''}} ts-scroll" href="/blog">Blog</a>
+                            <a class="nav-item nav-link {{'contactus' == request()->path() ? 'active' : ''}} ts-scroll mr-2" href="/contactus">Contact Us</a>
                             @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" data-toggle="modal" data-target="#LoginModal">{{ __('Login') }}</a>
+                                    <a class="nav-link {{'login' == request()->path() ? 'active' : ''}}" href="#" data-toggle="modal" data-target="#LoginModal">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" data-toggle="modal" data-target="#RegisterModal">{{ __('Register') }}</a>
+                                    <a class="nav-link {{'register' == request()->path() ? 'active' : ''}}" href="#" data-toggle="modal" data-target="#RegisterModal">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -49,7 +49,7 @@
                                 </div>
                             </li>
                         @endguest
-							<a class="nav-item nav-link ts-scroll mr-2" href="{{route('cart.index')}}"><i class="fas fa-shopping-cart">{{\Cart::getContent()->count()}}</i></a>
+							<a class="nav-item nav-link {{'cart' == request()->path() ? 'active' : ''}} ts-scroll mr-2" href="{{route('cart.index')}}"><i class="fas fa-shopping-cart">{{\Cart::getContent()->count()}}</i></a>
                         </div>
                         <!--end navbar-nav-->
                     </div>
