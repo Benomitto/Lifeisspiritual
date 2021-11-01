@@ -37,9 +37,9 @@
 	                           <section id="about" class="ts-block" >
                    <div id="cards_landscape_wrap-2">
         <div class="container">
-            <div class="row">
+            <div class="row d-flex justify-content-around">
 			@foreach($products as $product)
-                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
                     <a href="{{route("products.show",$product->slug)}}">
                         <div class="card-flyer"  >
                             <div class="text-box">

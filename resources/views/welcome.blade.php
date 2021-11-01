@@ -129,12 +129,12 @@
             <!--TIMELINE ********************************************************************************************-->
                             <section id="about" class="ts-block" >
                    <div id="cards_landscape_wrap-2">
-        <div class="container">
-            <div class="row">
+        <div class="container " style="width:70%">
+            <div class="row d-flex justify-content-around">
 			@foreach($products as $product)
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <a href="{{route("products.show",$product->slug)}}">
-                        <div class="card-flyer">
+                        <div class="card-flyer ">
                             <div class="text-box">
                                 <div class="image-box">
                                     <img src="{{asset($product->image)}}" alt="{{$product->title}}" class="img-fluid rounded mx-auto d-block" width="100%"/>
@@ -166,19 +166,19 @@
                     <!--end ts-title-->
                     <div class="row">
 						<div class="col-md-4">
-                           <iframe width="359" height="359" src="https://www.youtube.com/embed/KkS7Up3AHhk" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.1s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <h5 class="py-4"><a href="videos">Erica part 4: Death,Hell & Heaven Book</a> </h5>
+                           <iframe width="350" height="180" src="https://www.youtube.com/embed/KkS7Up3AHhk" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.1s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <h6 class="py-4 text-align-center"><a href="videos">Erica part 4: Death,Hell & Heaven Book</a> </h6>
                         </div>
                         <div class="col-md-4">
-                                <iframe width="359" height="359" src="https://www.youtube.com/embed/Rq8NNOqTuaU" title="YouTube video player" frameborder="0"  data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <h5 class="py-4"><a href="videos">Bamboo presents Erica Mukisa's Testimony of Witchcraft & Deliverance Part 1</a> </h5>
+                                <iframe width="350" height="180" src="https://www.youtube.com/embed/Rq8NNOqTuaU" title="YouTube video player" frameborder="0"  data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <h6 class="py-4 text-align-center"><a href="videos">Bamboo presents Erica Mukisa's Testimony of Witchcraft & Deliverance Part 1</a> </h6>
 						</div>
                         <!--end col-md-4-->
                         
                         <!--end col-md-4-->
                         <div class="col-md-4">
-                            <iframe width="359" height="359" src="https://www.youtube.com/embed/cPAYOBFGZh8" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <h5 class="py-4"><a href="videos">Bamboo presents Erica Mukisa's Testimony of Witchcraft & Deliverance Part 2</a> </h5>
+                            <iframe width="350" height="180" src="https://www.youtube.com/embed/cPAYOBFGZh8" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.2s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <h6 class="py-4 text-align-center"><a href="videos">Bamboo presents Erica Mukisa's Testimony of Witchcraft & Deliverance Part 2</a> </h6>
                         </div>
                         <!--end col-md-4-->
                     </div>
@@ -194,11 +194,11 @@
 			
             <!--END GALLERY *****************************************************************************************-->
 		<section id="about" class="ts-block" >
-		<div id="cards_landscape_wrap-2">
-		<div class="container">
-            <div class="row">
+		<div id="cards_landscape_wrap-3">
+		<div class="container" style="width:100%" >
+            <div class="row d-flex justify-content-around">
 			@foreach($blogs as $blog)
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <a href={{route("article.show",$blog->slug)}}>
                         <div class="card-flyer"  >
                             <div class="text-box">
@@ -207,7 +207,6 @@
                                 </div>
                                 <div class="text-container">
                                     <h6>{{$blog->title}}</h6>
-                                   
                                 </div>
 								<div class="card-footer">
 											<span class="mybuttonoverlaptwo btn btn-primary text-white text-center font-weight-bold">Read</span>
