@@ -118,3 +118,28 @@ Route::get('combine',[CombineController::class,'index']);
 
 //Likes
 Route::post('/blog/{id}/likes', [App\Http\Controllers\PostlikeController::class, 'store'])->name('blog.likes');
+
+
+//Newsletter Start
+Route::post('newsletter', function(){
+request()->validate(['email'=>'required|email']);
+$mailchimp = new \MailchimpMarketing\ApiClient();
+$mailchimp->setConfig([
+'apiKey' => config('services.mailchimp.key'),
+'server' => 'us6'
+]);
+
+try{
+	$response = $mailchimp->lists->addListMember('c33ba8496b',[
+'email_address' => request('email'),
+'status'=>'subscribed'
+]);
+}catch(\Exception $e){
+	throw \Illuminate\Validation\ValidationException::withMessages([
+	'email' => 'This email cannot be added to our email list'
+	]);
+}
+
+return redirect('/')->with('success','You have been subscribed to Life Is Spiritual Newsletter');
+});
+//Newsletter End

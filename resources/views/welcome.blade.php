@@ -43,7 +43,7 @@
                     <div class="col-md-7 mt-5">
                         <h1 data-animate="ts-fadeInUp mt-5">{{$welcome->intro}}</h1>
                         <div data-animate="ts-fadeInUp" data-delay=".1s">
-                            <p class="w-75 text-white mb-5 ts-opacity__50 px-5">{{$welcome->descri}}</p>
+                            <p class="w-75 text-white mb-5 ts-opacity__50 px-1" id="description">{{$welcome->descri}}</p>
                         </div>
                         <a href="/about" class="btn btn-primary btn-lg ts-scroll mr-4" data-animate="ts-fadeInUp" data-delay=".2s">
                             {{$welcome->button}}
@@ -60,7 +60,7 @@
                     <div class="col-md-7 mt-5">
                         <h1 data-animate="ts-fadeInUp mt-5">{{$welcome->introduction}}</h1>
                         <div data-animate="ts-fadeInUp" data-delay=".1s">
-                            <p class="w-75 text-white mb-5 ts-opacity__50 px-5">{{$welcome->descript}} <br>{{$welcome->description}}</p>
+                            <p class="w-75 text-white mb-5 ts-opacity__50">{{$welcome->descript}} <br>{{$welcome->description}}</p>
                         </div>
                         <a href="https://www.paypal.com/ke/home" class="btn btn-primary btn-lg ts-scroll mr-4" data-animate="ts-fadeInUp" data-delay=".2s">
                             {{$welcome->btn}}
@@ -323,6 +323,7 @@
     <script src="assets/js/custom.js"></script>
 	<script src="assets/js/autoplay.js"></script>
 	<script src="/js/testimonials.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 	@include('sweetalert::alert')
 
 </body>

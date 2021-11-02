@@ -16,7 +16,7 @@
 	<script src="/assets/js/popper.min.js"></script>
 	<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
-
+	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 	<script src="/assets/js/isInViewport.jquery.js"></script>
 	<script src="/assets/js/jquery.magnific-popup.min.js"></script>
 	<script src="/assets/js/owl.carousel.min.js"></script>

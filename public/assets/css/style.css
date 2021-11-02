@@ -2630,6 +2630,7 @@ ul {
     padding: 5px 10px;
     border: 1px solid #2596be;
     top: 0;
+	cursor:pointer;
 }
 .subscribe-form button i {
   color: #fff;
@@ -3181,6 +3182,6 @@ ul {
 }
 
 /*Bootstrap cards*/
-.card{
-	
+#description{
+	right:50px;
 }

@@ -48,9 +48,13 @@
                                 <p>Promotions, new products and sales. Directly in your inbox</p>
                             </div>
                             <div class="subscribe-form">
-                                <form action="#">
-                                    <input type="text" placeholder="Email Address">
+                                <form action="/newsletter" method="post">
+								@csrf
+                                    <input id="email" name="email" type="text" placeholder="Email Address">
                                     <button><i class="fab fa-telegram-plane"></i></button>
+									@error('email')
+										<span class="text-xs text-danger">{{$message}}</span>
+									@enderror
                                 </form>
                             </div>
                         </div>
@@ -59,4 +63,10 @@
             </div>
         </div>
     </footer>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	@if(session('status'))
+		<script>swal("{{session('status')}}");</script>
+	@endif
+	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 				</section>
+				
