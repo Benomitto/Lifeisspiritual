@@ -273,7 +273,7 @@
                         <!-- END Left Header Navigation -->
 
                         <!-- Search Form -->
-                        <form action="page_ready_search_results.html" method="post" class="navbar-form-custom">
+                        <form action="#" method="post" class="navbar-form-custom">
                             <div class="form-group">
                                 <input type="text" id="top-search" name="top-search" class="form-control" placeholder="Search..">
                             </div>

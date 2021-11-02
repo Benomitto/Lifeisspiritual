@@ -18,7 +18,7 @@ class ProductController extends Controller
 	public function __construct(){
 		$this->middleware('admin')->except(['index','show']);
 	} 
-	 
+	
     public function index()
     {
         //

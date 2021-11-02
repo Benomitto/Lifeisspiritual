@@ -39,6 +39,11 @@
                      </div>
 					 </div>
 					 </div>
+					@if(Session::has('success'))
+            <div class="alert alert-success">
+                {{Session::get('success')}}
+            </div>
+        @endif 
                     <div class="col-md-3 mb-50">
                         <div class="footer-widget">
                             <div class="footer-widget-heading">
@@ -63,10 +68,5 @@
             </div>
         </div>
     </footer>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	@if(session('status'))
-		<script>swal("{{session('status')}}");</script>
-	@endif
-	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 				</section>
 				
