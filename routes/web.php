@@ -140,6 +140,6 @@ try{
 	]);
 }
 
-return redirect('/')->with('success','You have been subscribed to Life Is Spiritual Newsletter');
+return redirect('/')->with('success','You have successfully been subscribed to Life Is Spiritual Newsletter');
 });
 //Newsletter End

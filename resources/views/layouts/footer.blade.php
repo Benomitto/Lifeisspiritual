@@ -1,8 +1,14 @@
+
 	<section id="contact" class="ts-separate-bg-element" data-bg-image="assets/img/bg-hand-mobile.jpg" data-bg-image-opacity=".1" data-bg-color="#12264f">
 <footer class="footer-section">
         <div class="container">
-           
+         
             <div class="footer-content pt-5 pb-5 ">
+			  	@if(Session::has('success'))
+            <div class="flash alert-success">
+                <p>{{Session::get('success')}}</p>
+            </div>
+        @endif 
                 <div class="row d-flex justify-content-around">
                     <div class="col-md-3 mb-50">
                         <div class="footer-widget">
@@ -39,11 +45,7 @@
                      </div>
 					 </div>
 					 </div>
-					@if(Session::has('success'))
-            <div class="alert alert-success">
-                {{Session::get('success')}}
-            </div>
-        @endif 
+					
                     <div class="col-md-3 mb-50">
                         <div class="footer-widget">
                             <div class="footer-widget-heading">
