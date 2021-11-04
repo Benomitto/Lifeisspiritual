@@ -62,7 +62,7 @@ class BlogController extends Controller
 		
 		
 		return view('admin.blog.index')->with([
-			'blogs' => Blog::all(),
+			'blogs' => Blog::paginate(2),
 			
 		]);
 	}

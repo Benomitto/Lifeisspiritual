@@ -62,11 +62,12 @@
                         <div data-animate="ts-fadeInUp" data-delay=".1s">
                             <p class="w-75 text-white mb-5 ts-opacity__50">{{$welcome->descript}} <br>{{$welcome->description}}</p>
                         </div>
-                        <a href="https://www.paypal.com/ke/home" class="btn btn-primary btn-lg ts-scroll mr-4" data-animate="ts-fadeInUp" data-delay=".2s">
+                        <a href="https://www.paypal.com/donate?hosted_button_id=CSZN5GQDUMENG" class="btn btn-primary btn-lg ts-scroll mr-4" data-animate="ts-fadeInUp" data-delay=".2s">
                             {{$welcome->btn}}
                             <i class="fa fa-arrow-right small ml-3 ts-opacity__50"></i>
+							
                         </a>
-                        
+						                       
                     </div>
                     <!--end col-md-7-->
                 </div>

@@ -27,7 +27,7 @@
         <!-- Stylesheets -->
         <!-- Bootstrap is included in its original form, unaltered -->
         <link rel="stylesheet" href="/dash-assets/css/bootstrap.min.css">
-	
+		<link rel="stylesheet" href="/dash-assets/css/dataTables.min.css">
         <!-- Related styles of various icon packs and plugins -->
         <link rel="stylesheet" href="/dash-assets/css/plugins.css">
 
@@ -38,6 +38,7 @@
 
         <!-- The themes stylesheet of this template (for using specific theme color in individual elements - must included last) -->
         <link rel="stylesheet" href="/dash-assets/css/themes.css">
+		<link rel="stylesheet" href="/assets/css/dataTables.min.css">
         <!-- END Stylesheets -->
 
         <!-- Modernizr (browser feature detection library) -->
@@ -158,15 +159,10 @@
                                         <li>
                                             <a href="{{route('admin.products')}}"><i class="fa fa-angle-left sidebar-nav-indicator"></i>Products</a>
                                         </li>
-                                        <li>
-                                            <a href="#" class="sidebar-nav-submenu"><i class="fa fa-angle-left sidebar-nav-indicator"></i>Orders</a>
-                                            <ul>
-                                                <li>
-                                                    <a href="{{route('admin.orders')}}">Index</a>
-                                                </li>
-                                               
-                                            </ul>
-                                        </li> 
+										<li>
+                                            <a href="{{route('admin.orders')}}"><i class="fa fa-angle-left sidebar-nav-indicator"></i>Orders</a>
+                                        </li>
+                                         
                                     </ul>
                                 </li>
                                 
@@ -273,9 +269,9 @@
                         <!-- END Left Header Navigation -->
 
                         <!-- Search Form -->
-                        <form action="#" method="post" class="navbar-form-custom">
+                        <form action="#" method="GET" class="navbar-form-custom">
                             <div class="form-group">
-                                <input type="text" id="top-search" name="top-search" class="form-control" placeholder="Search..">
+                                <input type="text" id="search" name="search" class="form-control" placeholder="Search..">
                             </div>
                         </form>
                         <!-- END Search Form -->
@@ -470,13 +466,14 @@
         <!-- jQuery, Bootstrap.js, jQuery plugins and Custom JS code -->
         <script src="/dash-assets/js/vendor/jquery.min.js"></script>
         <script src="/dash-assets/js/vendor/bootstrap.min.js"></script>
+		<script src="/dash-assets/js/vendor/dataTables.min.js"></script>
+		<script src="assets/js/dataTables.min.js"></script>
         <script src="/dash-assets/js/plugins.js"></script>
         <script src="/dash-assets/js/app.js"></script>
 
         <!-- Google Maps API Key (you will have to obtain a Google Maps API key to use Google Maps) -->
         <!-- For more info please have a look at https://developers.google.com/maps/documentation/javascript/get-api-key#key -->
-        <script src="https://maps.googleapis.com/maps/api/js?key="></script>
-        <script src="/dash-assets/js/helpers/gmaps.min.js"></script>
+        
 
         <!-- Load and execute javascript code used only in this page -->
         <script src="/dash-assets/js/pages/index.js"></script>

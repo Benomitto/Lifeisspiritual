@@ -56,7 +56,7 @@
 							  <span><a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {{count($blog->comments)}} Likes</a></span>
                          </div>
                          <div class="blog-post-des">
-                              <p>{{$blog->body}}</p>
+                              <p>{{$blog->description}}</p>
                               <a href="{{route("article.show",$blog->slug)}}" class="btn btn-outline-secondary">Continue Reading</a>
                          </div>
                     </div>  
@@ -64,7 +64,7 @@
 			  
           </div>@endforeach
      </div>
-</section> <div class="pagination justify-content-center">{{$blogs->links()}}</div>         
+</section> <div class="pagination justify-content-center py-2">{{$blogs->links()}}</div>         
 			
 
  <footer class="footer-top" id="ts-footer">

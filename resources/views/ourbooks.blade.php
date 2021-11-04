@@ -46,6 +46,10 @@
                                 <div class="image-box ">
                                     <img src="{{asset($product->image)}}" alt="{{$product->title}}" class="rounded mx-auto d-block" />
                                 </div>
+								<div class="text-container">
+                                    <h6>{{$product->title}}</h6>
+                                    
+                                </div>
 								<div class="card-footer">
 											<i class="text-muted"><strike>Ksh.{{$product->old_price}}</strike></i>
                                             <span class="text-primary font-weight-bold">Ksh.{{$product->price}}</span><br>

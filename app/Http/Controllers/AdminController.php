@@ -23,7 +23,7 @@ class AdminController extends Controller
 		'products' => Product::all(),
 		'categories' => Category::all(),
 		'orders' => Order::all(),
-		'blogs' => Blog::all(),
+		'blogs' => Blog::latest()->filter()->get(),
 		'users' => User::all(),
 		'abouts' => About::all(),
 		'galleries' => Gallery::all(),
@@ -54,7 +54,7 @@ class AdminController extends Controller
 				
 	public function getProducts(){
 		return view('admin.products.index')->with([
-		'products' => Product::all(),
+		'products' => Product::paginate(4),
 		'orders' => Order::all(),
 		'categories' => Category::all(),
 		]);
@@ -62,11 +62,21 @@ class AdminController extends Controller
 	
 	public function getOrders(){
 		return view('admin.orders.index')->with([
-		'orders' => Order::all(),
+		'orders' => Order::paginate(4),
 		'products' => Product::all(),
 		
 		
 		]);
+	}
+	
+	protected function getBlogs()
+	{
+		
+		/*$blogs = Blog::latest();
+		if(request('search')){$blogs
+		->where('title','like','%'.request('search').'%')
+		->orWhere('body','like','%'.request('search').'%');}
+		return $blogs->get();*/
 	}
 
 }

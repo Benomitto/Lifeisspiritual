@@ -62,7 +62,7 @@ class MpesaController extends Controller
 		'PartyA'=> $phoneNumber,
 		'PartyB'=>174379,
 		'PhoneNumber'=> $phoneNumber,
-		'CallBackURL'=> 'https://cce1-197-248-92-161.ngrok.io/api/stk/push/callback/url', 
+		'CallBackURL'=> 'https://ae73-197-248-92-161.ngrok.io/api/stk/push/callback/url', 
 		'AccountReference'=> "Life Is Spiritual",
 		'TransactionDesc'=> "Lipa na M-pesa"
 		];
@@ -83,7 +83,7 @@ class MpesaController extends Controller
 		//$pays = Payment::latest()->get();
 		
 		
-		return redirect('/combine');
+		return redirect()->away('https://lifeisspiritual.org');
 		//return redirect()->route('confirm', compact('pays'));
 		 //return view('confirm', compact('pays'));
 		

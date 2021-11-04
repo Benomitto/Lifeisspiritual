@@ -20,7 +20,7 @@ class CreateCustomerinfosTable extends Migration
 			$table->string('zipcode')->unique();
 			$table->string('city')->unique();
 			$table->string('state')->unique();
-			$table->string('country')->unique();
+			$table->string('country');
             $table->timestamps();
         });
     }

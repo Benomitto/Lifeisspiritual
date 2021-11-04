@@ -29,8 +29,8 @@
                             </div>
                             <ul>
                                 <li><a href="#">Refund Policy</a></li>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Blog</a></li>
+                                <li><a href="/about">About Us</a></li>
+                                <li><a href="/blog">Blog</a></li>
                             </ul>
                         </div>
                     </div>
