@@ -121,13 +121,7 @@
                                     </a>
                                 </div>
                                 <div class="sidebar-user-name">John Spiritual</div>
-                                <div class="sidebar-user-links">
-                                    <a href="page_ready_user_profile.html" data-toggle="tooltip" data-placement="bottom" title="Profile"><i class="gi gi-user"></i></a>
-                                    <a href="page_ready_inbox.html" data-toggle="tooltip" data-placement="bottom" title="Messages"><i class="gi gi-envelope"></i></a>
-                                    <!-- Opens the user settings modal that can be found at the bottom of each page (page_footer.html in PHP version) -->
-                                    <a href="javascript:void(0)" class="enable-tooltip" data-placement="bottom" title="Settings" onclick="$('#modal-user-settings').modal('show');"><i class="gi gi-cogwheel"></i></a>
-                                    <a href="login.html" data-toggle="tooltip" data-placement="bottom" title="Logout"><i class="gi gi-exit"></i></a>
-                                </div>
+                               
                             </div>
                             <!-- END User Info -->
 
@@ -290,48 +284,41 @@
                                 <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
                                     <li class="dropdown-header text-center">Account</li>
                                     <li>
-                                        <a href="page_ready_timeline.html">
-                                            <i class="fa fa-clock-o fa-fw pull-right"></i>
-                                            <span class="badge pull-right">10</span>
-                                            Updates
-                                        </a>
-                                        <a href="page_ready_inbox.html">
-                                            <i class="fa fa-envelope-o fa-fw pull-right"></i>
-                                            <span class="badge pull-right">5</span>
-                                            Messages
-                                        </a>
-                                        <a href="page_ready_pricing_tables.html"><i class="fa fa-magnet fa-fw pull-right"></i>
-                                            <span class="badge pull-right">3</span>
-                                            Subscriptions
-                                        </a>
-                                        <a href="page_ready_faq.html"><i class="fa fa-question fa-fw pull-right"></i>
-                                            <span class="badge pull-right">11</span>
-                                            FAQ
-                                        </a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
                                         <a href="/">
-                                            <i class="fa fa-user fa-fw pull-right"></i>
+                                            <i class="fa fa-home fa-fw pull-right"></i>
                                             Home
                                         </a>
-                                        <!-- Opens the user settings modal that can be found at the bottom of each page (page_footer.html in PHP version) -->
-                                        <a href="#modal-user-settings" data-toggle="modal">
-                                            <i class="fa fa-cog fa-fw pull-right"></i>
-                                            Settings
+										<a href="/about">
+                                            <i class="fa fa-question fa-fw pull-right"></i>
+                                            About
+                                        </a>
+										<a href="/ourbooks">
+                                            <i class="fa fa-book fa-fw pull-right"></i>
+                                            Ourbooks
+                                        </a>
+										<a href="/videos">
+                                            <i class="fa fa-video-camera fa-fw pull-right"></i>
+                                            Videos
+                                        </a>
+										<a href="/gallery">
+                                            <i class="fa fa-picture-o fa-fw pull-right"></i>
+                                            Gallery
+                                        </a>
+										<a href="/blog">
+                                            <i class="fa fa-rss fa-fw pull-right"></i>
+                                            Blog
                                         </a>
                                     </li>
                                     <li class="divider"></li>
+                                   
+                                    <li class="divider"></li>
                                     <li>
-                                        <a href="login.html"><i class="fa fa-ban fa-fw pull-right"></i> Logout</a>
+									<form action="/logout" method="post">
+									@csrf
+                                        <button type="submit" class="btn btn-primary"><i class="fa fa-ban fa-fw pull-right"></i> Logout</submit>
+									</form>
                                     </li>
-                                    <li class="dropdown-header text-center">Activity</li>
-                                    <li>
-                                        <div class="alert alert-success alert-alt">
-                                            <small>5 min ago</small><br>
-                                            <i class="fa fa-thumbs-up fa-fw"></i> You had a new sale ($10)
-                                        </div>
-                                    </li>
+                                    
                                 </ul>
                             </li>
                             <!-- END User Dropdown -->

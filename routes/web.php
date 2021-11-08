@@ -5,6 +5,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\MpesaController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CombineController;
+use App\Http\Controllers\SessionsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -143,3 +144,7 @@ try{
 return redirect('/')->with('success','You have successfully been subscribed to Life Is Spiritual Newsletter');
 });
 //Newsletter End
+
+//Logout Start
+Route::post('/',[SessionsController::class,'destroy']);
+//Logout End
