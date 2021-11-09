@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,7 +8,9 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="assets/font-awesome/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
@@ -122,6 +125,8 @@
                     <!--end owl-carousel-->
                 </div>
                 <!--end ts-background-->
+				
+				
 
             </section>
 		@endforeach
@@ -133,7 +138,7 @@
         <div class="container " style="width:70%">
             <div class="row d-flex justify-content-around">
 			@foreach($products as $product)
-                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
                     <a href="{{route("products.show",$product->slug)}}">
                         <div class="card-flyer ">
                             <div class="text-box">
@@ -151,7 +156,16 @@
                 </div>
 				@endforeach
             </div>
-        </div>
+        </div><!--Carousel Buttons-->
+					<div class="col-6 text-right">
+                <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                    <i class="fa fa-arrow-left"></i>
+                </a>
+                <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+				<!--Carousel Buttons-->
     </div>
 				
 				<!--New-->
@@ -325,6 +339,9 @@
 	<script src="assets/js/autoplay.js"></script>
 	<script src="/js/testimonials.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+	<script type='text/javascript' src=''></script>
+                                <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+                                <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
 	@include('sweetalert::alert')
 
 </body>

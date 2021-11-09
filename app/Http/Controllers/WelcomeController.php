@@ -75,7 +75,7 @@ class WelcomeController extends Controller
 	}
 	
 	public function getProducts(int $limit) {
-    return Product::take($limit)->get();
+    return Product::orderBy('id', 'desc')->skip(0)->take($limit)->get();
 	}
 
     /**
