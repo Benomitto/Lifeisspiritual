@@ -15,11 +15,12 @@ class CreateCustomerinfosTable extends Migration
     {
         Schema::create('customerinfos', function (Blueprint $table) {
             $table->id();
-			$table->string('email')->unique();
-			$table->string('name')->nullable;
-			$table->string('zipcode')->unique();
-			$table->string('city')->unique();
-			$table->string('state')->unique();
+			$table->unsignedBigInteger('user_id')->nullable();
+			$table->string('email');
+			$table->string('name');
+			$table->string('zipcode');
+			$table->string('city');
+			$table->string('state');
 			$table->string('country');
             $table->timestamps();
         });

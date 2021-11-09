@@ -1,11 +1,4 @@
-@extends('layouts.master')
-
-@section('css')
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.2.0/css/fixedHeader.bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css">
-@endsection
+	@extends('layouts.master')
 
 @section('content')
 
@@ -81,7 +74,7 @@
 			
 			
 			
-				<table id="products" class="table table-bordered border-dark">
+				<table class="table table-bordered border-dark">
 					<thead class="table table-bordered border-dark">
 						<tr>
 							<td>Id</td>
@@ -197,25 +190,9 @@
 						
 					</tbody>
 				</table>
+				<div class="my-3 d-flex justify-content-center">
 				
-				<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-				<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-				<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap.min.js"></script>
-				<script src="https://cdn.datatables.net/fixedheader/3.2.0/js/dataTables.fixedHeader.min.js"></script>
-				<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-				<script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap.min.js"></script>
-				
-				<script>
-					$(document).ready(function() {
-					var table = $('#products').DataTable( {
-					responsive: true
-					} );
-					new $.fn.dataTable.FixedHeader( table );
-					} );
-				</script>
-				
-				<div class="text-center">{{$products->links()}}</div>
-				
+				</div>
         </div>
     </div>	
 </div>

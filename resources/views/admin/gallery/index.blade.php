@@ -30,9 +30,6 @@
 					<input class="form-control" type="text" name="description" placeholder="Description">
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="text" name="sentence" placeholder="Sentence">
-				</div>
-				<div class="form-group">
 					<input class="form-control" type="file" name="image[]" multiple>
 				</div>
 				
@@ -60,7 +57,6 @@
 							<td>Id</td>
 							<td>Title</td>
 							<td>Description</td>
-							<td>Sentence</td>
 							<td>Image</td>
 							<td></td>
 						</tr>
@@ -71,7 +67,6 @@
 								<td>{{$gallery->id}}</td>
 								<td>{{$gallery->title}}</td>
 									<td>{{Str::limit($gallery->description,200)}}</td>
-									<td>{{Str::limit($gallery->sentence,200)}}</td>
 									<td>
 										@php
 										$images= explode("|",$gallery->image)
@@ -111,9 +106,6 @@
 				</div>
 				<div class="form-group">
 					<input class="form-control" value="{{$gallery->description}}" type="text" name="description" placeholder="Description">
-				</div>
-				<div class="form-group">
-					<input class="form-control" value="{{$gallery->sentence}}" type="text" name="sentence" placeholder="Sentence">
 				</div>
 				<div class="form-group">
 					<img src="{{asset('images/slider/'.$gallery->image)}}"  class="img-fluid" width="100" height="100" alt="">

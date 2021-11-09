@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Customerinfo;
 use App\Models\Order;
+use Auth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderPlaced;
 
@@ -41,6 +42,7 @@ class CustomerinfoController extends Controller
     {
         //
 		$customerinfo = new Customerinfo;
+		$customerinfo->user_id = Auth::user()->id;
 		$customerinfo->email = $request->input('email');
 		$customerinfo->name = $request->input('name');
 		$customerinfo->country = $request->input('country');
@@ -69,7 +71,7 @@ class CustomerinfoController extends Controller
             $order->delivered = 0;
             $order->user_id = $userid;
             $order->save();
-			Mail::send(new OrderPlaced($order));
+			
         }
         
 		return redirect()->route('checkout')->withSuccess("Items have been updated ");

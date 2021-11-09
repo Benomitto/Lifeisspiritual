@@ -9,11 +9,14 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Models\MpesaTransaction;
+use Auth;
 use App\Models\Payment;
 use App\Mail\OrderPlaced;
 class MpesaController extends Controller
 {
     //
+	
+	
 	public function lipaNaMpesaPassword(){
 		$timestamp = Carbon::rawParse('now')->format('YmdHms');
 		$passkey = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919";
@@ -42,8 +45,10 @@ class MpesaController extends Controller
 	
 	public function stkPush(Request $request,$amount){
 		
+		
+		$user_id = Auth::user()->id;
 		$cart = \Cart::getSubtotal();
-		$user = $request->user; //Displays on the checkout form
+		$user = $request->user_id; //Displays on the checkout form
 		$amount = $request->amount;
 		$phone = $request->phone;
 		$formatedPhone = substr($phone,1);
@@ -62,7 +67,7 @@ class MpesaController extends Controller
 		'PartyA'=> $phoneNumber,
 		'PartyB'=>174379,
 		'PhoneNumber'=> $phoneNumber,
-		'CallBackURL'=> 'https://ae73-197-248-92-161.ngrok.io/api/stk/push/callback/url', 
+		'CallBackURL'=> 'https://ccf0-197-248-92-161.ngrok.io/api/stk/push/callback/url/?user='.$user_id, 
 		'AccountReference'=> "Life Is Spiritual",
 		'TransactionDesc'=> "Lipa na M-pesa"
 		];
@@ -96,6 +101,7 @@ class MpesaController extends Controller
         $reCode =$response->Body->stkCallback->ResultCode;
         $resMessage =$response->Body->stkCallback->ResultDesc;
         $amountPaid = $resData->Item[0]->Value;
+		
         $mpesaTransactionId = $resData->Item[1]->Value;
         $paymentPhoneNumber =$resData->Item[4]->Value;
         //replace the first 254 with 0
@@ -104,8 +110,10 @@ class MpesaController extends Controller
         $payment->amount = $amountPaid;
         $payment->mpesa_trans_id = $mpesaTransactionId;
         $payment->phone = $formatedPhone;
+		$payment->user_id = $request->user;
+		
         $payment->save();
-		Mail::send(new OrderPlaced);
+		Mail::send(new OrderPlaced($payment));
 		\Log::info("Transaction ".$mpesaTransactionId." of amount ".$amountPaid." from phone number ".$formatedPhone." has been completed successfully");
 		
 	}

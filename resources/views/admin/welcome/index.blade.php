@@ -87,7 +87,7 @@
 								<td>{{$welcome->id}}</td>
 								<td>{{$welcome->intro}}</td>
 									<td>{{Str::limit($welcome->descri,200)}}</td>
-									<td>{{$welcome->introduction}}Ksh</td>
+									<td>{{$welcome->introduction}}</td>
 									<td>{{Str::limit($welcome->descript,200)}}</td>
 									<td>{{Str::limit($welcome->description,200)}}</td>
 									<td>{{Str::limit($welcome->button,200)}}</td>

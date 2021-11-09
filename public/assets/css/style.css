@@ -2677,8 +2677,9 @@ ul {
 .item {
    display: inline-block;
    text-decoration: none;
-   background: #FFF;
-   margin: 10px;
+   background: #D0D0D0;
+   
+   margin: 1px;
    -webkit-box-shadow: 2px 2px 2px 0px rgba(212, 212, 212, 1);
    -moz-box-shadow: 2px 2px 2px 0px rgba(212, 212, 212, 1);
    box-shadow: 2px 2px 2px 0px rgba(212, 212, 212, 1);
@@ -2710,6 +2711,7 @@ ul {
 }
 
 .item h2 {
+	width:360px;
    padding: 10px;
    padding-bottom: 0;
    font-size: 20px;

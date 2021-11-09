@@ -40,7 +40,6 @@ Route::get('/activate/{code}', 'App\Http\Controllers\ActivateAccountController@a
 Route::get('/resend/{code}', 'App\Http\Controllers\ActivateAccountController@resendCode')->name('code.resend');
 
 //Admin Section
-
 Route::group(['middleware' => ['auth','admin']],function(){ Route::get('/admin', function () {return view('admin.index');});});
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'dashboard'])->name('admin.dashboard');
 Route::get('/admin/products', 'App\Http\Controllers\AdminController@getProducts')->name('admin.products');
@@ -98,6 +97,7 @@ Route::post('/customerinfo.store', 'App\Http\Controllers\CustomerinfoController@
 Route::resource('/customerinfo','App\Http\Controllers\CustomerinfoController');
 //Mpesa Checkout
 Route::get('/checkout', 'App\Http\Controllers\CheckoutController@index')->name('checkout');
+Route::any('/mpesa/stk/push/{amount}/', 'App\Http\Controllers\MpesaController@stkPush')->name('lipa');
 
 //Confirmation Message
 Route::get('/confirm', function () {return view('confirm');});

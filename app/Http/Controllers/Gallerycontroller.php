@@ -55,7 +55,7 @@ class Gallerycontroller extends Controller
         $gallery = new Gallery;
         $gallery->title = $request->input('title');
         $gallery->description = $request->input('description');
-        $gallery->sentence = $request->input('sentence');
+       
         
         
          $validatedData = $request->validate([

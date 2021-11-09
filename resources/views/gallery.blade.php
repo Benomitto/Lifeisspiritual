@@ -38,8 +38,9 @@
 	
 		            <section class="" id="sermons">
 		            	
-      <div class="container ">
+      <div class="container-md">
 		<!--Album Start-->
+		<div class="col-md-6 d-flex">
 		@foreach ($galleries as $gallery)
 		@php
 		$images= explode("|",$gallery->image);
@@ -60,6 +61,7 @@
 		 
       </a>
       @endforeach
+	  </div>
 	  <!--Album End-->
       </div>
 

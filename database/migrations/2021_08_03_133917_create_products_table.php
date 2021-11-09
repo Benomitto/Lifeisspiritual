@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
 			$table->text('old_price',8,2)->nullable;
 			$table->integer('inStock')->default(0);
 			$table->unsignedBigInteger('category_id');
-            $table->timestamps();
+            $table->timestamps()->unique();
         });
     }
 

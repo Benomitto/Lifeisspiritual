@@ -17,8 +17,9 @@ class CreatePaymentsTable extends Migration
              $table->id();
 			
             $table->string('mpesa_trans_id');
-            $table->decimal('amount',8,2)->nullable;
+            $table->decimal('amount',8,2)->nullable();
             $table->string('phone');
+			$table->unsignedBigInteger('user_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
