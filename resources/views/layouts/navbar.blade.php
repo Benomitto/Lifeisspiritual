@@ -1,6 +1,6 @@
             <nav class="navbar navbar-expand-md navbar-dark fixed-top" data-bg-color="#141a3a">
                 <div class="container">
-                    <a class="navbar-brand" href="#page-top">
+                    <a class="navbar-brand" href="/">
                         <img src="/assets/img/logo.png" alt="">
                     </a>
                     <!--end navbar-brand-->

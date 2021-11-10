@@ -24,7 +24,7 @@
         <div class="overlay-content py-5 index-forward">
           <div class="container py-5 mt-5">
             <div class="row py-5 text-white text-center">
-              <div class="col-lg-7 mx-auto">
+              <div class="col-lg-2 mx-auto">
                 <h4 class="text">Our Books</h4>
                 <p class="lead"></p>
               </div>
@@ -39,7 +39,7 @@
         <div class="container">
             <div class="row d-flex justify-content-around">
 			@foreach($products as $product)
-                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 d-flex justify-content-center">
                     <a href="{{route("products.show",$product->slug)}}">
                         <div class="card-flyer"  >
                             <div class="text-box">

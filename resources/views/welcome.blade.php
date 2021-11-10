@@ -138,7 +138,7 @@
         <div class="container " style="width:70%">
             <div class="row d-flex justify-content-around">
 			@foreach($products as $product)
-				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 d-flex justify-content-center">
                     <a href="{{route("products.show",$product->slug)}}">
                         <div class="card-flyer ">
                             <div class="text-box">
@@ -180,7 +180,7 @@
                         <!--<h2 class="text-center py-4">Videos</h2>-->
                     <!--end ts-title-->
                     <div class="row">
-						<div class="col-md-4">
+						<div class="col-md-4 ">
                            <iframe width="350" height="180" src="https://www.youtube.com/embed/KkS7Up3AHhk" title="YouTube video player" frameborder="0" data-animate="ts-fadeInUp" data-delay="0.1s" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <h6 class="py-4 text-align-center"><a href="videos">Erica part 4: Death,Hell & Heaven Book</a> </h6>
                         </div>
@@ -213,7 +213,7 @@
 		<div class="container" style="width:100%" >
             <div class="row d-flex justify-content-around">
 			@foreach($blogs as $blog)
-                <div class="col-lg-3">
+                <div class="col-lg-3 d-flex justify-content-around">
                     <a href={{route("article.show",$blog->slug)}}>
                         <div class="card-flyer"  >
                             <div class="text-box">
