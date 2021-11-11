@@ -138,9 +138,9 @@
         <div class="container " style="width:70%">
             <div class="row d-flex justify-content-around">
 			@foreach($products as $product)
-				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 d-flex justify-content-center">
-                    <a href="{{route("products.show",$product->slug)}}">
-                        <div class="card-flyer ">
+				<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3 d-flex justify-content-center" >
+                    <a href="{{route("products.show",$product->slug)}}" id="carouselExampleIndicators2" >
+                        <div class="card-flyer" >
                             <div class="text-box">
                                 <div class="image-box">
                                     <img src="{{asset($product->image)}}" alt="{{$product->title}}" class="img-fluid rounded mx-auto d-block" width="100%"/>

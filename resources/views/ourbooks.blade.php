@@ -40,8 +40,8 @@
             <div class="row d-flex justify-content-around">
 			@foreach($products as $product)
                 <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2 d-flex justify-content-center">
-                    <a href="{{route("products.show",$product->slug)}}">
-                        <div class="card-flyer"  >
+                    <a href="{{route("products.show",$product->slug)}}" >
+                        <div class="card-flyer">
                             <div class="text-box">
                                 <div class="image-box ">
                                     <img src="{{asset($product->image)}}" alt="{{$product->title}}" class="rounded mx-auto d-block" />

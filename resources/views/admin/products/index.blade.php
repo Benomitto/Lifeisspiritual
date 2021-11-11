@@ -8,9 +8,9 @@
 			<h5 class="text-center text-primary">Products</h5>
 			<div class="form-group">
 				
-				<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+				<div class="text-right"><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
 					<i class="fa fa-plus"></i>
-				</a>
+				</a></div>
 				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					  <div class="modal-dialog">
 						<div class="modal-content">

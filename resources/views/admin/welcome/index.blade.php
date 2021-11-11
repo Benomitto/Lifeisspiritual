@@ -8,9 +8,9 @@
 			<h5 class="text-center text-primary">Index Page</h5>
 			<div class="form-group">
 				
-				<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+				<div class="text-right"><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
 					<i class="fa fa-plus"></i>
-				</a>
+				</a></div>
 				<!--Modal Start-->
 						<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 						  <div class="modal-dialog">

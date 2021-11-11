@@ -2873,6 +2873,7 @@ ul {
   margin: 0px 50px 50px 0px;
   width:300px;
   align-items:center;
+  
 }
 
 #cards_landscape_wrap-3 .card-flyer .image-box{
@@ -3186,4 +3187,8 @@ ul {
 /*Bootstrap cards*/
 #description{
 	right:50px;
+}
+
+#add{
+	left:100px;
 }
