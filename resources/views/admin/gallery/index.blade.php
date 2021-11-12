@@ -41,7 +41,7 @@
         </div>
     </div>	
 </div>
-									<!--Create Ennd-->
+									<!--Create End-->
 							  </div>
 							  <div class="modal-footer">
 								<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -84,9 +84,19 @@
 									
 									<td class="d-flex flex-row justify-content-center align-items-center">
 									<div class="form-group">
-									<a href="#" class="btn btn-warning btn-sm mr-2" data-toggle="modal" data-target="#editBackdrop">
-										<i class="fa fa-edit"></i>
-									</a>
+									<div class="dropdown">
+<a href="#" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="false"><svg class="bi bi-three-dots-vertical" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+</svg></a>
+<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <li><button type="submit" class="btn btn-link dropdown-item" data-toggle="modal" data-target="#editBackdrop">Edit</button></li>
+    <form action="{{route('gallery.destroy',$gallery->id)}}" method="post">
+											@csrf
+											@method('DELETE')
+	<li><button type="submit" class="btn btn-link dropdown-item">Delete</button></li>
+	</form>
+  </ul>
+</div>
 									
 									<!--Edit Modal Start-->
 										<div class="modal fade" id="editBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -98,7 +108,7 @@
     <div class="row p-3 ">
         <div class="col-md-6 mx-auto card p-3 ">
 			<h5 class="text-center text-primary ">Edit Index Page</h5>
-			<form method="post" action={{route('gallery.update',$gallery->id)}} enctype="multipart/form-data">
+			<form method="post" action="{{route('gallery.update',$gallery->id)}}" enctype="multipart/form-data">
 			@csrf
 			@method('PUT')
 				<div class="form-group">
@@ -132,17 +142,6 @@
 									<!--Edit Modal End-->
 									
 									</div>
-										<form action="{{route('gallery.destroy',$gallery->id)}}" method="post">
-											@csrf
-											@method('DELETE')
-											
-											<div class="form-group">
-												<button type="submit" class="btn btn-danger btn-sm">
-													<i class="fa fa-trash"></i>
-												</button>
-												
-											</div>
-										</form>
 									</td>
 							</tr>
 						@endforeach
