@@ -123,6 +123,7 @@ class AboutController extends Controller
     public function update(Request $request,$id)
     {
         //
+		
 		$about = About::find($id);
 		$about->header = $request->input('header');
 		$about->describe = $request->input('describe');
