@@ -97,11 +97,11 @@
 			
 			<!--Related Products-->
 			
-				<div class="col-md-4">
+				<!--<div class="col-md-4">
 				<ul class="list-group list-group-horizontal-md">
 					<!--<li class="list-group-item active">
 						Related Products
-					<li>-->
+					<li>
 						@foreach($categories as $category)
 							<a href="{{route("category.products",$category),$category->slug}}" class="list-group list-group-horizontal-md list-group-item-action">
 								{{$category->title}}
@@ -109,9 +109,9 @@
 							</a>
 						@endforeach
 				</ul>
-			</div>
+			</div>-->
 			
-			<section class="py-5 bg-light">
+			<!--<section class="py-5 bg-light">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -151,7 +151,7 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</section>-->
 			
 			<!--Related Products-->
 			

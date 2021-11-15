@@ -162,7 +162,7 @@ class BlogController extends Controller
     public function update(Request $request,$id)
     {
         //
-			$blog = Blog::findorFail($id);
+			$blog = Blog::find($id);
 			$blog->title = $request->input('title');
 			$blog->month = $request->input('month');
 			$blog->description = $request->input('description');

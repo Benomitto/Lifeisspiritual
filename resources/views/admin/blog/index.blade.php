@@ -15,9 +15,9 @@
 			<h5 class="text-center text-primary">Blog</h5>
 			<div class="form-group">
 				
-				<div class="text-right"><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+				<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
 					<i class="fa fa-plus"></i>
-				</a></div>
+				</a>
 				<!--Modal Start-->
 							<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 										  <div class="modal-dialog">
@@ -117,7 +117,7 @@
 
 
 											<!-- Modal -->
-											<div class="modal fade" id="editBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+											<div class="modal fade" id="editBackdrop_{{$blog->id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 											  <div class="modal-dialog">
 												<div class="modal-content">
 												  <div class="modal-body">
@@ -125,7 +125,7 @@
     <div class="row p-3 ">
         <div class="col-md-6 mx-auto card p-3 ">
 			<h5 class="text-center text-primary ">Update Blog</h5>
-			<form method="post" action={{route('blog.update',$blog->id)}} enctype="multipart/form-data">
+			<form method="post" action="{{route('blog.update',$blog->id)}}" enctype="multipart/form-data">
 			@csrf
 			@method('PUT')
 				<div class="form-group">
@@ -144,7 +144,7 @@
 					<textarea class="form-control" rows="5" cols="30" name="body" placeholder="body">{{$blog->body}}</textarea>
 				</div>
 				<div class="form-group">
-					<input class="form-control" type="text" name="writer" placeholder="Author">
+					<input class="form-control" type="text" name="writer" placeholder="Author" value="{{$blog->writer}}">
 				</div>
 				<div class="form-group"><img src="{{('/images/blogs/'.$blog->image)}}"  class="img-fluid" width="200" height="300" alt=""></div>
 				<div class="form-group">

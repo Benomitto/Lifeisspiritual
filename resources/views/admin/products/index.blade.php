@@ -111,7 +111,7 @@
   <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
 </svg></a>
 <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <li><button type="submit" class="btn btn-link dropdown-item" data-toggle="modal" data-target="#editBackdrop">Edit</button></li>
+    <li><button type="submit" class="btn btn-link dropdown-item" data-toggle="modal" data-target="#editBackdrop_{{$product->id}}">Edit</button></li>
     <form action="{{route('products.destroy',$product->id)}}" method="post">
 											@csrf
 											@method('DELETE')
@@ -121,7 +121,7 @@
 </div>
 									<!--Modal Start-->
 											<!-- Modal -->
-											<div class="modal fade" id="editBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="editBackdropLabel" aria-hidden="true">
+											<div class="modal fade" id="editBackdrop_{{$product->id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="editBackdropLabel" aria-hidden="true">
 											  <div class="modal-dialog">
 												<div class="modal-content">
 												  <div class="modal-body">
@@ -147,7 +147,7 @@
 				<div class="form-group">
 					<input class="form-control" value="{{$product->inStock}}" type="number" name="inStock" placeholder="Quantity in stock">
 				</div>
-				<div class="form-group"><img src="asset('images/product/'.$product->image)"  class="img-fluid" width="200" height="300" alt=""></div>
+				<div class="form-group"><img src="{{asset($product->image)}}"  class="img-fluid" width="200" height="300" alt=""></div>
 				<div class="form-group">
 					<input class="form-control" type="file" name="image" >
 				</div>

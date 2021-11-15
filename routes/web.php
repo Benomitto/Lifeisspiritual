@@ -67,8 +67,8 @@ Route::resource('/about','App\Http\Controllers\AboutController');
 //Blog
 Route::get('/blog/', [App\Http\Controllers\BlogController::class, 'index'])->name('blog');
 Route::get('blogs/{slug}','App\Http\Controllers\BlogController@getArticles')->name('article.show');
-Route::get('blog.update/{id}','App\Http\Controllers\BlogController@edit');
-Route::put('blog.update/{id}','App\Http\Controllers\BlogController@update');
+Route::any('blog.edit/{id}','App\Http\Controllers\BlogController@edit');
+Route::any('blog.update/{id}','App\Http\Controllers\BlogController@update');
 Route::post('save_comment/{id}','App\Http\Controllers\BlogController@save_comment')->name('save_comment');
 Route::get('/admin/blog', 'App\Http\Controllers\BlogController@getBlog')->name('admin.blog');
 Route::resource('/blog','App\Http\Controllers\BlogController');
@@ -95,6 +95,7 @@ Route::delete('/delete/cart/{product}', 'App\Http\Controllers\CartController@rem
 Route::get('/customerinfo', 'App\Http\Controllers\CustomerinfoController@index')->name('customerinfo');
 Route::post('/customerinfo.store', 'App\Http\Controllers\CustomerinfoController@store')->name('customerinfo');
 Route::resource('/customerinfo','App\Http\Controllers\CustomerinfoController');
+
 //Mpesa Checkout
 Route::get('/checkout', 'App\Http\Controllers\CheckoutController@index')->name('checkout');
 Route::any('/mpesa/stk/push/{amount}/', 'App\Http\Controllers\MpesaController@stkPush')->name('lipa');

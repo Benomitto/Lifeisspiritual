@@ -78,26 +78,7 @@
 							
                             
                             
-                            <div class="col-sm-6">
-                                <!-- Widget -->
-                                 <a href="#" class="widget widget-hover-effect1">
-                                    <div class="widget-simple">
-                                        <div class="widget-icon pull-left themed-background animation-fadeIn">
-                                            <i class="gi gi-wallet"></i>
-                                        </div>
-                                        <div class="pull-right">
-                                             
-                                             <span id="mini-chart-sales"></span>
-                                        </div>
-                                        <h3 class="widget-content animation-pullDown visible-lg">
-                                            Latest <strong>Sales</strong>
-                                            <small>Per hour</small>
-                                        </h3>
-                                    </div>
-                                </a>
-                                <!-- END Widget -->
-                             <!--</div>-->
-                        </div>
+                            
 						<div class="row">
                             
 							

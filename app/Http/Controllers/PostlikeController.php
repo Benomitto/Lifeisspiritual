@@ -10,5 +10,6 @@ class PostlikeController extends Controller
 	public function store($id)
 	{
 		dd($id);
+		
 	}
 }
